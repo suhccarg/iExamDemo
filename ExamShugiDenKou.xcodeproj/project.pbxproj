@@ -17,12 +17,6 @@
 		D952EAE62A61FF3C001A3F04 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D952EAD12A61FF3B001A3F04 /* MessageViewController.swift */; };
 		D952EAE82A61FF3C001A3F04 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D952EAD32A61FF3B001A3F04 /* MenuViewController.swift */; };
 		D952EAE92A61FF3C001A3F04 /* CustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D952EAD42A61FF3B001A3F04 /* CustomViewController.swift */; };
-		D952EAEA2A61FF3C001A3F04 /* SettingDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = D952EAD62A61FF3B001A3F04 /* SettingDao.swift */; };
-		D952EAEB2A61FF3C001A3F04 /* ExamUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = D952EAD72A61FF3B001A3F04 /* ExamUnit.swift */; };
-		D952EAEC2A61FF3C001A3F04 /* ExamManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D952EAD82A61FF3C001A3F04 /* ExamManager.swift */; };
-		D952EAED2A61FF3C001A3F04 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D952EAD92A61FF3C001A3F04 /* Parser.swift */; };
-		D952EAEE2A61FF3C001A3F04 /* TypeCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D952EADA2A61FF3C001A3F04 /* TypeCode.swift */; };
-		D952EAEF2A61FF3C001A3F04 /* ExamSourceDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = D952EADB2A61FF3C001A3F04 /* ExamSourceDao.swift */; };
 		D952EAF02A61FF3C001A3F04 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D952EADC2A61FF3C001A3F04 /* AppDelegate.swift */; };
 		D952EAF32A620145001A3F04 /* ExamLib_iOS1 in Frameworks */ = {isa = PBXBuildFile; productRef = D952EAF22A620145001A3F04 /* ExamLib_iOS1 */; };
 /* End PBXBuildFile section */
@@ -40,12 +34,6 @@
 		D952EAD12A61FF3B001A3F04 /* MessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
 		D952EAD32A61FF3B001A3F04 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		D952EAD42A61FF3B001A3F04 /* CustomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomViewController.swift; sourceTree = "<group>"; };
-		D952EAD62A61FF3B001A3F04 /* SettingDao.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingDao.swift; sourceTree = "<group>"; };
-		D952EAD72A61FF3B001A3F04 /* ExamUnit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExamUnit.swift; sourceTree = "<group>"; };
-		D952EAD82A61FF3C001A3F04 /* ExamManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExamManager.swift; sourceTree = "<group>"; };
-		D952EAD92A61FF3C001A3F04 /* Parser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
-		D952EADA2A61FF3C001A3F04 /* TypeCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeCode.swift; sourceTree = "<group>"; };
-		D952EADB2A61FF3C001A3F04 /* ExamSourceDao.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExamSourceDao.swift; sourceTree = "<group>"; };
 		D952EADC2A61FF3C001A3F04 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -103,7 +91,6 @@
 			isa = PBXGroup;
 			children = (
 				D952EACD2A61FF3B001A3F04 /* VIew */,
-				D952EAD52A61FF3B001A3F04 /* Exam */,
 				D952EADC2A61FF3C001A3F04 /* AppDelegate.swift */,
 			);
 			path = src;
@@ -119,19 +106,6 @@
 				D952EAD42A61FF3B001A3F04 /* CustomViewController.swift */,
 			);
 			path = VIew;
-			sourceTree = "<group>";
-		};
-		D952EAD52A61FF3B001A3F04 /* Exam */ = {
-			isa = PBXGroup;
-			children = (
-				D952EAD62A61FF3B001A3F04 /* SettingDao.swift */,
-				D952EAD72A61FF3B001A3F04 /* ExamUnit.swift */,
-				D952EAD82A61FF3C001A3F04 /* ExamManager.swift */,
-				D952EAD92A61FF3C001A3F04 /* Parser.swift */,
-				D952EADA2A61FF3C001A3F04 /* TypeCode.swift */,
-				D952EADB2A61FF3C001A3F04 /* ExamSourceDao.swift */,
-			);
-			path = Exam;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -214,15 +188,9 @@
 				D952EAE82A61FF3C001A3F04 /* MenuViewController.swift in Sources */,
 				D952EAE62A61FF3C001A3F04 /* MessageViewController.swift in Sources */,
 				D91803362A61C1A00038B5A8 /* ViewController.swift in Sources */,
-				D952EAEB2A61FF3C001A3F04 /* ExamUnit.swift in Sources */,
 				D952EAE52A61FF3C001A3F04 /* ExamViewController.swift in Sources */,
-				D952EAEF2A61FF3C001A3F04 /* ExamSourceDao.swift in Sources */,
 				D952EAE32A61FF3C001A3F04 /* SettingViewController.swift in Sources */,
 				D91803342A61C1A00038B5A8 /* SceneDelegate.swift in Sources */,
-				D952EAED2A61FF3C001A3F04 /* Parser.swift in Sources */,
-				D952EAEC2A61FF3C001A3F04 /* ExamManager.swift in Sources */,
-				D952EAEE2A61FF3C001A3F04 /* TypeCode.swift in Sources */,
-				D952EAEA2A61FF3C001A3F04 /* SettingDao.swift in Sources */,
 				D952EAE92A61FF3C001A3F04 /* CustomViewController.swift in Sources */,
 				D952EAF02A61FF3C001A3F04 /* AppDelegate.swift in Sources */,
 			);
