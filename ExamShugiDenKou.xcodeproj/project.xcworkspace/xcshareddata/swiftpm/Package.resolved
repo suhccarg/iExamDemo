@@ -14,8 +14,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/suhccarg/ExamLib_iOS1.git",
       "state" : {
-        "branch" : "develop",
-        "revision" : "5e82b59c87ba659b2051b094012e3c87d0211438"
+        "branch" : "main",
+        "revision" : "bf308af00b135ee169b7baa1197fe77003e23278"
       }
     }
   ],

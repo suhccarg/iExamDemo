@@ -8,8 +8,9 @@
 
 import Foundation
 import UIKit
+import ExamLib_iOS1
 
-public class MessageViewController: CustomViewController {
+public class MessageViewController: MessageViewBaseController {
     private var messageViewArea: ExamLabel!
     public var message: String = "."
     public var returnView: ViewType = .unknown

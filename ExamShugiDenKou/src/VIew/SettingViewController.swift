@@ -9,8 +9,9 @@
 import Foundation
 import UIKit
 import WebKit
+import ExamLib_iOS1
 
-public class SettingViewController: CustomViewController {
+public class SettingViewController: SettingViewBaseController {
     public var darkModeGroup: DarkModeGroup!
     public var optionGroup: OptionGroup!
     public var questionCountGroup: QuestionCountGroup!

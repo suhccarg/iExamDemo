@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import ExamLib_iOS1
+
 public enum TouchedView { case base, title, other }
 
-public class MenuViewController: CustomViewController {
+public class MenuViewController: MenuViewBaseController {
     public var radioGroup: ExamRadioGroup!
     public var messageArea: UILabel!
     public var startButton: ExamButton!
