@@ -8,7 +8,7 @@
 
 import Foundation
 import SQLite3
-import CryptoSwift
+import ExamLib_iOS1
 
 fileprivate let tableName = "exam"
 fileprivate let columnImage = "_image"

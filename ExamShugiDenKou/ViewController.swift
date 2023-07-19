@@ -3,7 +3,7 @@
 //  ExamShugiDenKou
 //
 //  Created by suhccarg on 2023/07/14.
-//
+/
 
 import UIKit
 

@@ -7,10 +7,8 @@
 //
 
 import Foundation
-
-import Foundation
 import SQLite3
-import CryptoSwift
+import ExamLib_iOS1
 
 fileprivate let tableName = "settings"
 fileprivate let columnId = "_id"
