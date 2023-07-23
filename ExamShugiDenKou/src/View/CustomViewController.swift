@@ -140,7 +140,7 @@ public class CustomViewController: UIViewController {
         self.view.addSubview(returnButton)
     }//setupReturnButton()
     
-    @objc public func onReturnButtonListener(_ sender: UIButton) {
+    @objc public  func onReturnButtonListener(_ sender: UIButton) {
         log(90, "returnButton tapped.")
         try! returnToPreviousView(previousView: .menu)
     }//onReturnButtonListener(_ sender: UIButton)
@@ -331,7 +331,7 @@ public class CustomViewController: UIViewController {
     public func gotoMessageView(message: String, returnView: ViewType) throws {
         log(50, "gotoMessageView")
         let storyboard: UIStoryboard = self.storyboard!
-        let messageView = storyboard.instantiateViewController(withIdentifier: "MessageView") as! MessageViewBaseController
+        let messageView = storyboard.instantiateViewController(withIdentifier: "MessageView") as! MessageViewController
         messageView.message = message
         messageView.returnView = returnView
         viewState = .message
@@ -350,11 +350,7 @@ public class ExamLabel: UITextView {
     public var fontSize: CGFloat
     let heightMargin: CGFloat = 8
     let leftMargin: CGFloat = 8
-    //    // webview 内のテキスト選択禁止
-    //    static let disableSelectionScriptString = "document.documentElement.style.webkitUserSelect='none';"
-    //    // webview 内の⻑押しによるメニュー表示禁止
-    //    static let disableCalloutScriptString = "document.documentElement.style.webkitTouchCallout='none';"
-    
+  
     init(baseView: CustomViewController, text: String, fontSize: CGFloat, under upperView: UIView?)  throws {
         self.baseView = baseView
         self.upperView = upperView
@@ -631,17 +627,17 @@ public class ExamDividingLine {
     }//apply()
 }//class ExamDividingLine
 public class QuestionCountGroup {
-    weak var baseView: SettingViewBaseController!
+    weak var baseView: SettingViewController!
     var upperView: UIView!
     var slider: UISlider!
     var label: UILabel!
     
     public static let defaultQuestionCount: Float = 500
     
-    public init(baseView: SettingViewBaseController, upperView: UIView) {
+    public init(baseView: SettingViewController, upperView: UIView) {
         self.baseView = baseView
         self.upperView = upperView
-    }//init(baseView: SettingViewBaseController, upperView: UIView)
+    }//init(baseView: SettingViewController, upperView: UIView)
     
     public func setup() throws {
         log(50, "QuestionCountGroup#setup")
@@ -718,7 +714,7 @@ public class QuestionCountGroup {
 }//class QuestionCountGroup
 
 public class FontSizeGroup {
-    weak var baseView: SettingViewBaseController!
+    weak var baseView: SettingViewController!
     var upperView: UIView!
     var slider: UISlider!
     var label: UILabel!
@@ -739,10 +735,10 @@ public class FontSizeGroup {
     + "    <p>" + FontSizeGroup.addtitionalParagraph + "</p>\n"
     + "  </div>\n"
     
-    public init(baseView: SettingViewBaseController, upperView: UIView) {
+    public init(baseView: SettingViewController, upperView: UIView) {
         self.baseView = baseView
         self.upperView = upperView
-    }//init(baseView: SettingViewBaseController, upperView: UIView)
+    }//init(baseView: SettingViewController, upperView: UIView)
     
     public func setup() throws {
         log(50, "FontSizeGroup#setup")

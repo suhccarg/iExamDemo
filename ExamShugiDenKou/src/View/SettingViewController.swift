@@ -13,14 +13,14 @@ import WebKit
 import ExamLib_iOS1
 #endif
 
-public class SettingViewBaseController: CustomViewController {
+public class SettingViewController: CustomViewController {
     public var darkModeGroup: DarkModeGroup!
     public var optionGroup: OptionGroup!
     public var questionCountGroup: QuestionCountGroup!
     public var fontSizeGroup: FontSizeGroup!
     
     override public func viewDidLoad() {
-        log(50, "SettingViewBaseController#viewDidLoad:\(viewState)")
+        log(50, "SettingViewController#viewDidLoad:\(viewState)")
         super.viewDidLoad()
         do {
             darkModeGroup = DarkModeGroup(baseView: self, upperView: super.topMessage)
@@ -67,26 +67,26 @@ public class SettingViewBaseController: CustomViewController {
                     try gotoMessageView(message: s, returnView: viewState)
                 }
             } else {
-                log(90, "SettingViewBaseController#onSwipeListener: undefined swipe")
+                log(90, "SettingViewController#onSwipeListener: undefined swipe")
             }
         } catch let e {
-            log(10, "SettingViewBaseController#onSwipeListener:\(e)")
+            log(10, "SettingViewController#onSwipeListener:\(e)")
         }
     }//onSwipeListener(sender: UISwipeGestureRecognizer)
     
     ///// 回転処理 /////
     @objc override public func onOrientationChangeListner() {
-        log(10, "SettingViewBaseController#onOrientationChangeListner(...)")
+        log(10, "SettingViewController#onOrientationChangeListner(...)")
         do {
             try fontSizeGroup.updateFontSample()
         } catch let e {
-            try! gotoMessageView(message: log(10, "SettingViewBaseController#viewDidLayoutSubviews:\(e)"), returnView: viewState)
+            try! gotoMessageView(message:  slog(10, "SettingViewController#viewDidLayoutSubviews:\(e)"), returnView: viewState)
         }
     }//onOrientationChangeListner
     
     ///// レイアウト /////
     override public func viewDidLayoutSubviews() {
-        log(50, "SettingViewBaseController#viewDidLayoutSubviews")
+        log(50, "SettingViewController#viewDidLayoutSubviews")
         super.viewDidLayoutSubviews()
         //       if viewState == .setting {
         do {
@@ -121,20 +121,20 @@ public class SettingViewBaseController: CustomViewController {
         innerDividingLine.apply(targetView: self.scroll!)
     }//layoutSettingView()
     
-}//class SettingViewBaseController
+}//class SettingViewController
 
 public class DarkModeGroup {
-    weak var baseView: SettingViewBaseController!
+    weak var baseView: SettingViewController!
     var upperView: UIView
     var onOffSwitch: UISwitch!
     var label: UILabel!
     var initialValue: ExamColor.Mode
     
-    public init(baseView: SettingViewBaseController, upperView: UIView) {
+    public init(baseView: SettingViewController, upperView: UIView) {
         self.baseView = baseView
         self.upperView = upperView
         initialValue = ExamColor.mode
-    }//init(baseView: SettingViewBaseController, upperView: UIView)
+    }//init(baseView: SettingViewController, upperView: UIView)
     
 
     public func setup() throws {
@@ -161,7 +161,7 @@ public class DarkModeGroup {
         onOffSwitch.isOn = (initialValue == .dark)
     }//setupOnOffSwitch
     
-    @objc public func onOnOffSwitchChangeListener(_ sender: UISwitch) {
+    @objc private  func onOnOffSwitchChangeListener(_ sender: UISwitch) {
         update(darkMode: sender.isOn)
     }//onOnOffSwitchChangeListener(_ sender: UISwitch)
     
@@ -175,7 +175,7 @@ public class DarkModeGroup {
     }//update()
 
     public func apply() throws {
-        Repository.menu!.setupColor()
+        Preference.menu!.setupColor()
     }//apply()
     ///// レイアウト /////
     public func layout(top: CGFloat) throws {
@@ -235,16 +235,16 @@ public class DarkModeGroup {
 }//class DarkModeGroup
 
 public class OptionGroup: NSObject {
-    weak var baseView: SettingViewBaseController!
+    weak var baseView: SettingViewController!
     var upperView: UIView
     var buttons: [OptionButton]
     var label: UILabel!
 
-    public init(baseView: SettingViewBaseController, upperView: UIView) {
+    public init(baseView: SettingViewController, upperView: UIView) {
         self.baseView = baseView
         self.upperView = upperView
         self.buttons = []
-    }//init(baseView: SettingViewBaseController, upperView: UIView)
+    }//init(baseView: SettingViewController, upperView: UIView)
     
     public func setup() throws {
         log(50, "OptionGroup#setup")
@@ -340,7 +340,7 @@ class OptionButton: ExamButton {
             self.setTitle(OptionButton.optionList[try getIndex()].name, for: .normal)
             self.layer.borderWidth = 3
             updateColor()
-            let baseView = config.baseView as! SettingViewBaseController
+            let baseView = config.baseView as! SettingViewController
             baseView.scroll.addSubview(self)
             self.addTarget(self, action: #selector(onOptionButtonListener),
                            for: UIControl.Event.touchUpInside)

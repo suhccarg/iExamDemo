@@ -12,7 +12,7 @@ import UIKit
 import ExamLib_iOS1
 #endif
 
-public class MessageViewBaseController: CustomViewController {
+public class MessageViewController: CustomViewController {
     private var messageViewArea: ExamLabel!
     public var message: String = "."
     public var returnView: ViewType = .unknown

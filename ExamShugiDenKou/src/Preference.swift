@@ -13,7 +13,7 @@ import ExamLib_iOS1
 let defaultMargin: CGFloat = 8.0
  let initialQuestionCount: Int = 5
  let initialExamFontSize: Float = 16.0     // 16px = 12pt
-//## var menu: MenuViewBaseController!
+//## var menu: MenuViewController!
  let hiddenCounterLimit =  3
  let defaultFontSize: CGFloat = 16.0
 
@@ -28,6 +28,7 @@ enum ExamAppError: Error {
 }//enum ExamAppError
 
 public class Preference {
+    public static var menu :MenuViewController!
     public static let examCategories: [ExamCategory] = [
         ExamCategory.sdk21Setsubi,
         ExamCategory.sdk22Shinraisei_System,
@@ -59,7 +60,7 @@ public class Preference {
         get {
             let n = UserDefaults.standard.integer(forKey: Repository.keyQuestionCount)
             if n == 0 {
-                return Repository.initialQuestionCount       // default
+                return initialQuestionCount       // default
             }
             
             return min(max(n, questionCountMinLimit), questionCountMaxLimit)
@@ -80,7 +81,7 @@ public class Preference {
         get {
             let size = UserDefaults.standard.float(forKey: Repository.keyExamFontSize)
             if size == 0 {
-                return Preference.initialExamFontSize
+                return initialExamFontSize
             }
             return min(max(size, fontSizeMinLimit), fontSizeMaxLimit)
         }

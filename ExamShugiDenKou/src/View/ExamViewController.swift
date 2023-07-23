@@ -138,7 +138,7 @@ class ExamViewController: CustomViewController {
            try gotoNext()
        } catch let e {
 //            fatalError(slog(10, "ExamViewController#onGotoNextButtonListener:\(e)"))
-           try! gotoMessageView(message: log(10, "ExamViewController#onGotoNextButtonListener:\(e)"), returnView: viewState)
+           try! gotoMessageView(message: slog(10, "ExamViewController#onGotoNextButtonListener:\(e)"), returnView: viewState)
        } // do ... catch let e
    }//onGotoNextButtonListener(_ sender: UIButton)
    
@@ -189,7 +189,7 @@ class ExamViewController: CustomViewController {
             try layout()
        } catch let e {
 //            fatalError(slog(10, "ExamViewController#viewDidLayoutSubviews:\(e)"))
-           try! gotoMessageView(message: log(10, "ExamViewController#viewDidLayoutSubviews:\(e)"), returnView: viewState)
+           try! gotoMessageView(message: slog(10, "ExamViewController#viewDidLayoutSubviews:\(e)"), returnView: viewState)
        }
    }//viewDidLayoutSubviews()
 
@@ -207,11 +207,11 @@ class ExamViewController: CustomViewController {
                  gotoNextButton, gotoNewExamButton, returnButton] where button != nil {
            try button!.layout()
        }
-//        _ = logPrecisely(40, "ExamViewController#layoutExamView: try printToWebView")
+//        logPrecisely(40, "ExamViewController#layoutExamView: try printToWebView")
        self.htmlInView = try printToWebView()
-       _ = logPrecisely(40, "ExamViewController#layoutExamView: try webView!.layout")
+       logPrecisely(40, "ExamViewController#layoutExamView: try webView!.layout")
        try self.webView!.layout()
-       _ = logPrecisely(40, "ExamViewController#layoutExamView")
+       logPrecisely(40, "ExamViewController#layoutExamView")
    }//layoutExamView()
    
   private func printToWebView() throws -> String {

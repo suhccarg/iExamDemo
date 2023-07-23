@@ -149,6 +149,94 @@ public class ExamButton: UIButton {
     
 }//class ExamButton
 
+
+public class ExamRadioGroup {
+    private var buttons: [ExamRadioButton]
+    private var selected: ExamCategory!
+    
+    public init(defaultConfig: ExamRadioConfig, categories: [ExamCategory], selectedCode: Int?) {
+        var config = defaultConfig
+        self.buttons = []
+//        var previousView = config.upperView
+        var previousView: UIView = config.baseView.topMessage
+        for i in 0 ..< categories.count {
+            config.category = categories[i]
+            config.upperView = previousView
+            config.isSelected = false
+            let newButton = ExamRadioButton(config: config, radioGroup: self)
+            self.buttons.append(newButton)
+            previousView = newButton
+        }//for i in 0 ..< labels.count
+        select(tag: selectedCode!)
+    }//init(defaultConfig: ExamRadioConfig, labels: [String], selected: Int?)
+    
+    public func setup() {
+        for b in buttons {
+            b.setup()
+        }
+    }//setup()
+    
+    public func setupColor() {
+        for b in buttons {
+            b.setupColor()
+            b.redraw()
+        }
+    }//setupColor()
+    
+    public func layout() throws {
+        for b in buttons {
+            try b.layout()
+        }
+    }//layout()
+    
+    public func getSelected() -> ExamCategory? {
+        return self.selected
+    }//getSelected()
+    
+    public func select(sender: UIButton) {
+        select(tag: sender.tag)
+    }//select(sender: UIButton)
+    
+    public func select(tag: Int) {
+        var checkExists = false
+        do {
+            self.selected = try ExamCategory.find(code: tag)
+            for b in buttons {
+                if b.tag == tag && !b.isSelected {
+                    b.check(selected: true)
+                    checkExists = true
+                } else if b.tag != tag && b.isSelected {
+                    b.check(selected: false)
+                }
+            }//for b in buttons
+            if !checkExists {
+                buttons[0].check(selected: true)
+                self.selected = try ExamCategory.find(code: buttons[0].tag)
+            }
+        } catch let e {
+            log(10, "CustomViewController#select(\(tag)):\(e)")
+        }
+    }//select(sender: UIButton)
+    
+    public func getLabels() -> [UILabel] {
+        var labels: [UILabel] = []
+        for b in buttons {
+            labels.append(b.label)
+        }
+        return labels
+    }//getLabels()
+    
+    public func getBottomButton() -> ExamRadioButton {
+        return self.buttons[buttons.count - 1]
+    }//getBottomButton()
+    
+    public func getBottomLabel() -> ExamRadioButton {
+        return self.buttons[buttons.count - 1]
+    }//getBottomButton()
+    
+}//class ExamRadioGroup
+
+
 public class ExamRadioButton: UIButton {
     private var config: ExamRadioConfig!
     public var label: UILabel!

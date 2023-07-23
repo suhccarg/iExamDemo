@@ -14,6 +14,10 @@ import WebKit
 #if canImport(ExamLib_iOS1)
 import ExamLib_iOS1
 #endif
+// webview 内のテキスト選択禁止
+let disableSelectionScriptString = "document.documentElement.style.webkitUserSelect='none';"
+// webview 内の⻑押しによるメニュー表示禁止
+let disableCalloutScriptString = "document.documentElement.style.webkitTouchCallout='none';"
 
 public class ExamWebView: WKWebView {
     weak public var baseView: CustomViewController!
