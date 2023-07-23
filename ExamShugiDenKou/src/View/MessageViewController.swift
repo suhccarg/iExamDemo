@@ -8,22 +8,25 @@
 
 import Foundation
 import UIKit
+#if canImport(ExamLib_iOS1)
+import ExamLib_iOS1
+#endif
 
-public class MessageViewController: CustomViewController {
+public class MessageViewBaseController: CustomViewController {
     private var messageViewArea: ExamLabel!
     public var message: String = "."
     public var returnView: ViewType = .unknown
     
     override public func viewDidLoad() {
         viewState = .message
-        _ = log(50, "MessageViewController#viewDidLoad:\(viewState)")
+        log(50, "MessageViewController#viewDidLoad:\(viewState)")
         super.viewDidLoad()
         do {
             try setupMessageView()
             try setupReturnButton()
             returnButton.setTitle("戻る", for: .normal)
         } catch let e {
-            _ = log(10, "MessageViewController#viewDidLoad:\(e)")
+            log(10, "MessageViewController#viewDidLoad:\(e)")
         }
     }//viewDidLoad()
     
@@ -44,18 +47,18 @@ public class MessageViewController: CustomViewController {
     
     ///// レイアウト /////
     override public func viewDidLayoutSubviews() {
-        _ = log(50, "MessageViewController#viewDidLayoutSubviews:\(viewState)")
+        log(50, "MessageViewController#viewDidLayoutSubviews:\(viewState)")
         super.viewDidLayoutSubviews()
         do {
             try returnButton.layout()
             try layoutMessageViewArea()
         } catch let e {
-            _ = log(10, "MessageViewController#viewDidLayoutSubviews:\(e)")
+            log(10, "MessageViewController#viewDidLayoutSubviews:\(e)")
         }
     }//viewDidLayoutSubviews()
 
     public func layoutMessageViewArea() throws {
-        _ = log(50, "MessageViewController#layoutMessageViewArea")
+        log(50, "MessageViewController#layoutMessageViewArea")
         let frame = self.view.frame
         let safe = getSafeArea(baseView: self)
         let x = safe.left + defaultMargin
@@ -64,9 +67,9 @@ public class MessageViewController: CustomViewController {
         let w = frame.width - safe.left - safe.right - defaultMargin * 2
         let h = returnButton.frame.minY  - bottonOfBaseView - defaultMargin * 2
         messageViewArea.frame = CGRect.init(x: x, y: y, width: w, height: h )
-        _ = log(50, "mainTitle: \(mainTitle.frame.size.width.d1), \(mainTitle.frame.size.height.d1) at (\(mainTitle.frame.minX.d1), \(mainTitle.frame.minY.d1))")
-        _ = log(50, "messageView: \(messageViewArea.frame.size.width.d1), \(messageViewArea.frame.size.height.d1) at (\(messageViewArea.frame.minX.d1), \(messageViewArea.frame.minY.d1))")
-        _ = log(50, "menuButton: \(returnButton.frame.size.width.d1), \(returnButton.frame.size.height.d1).d1) at (\(returnButton.frame.minX.d1), \(returnButton.frame.minY.d1)")
+        log(50, "mainTitle: \(mainTitle.frame.size.width.d1), \(mainTitle.frame.size.height.d1) at (\(mainTitle.frame.minX.d1), \(mainTitle.frame.minY.d1))")
+        log(50, "messageView: \(messageViewArea.frame.size.width.d1), \(messageViewArea.frame.size.height.d1) at (\(messageViewArea.frame.minX.d1), \(messageViewArea.frame.minY.d1))")
+        log(50, "menuButton: \(returnButton.frame.size.width.d1), \(returnButton.frame.size.height.d1).d1) at (\(returnButton.frame.minX.d1), \(returnButton.frame.minY.d1)")
     }//layoutMessageViewArea)
 }//class MessageViewController
 

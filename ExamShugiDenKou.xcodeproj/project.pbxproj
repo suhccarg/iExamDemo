@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D905CDFA2A6A2A280046BED8 /* CustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D905CDF72A6A2A270046BED8 /* CustomViewController.swift */; };
+		D905CDFB2A6A2A280046BED8 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D905CDF82A6A2A270046BED8 /* WebView.swift */; };
+		D905CDFC2A6A2A280046BED8 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = D905CDF92A6A2A280046BED8 /* Button.swift */; };
+		D905CDFE2A6A2BE40046BED8 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = D905CDFD2A6A2BE40046BED8 /* Device.swift */; };
+		D905CE002A6A50350046BED8 /* Preference.swift in Sources */ = {isa = PBXBuildFile; fileRef = D905CDFF2A6A50350046BED8 /* Preference.swift */; };
+		D905CE3C2A6B78BC0046BED8 /* AppRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D905CE3B2A6B78BC0046BED8 /* AppRepository.swift */; };
 		D91803342A61C1A00038B5A8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91803332A61C1A00038B5A8 /* SceneDelegate.swift */; };
 		D91803362A61C1A00038B5A8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91803352A61C1A00038B5A8 /* ViewController.swift */; };
 		D91803392A61C1A00038B5A8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D91803372A61C1A00038B5A8 /* Main.storyboard */; };
@@ -16,12 +22,17 @@
 		D952EAE52A61FF3C001A3F04 /* ExamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D952EAD02A61FF3B001A3F04 /* ExamViewController.swift */; };
 		D952EAE62A61FF3C001A3F04 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D952EAD12A61FF3B001A3F04 /* MessageViewController.swift */; };
 		D952EAE82A61FF3C001A3F04 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D952EAD32A61FF3B001A3F04 /* MenuViewController.swift */; };
-		D952EAE92A61FF3C001A3F04 /* CustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D952EAD42A61FF3B001A3F04 /* CustomViewController.swift */; };
 		D952EAF02A61FF3C001A3F04 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D952EADC2A61FF3C001A3F04 /* AppDelegate.swift */; };
 		D952EAF32A620145001A3F04 /* ExamLib_iOS1 in Frameworks */ = {isa = PBXBuildFile; productRef = D952EAF22A620145001A3F04 /* ExamLib_iOS1 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D905CDF72A6A2A270046BED8 /* CustomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomViewController.swift; sourceTree = "<group>"; };
+		D905CDF82A6A2A270046BED8 /* WebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+		D905CDF92A6A2A280046BED8 /* Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
+		D905CDFD2A6A2BE40046BED8 /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
+		D905CDFF2A6A50350046BED8 /* Preference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preference.swift; sourceTree = "<group>"; };
+		D905CE3B2A6B78BC0046BED8 /* AppRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRepository.swift; sourceTree = "<group>"; };
 		D918032E2A61C1A00038B5A8 /* ExamShugiDenKou.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExamShugiDenKou.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D91803332A61C1A00038B5A8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		D91803352A61C1A00038B5A8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -33,7 +44,6 @@
 		D952EAD02A61FF3B001A3F04 /* ExamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExamViewController.swift; sourceTree = "<group>"; };
 		D952EAD12A61FF3B001A3F04 /* MessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
 		D952EAD32A61FF3B001A3F04 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
-		D952EAD42A61FF3B001A3F04 /* CustomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomViewController.swift; sourceTree = "<group>"; };
 		D952EADC2A61FF3C001A3F04 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -68,7 +78,6 @@
 		D91803302A61C1A00038B5A8 /* ExamShugiDenKou */ = {
 			isa = PBXGroup;
 			children = (
-				D952EAC32A61FE0B001A3F04 /* New Group */,
 				D91803332A61C1A00038B5A8 /* SceneDelegate.swift */,
 				D91803352A61C1A00038B5A8 /* ViewController.swift */,
 				D91803372A61C1A00038B5A8 /* Main.storyboard */,
@@ -80,32 +89,30 @@
 			path = ExamShugiDenKou;
 			sourceTree = "<group>";
 		};
-		D952EAC32A61FE0B001A3F04 /* New Group */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "New Group";
-			sourceTree = "<group>";
-		};
 		D952EAC42A61FF3B001A3F04 /* src */ = {
 			isa = PBXGroup;
 			children = (
-				D952EACD2A61FF3B001A3F04 /* VIew */,
+				D952EACD2A61FF3B001A3F04 /* View */,
 				D952EADC2A61FF3C001A3F04 /* AppDelegate.swift */,
+				D905CDFF2A6A50350046BED8 /* Preference.swift */,
+				D905CE3B2A6B78BC0046BED8 /* AppRepository.swift */,
 			);
 			path = src;
 			sourceTree = "<group>";
 		};
-		D952EACD2A61FF3B001A3F04 /* VIew */ = {
+		D952EACD2A61FF3B001A3F04 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				D952EACE2A61FF3B001A3F04 /* SettingViewController.swift */,
 				D952EAD02A61FF3B001A3F04 /* ExamViewController.swift */,
 				D952EAD12A61FF3B001A3F04 /* MessageViewController.swift */,
+				D905CDF92A6A2A280046BED8 /* Button.swift */,
+				D905CDF72A6A2A270046BED8 /* CustomViewController.swift */,
+				D905CDF82A6A2A270046BED8 /* WebView.swift */,
 				D952EAD32A61FF3B001A3F04 /* MenuViewController.swift */,
-				D952EAD42A61FF3B001A3F04 /* CustomViewController.swift */,
+				D905CDFD2A6A2BE40046BED8 /* Device.swift */,
 			);
-			path = VIew;
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -185,14 +192,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D905CDFE2A6A2BE40046BED8 /* Device.swift in Sources */,
 				D952EAE82A61FF3C001A3F04 /* MenuViewController.swift in Sources */,
 				D952EAE62A61FF3C001A3F04 /* MessageViewController.swift in Sources */,
 				D91803362A61C1A00038B5A8 /* ViewController.swift in Sources */,
 				D952EAE52A61FF3C001A3F04 /* ExamViewController.swift in Sources */,
+				D905CE3C2A6B78BC0046BED8 /* AppRepository.swift in Sources */,
 				D952EAE32A61FF3C001A3F04 /* SettingViewController.swift in Sources */,
+				D905CDFC2A6A2A280046BED8 /* Button.swift in Sources */,
 				D91803342A61C1A00038B5A8 /* SceneDelegate.swift in Sources */,
-				D952EAE92A61FF3C001A3F04 /* CustomViewController.swift in Sources */,
+				D905CDFB2A6A2A280046BED8 /* WebView.swift in Sources */,
 				D952EAF02A61FF3C001A3F04 /* AppDelegate.swift in Sources */,
+				D905CE002A6A50350046BED8 /* Preference.swift in Sources */,
+				D905CDFA2A6A2A280046BED8 /* CustomViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -416,7 +428,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/suhccarg/ExamLib_iOS1.git";
 			requirement = {
-				branch = develop;
+				branch = main;
 				kind = branch;
 			};
 		};

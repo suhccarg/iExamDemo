@@ -7,8 +7,13 @@
 //
 
 import Foundation
+#if canImport(UIKit)
 import UIKit
+#endif
 import MediaPlayer
+#if canImport(ExamLib_iOS1)
+import ExamLib_iOS1
+#endif
 
 
 public let baseViewTag = 1000
@@ -19,15 +24,15 @@ public let topMessageViewTag = 1004
 public let messageAreaViewTag = 1005
 
 public func getSafeArea(baseView: CustomViewController)
-    ->  (top: CGFloat, bottom: CGFloat, left: CGFloat, right: CGFloat) {
-        if #available(iOS 11.0, *) {// iOS11以降
-            let safe: UIEdgeInsets = baseView.view.safeAreaInsets
-            return (top: safe.top, bottom: safe.bottom,
-                    left: safe.left, right: safe.right)
-        } else {// iOS10以前
-            let height = UIApplication.shared.statusBarFrame.size.height
-            return (top: height, bottom: 0.0, left: 0.0, right: 0.0)
-        }
+->  (top: CGFloat, bottom: CGFloat, left: CGFloat, right: CGFloat) {
+    if #available(iOS 11.0, *) {// iOS11以降
+        let safe: UIEdgeInsets = baseView.view.safeAreaInsets
+        return (top: safe.top, bottom: safe.bottom,
+                left: safe.left, right: safe.right)
+    } else {// iOS10以前
+        let height = UIApplication.shared.statusBarFrame.size.height
+        return (top: height, bottom: 0.0, left: 0.0, right: 0.0)
+    }
 }//func getSafeArea()
 
 
@@ -40,7 +45,7 @@ public class CustomViewController: UIViewController {
     public var returnButton: ExamButton!
     public var frameMinX: CGFloat!
     public var frameWidth: CGFloat!
-
+    
     override public var preferredStatusBarStyle: UIStatusBarStyle {
         if ExamColor.mode == .bright || ExamColor.mode == .na {
             return UIStatusBarStyle.default
@@ -48,14 +53,14 @@ public class CustomViewController: UIViewController {
             return UIStatusBarStyle.lightContent
         }
     }//var preferredStatusBarStyle
-
+    
     override public var prefersStatusBarHidden: Bool { return false }
     
     override public func viewDidLoad() {
-        _ = log(50, "CustomViewController#viewDidLoad:\(viewState)")
+        log(50, "CustomViewController#viewDidLoad:\(viewState)")
         super.viewDidLoad()
         clearError()
-
+        
         currentViewController = self
         self.view.tag = baseViewTag
         //Repository.baseViewSize = self.view.frame.size
@@ -66,10 +71,10 @@ public class CustomViewController: UIViewController {
             try setupTitle()
             try setupTopMessage()
         } catch let e {
-            _ = log(10, "CustomViewController#viewDidLoad:\(e)")
+            log(10, "CustomViewController#viewDidLoad:\(e)")
         }
     }//viewDidLoad()
-
+    
     private func createScrollView() throws {
         if viewState == .menu || viewState == .setting {
             scroll = UIScrollView()
@@ -91,27 +96,27 @@ public class CustomViewController: UIViewController {
     
     private func setupColorScrollView() {
         scroll.backgroundColor  = ExamColor.base.uiColor
-//        scroll.backgroundColor  = ExamColor.lightgreen.uiColor
+        //        scroll.backgroundColor  = ExamColor.lightgreen.uiColor
     }//setupScrollView()
     
     private func setupTitle() throws {
-        _ = log(50, "CustomViewController#setupTitle")
+        log(50, "CustomViewController#setupTitle")
         preTitle = try ExamTitle(baseView: self, text: Repository.applicationType.pretitle,
-             fontSize: Repository.defaultFontSize)
+                                 fontSize: Repository.defaultFontSize)
         preTitle.tag = preTitleViewTag
         mainTitle = try ExamTitle(baseView: self, text: Repository.applicationType.title,
-              fontSize: Repository.defaultFontSize * 5 / 4,
-               foot: defaultMargin, under: preTitle)
+                                  fontSize: Repository.defaultFontSize * 5 / 4,
+                                  foot: defaultMargin, under: preTitle)
         mainTitle.tag = mainTitleViewTag
     }//setupTitle()
     
     private func setupTopMessage() throws {
-        _ = log(50, "CustomViewController#setupTopMessage")
+        log(50, "CustomViewController#setupTopMessage")
         topMessage = try ExamTopMessage(baseView: self, under: mainTitle)
     }//setupTopMessage()
     
     public func setupButtonArea() throws {
-        _ = log(50, "CustomViewController#setupButtonArea")
+        log(50, "CustomViewController#setupButtonArea")
         self.buttonArea = UILabel()
         setupColorButtonArea()
         self.view.addSubview(self.buttonArea)
@@ -136,7 +141,7 @@ public class CustomViewController: UIViewController {
     }//setupReturnButton()
     
     @objc public func onReturnButtonListener(_ sender: UIButton) {
-        _ = log(90, "returnButton tapped.")
+        log(90, "returnButton tapped.")
         try! returnToPreviousView(previousView: .menu)
     }//onReturnButtonListener(_ sender: UIButton)
     
@@ -147,36 +152,36 @@ public class CustomViewController: UIViewController {
     
     public func setupExam() throws -> Bool {
         examManager = ExamManager()
-        let category: ExamCategory = try ExamCategory.find(code: Repository.categoryCode)
+        let category: ExamCategory = try ExamCategory.find(code: Preference.categoryCode)
         try examManager.generate(category: category,
-                                 count: Repository.questionCount)
+                                 count: Preference.questionCount)
         return (examManager.examList.count > 0)
     }//setupExam()
-
+    
     ///// 回転処理 /////
     public func setupOrientationChangeListner(action: Selector) {
         UIDevice.current.beginGeneratingDeviceOrientationNotifications()
         NotificationCenter.default.addObserver(self,
-               selector: action,
-               name:UIDevice.orientationDidChangeNotification, object:nil)
+                                               selector: action,
+                                               name:UIDevice.orientationDidChangeNotification, object:nil)
     }//setupOrientationChangeListner()
     
     @objc public func onOrientationChangeListner() {
-        _ = log(10, "CustomViewController#onOrientationChangeListner")
+        log(10, "CustomViewController#onOrientationChangeListner")
         //Repository.baseViewSize = self.view.frame.size
         if debugLevel > 0 {
             let deviceOrientation = UIDevice.current.orientation
             if deviceOrientation.isLandscape {
-                _ = log(90, "CustomViewController#Device orientation: Landscape")
+                log(90, "CustomViewController#Device orientation: Landscape")
             } else if deviceOrientation.isPortrait {
-                _ = log(90, "CustomViewController#Device orientation: Portrait")
+                log(90, "CustomViewController#Device orientation: Portrait")
             } else {
-                _ = log(90, "CustomViewController#Device orientation: Unknown")
+                log(90, "CustomViewController#Device orientation: Unknown")
             }
         }
     }//onOrientationChangeListner()
     
-
+    
     ///// スワイプ処理 /////
     public func setupSwipeListener(action: Selector!) throws {
         for direction: UISwipeGestureRecognizer.Direction in [ .right, .left, .up, .down ] {
@@ -187,31 +192,31 @@ public class CustomViewController: UIViewController {
     }//setupSwipeListener()
     
     @objc public func onSwipeListener(sender: UISwipeGestureRecognizer) {
-            _ = log(50, "CustomViewController#onSwipeListener")
+        log(50, "CustomViewController#onSwipeListener")
     }
-   
+    
     ////// viewDidLayoutSubviews#layout //////
     override public  func viewDidLayoutSubviews() {
-        _ = log(50, "CustomViewController#viewDidLayoutSubviews")
+        log(50, "CustomViewController#viewDidLayoutSubviews")
         super.viewDidLayoutSubviews()
         //printScreenMetrics()
         do {
             updateXScale()
             try layout()
         } catch let e {
-            _ = log(10, "CustomViewController#viewDidLayoutSubviews:\(e)")
+            log(10, "CustomViewController#viewDidLayoutSubviews:\(e)")
         }
     }//viewDidLayoutSubviews()
-   
+    
     public func layout() throws {
         try preTitle.layout()
         try mainTitle.layout()
         try topMessage!.layout(text: generateTopMessage())
         //DeviceOrientation.update(size: self.view.frame.size)
     }//layout()
-
+    
     public func layoutButtonArea(upperView: UIView) throws {
-        _ = log(90, "CustomViewController#layoutButtonArea")
+        log(90, "CustomViewController#layoutButtonArea")
         let frame = self.view.frame
         let safe = getSafeArea(baseView: self)
         let x = frame.minX + safe.right
@@ -228,36 +233,39 @@ public class CustomViewController: UIViewController {
     }//updateXScale()
     
     private func generateTopMessage() -> String {
-        switch viewState {
-        case .setting, .question, .answer, .message:
+        var headMessage = ""
+        let code = viewState.code
+        if code == ViewType.setting.code ||  code == ViewType.question.code
+            || code == ViewType.answer.code || code == ViewType.message.code {
             return "     "
-        case .menu:
+        }
+        if code == ViewType.menu.code {
             return "出題分野を選択してください。"
-        case .review:
+        }
+        if code == ViewType.review.code {
             return "出題は以上です。復習しましょう。"
-        default:
-            try! gotoMessageView(message: log(10, "CustomViewController#generateTopMessage() Invalid state: \(String(describing: viewState))"), returnView: viewState)
-            return " "
-        }///switch viewState
+        }
+        try! gotoMessageView(message: slog(10, "CustomViewController#generateTopMessage() Invalid state: \(String(describing: viewState))"), returnView: viewState)
+        return " "
     }//generateTopMessage()
     
     public func printScreenMetrics() {
         let level = 50
-        _ = log(level, "frame.origin.x = \(view.frame.origin.x)")
-        _ = log(level, "frame.origin.y = \(view.frame.origin.y)")
-        _ = log(level, "frame.width = \(view.frame.width)")
-        _ = log(level, "frame.height = \(view.frame.height)")
+        log(level, "frame.origin.x = \(view.frame.origin.x)")
+        log(level, "frame.origin.y = \(view.frame.origin.y)")
+        log(level, "frame.width = \(view.frame.width)")
+        log(level, "frame.height = \(view.frame.height)")
         let safe = getSafeArea(baseView: self)
-        _ = log(level, "safe.top = \(safe.top)")
-        _ = log(level, "safe.bottom = \(safe.bottom)")
-        _ = log(level, "safe.right = \(safe.right)")
-        _ = log(level, "safe.left = \(safe.left)")
+        log(level, "safe.top = \(safe.top)")
+        log(level, "safe.bottom = \(safe.bottom)")
+        log(level, "safe.right = \(safe.right)")
+        log(level, "safe.left = \(safe.left)")
     }//printScreenMetrics()
     
     ////// スクロール /////
     public func prepareScrollView(upperView: UIView) throws {
-        _ = log(90, "CustomViewController#prepareScrollView frame:\t\(self.view.frame))")
-        _ = log(90, "CustomViewController#prepareScrollView safe:\t\(getSafeArea(baseView: self)))")
+        log(90, "CustomViewController#prepareScrollView frame:\t\(self.view.frame))")
+        log(90, "CustomViewController#prepareScrollView safe:\t\(getSafeArea(baseView: self)))")
         try prepareScrollRect(upperView: upperView)
         try prepareContentsRect()
     }//prepareScrollView(baseView: CustomViewController, upperView: UIView)
@@ -267,22 +275,22 @@ public class CustomViewController: UIViewController {
         let w = self.view.frame.width
         let y = upperView.frame.maxY + defaultMargin / 2.0
         let h: CGFloat = 10000.0
-        _ = log(90, "CustomViewController#prepareScrollRect Scroll:\t\(w) x \(h) at (\(x), \(y))")
+        log(90, "CustomViewController#prepareScrollRect Scroll:\t\(w) x \(h) at (\(x), \(y))")
         scroll.frame = CGRect.init(x: x, y: y, width: w, height: h)
-        _ = log(90, "CustomViewController#prepareScrollRect safe:\t\(getSafeArea(baseView: self))")
+        log(90, "CustomViewController#prepareScrollRect safe:\t\(getSafeArea(baseView: self))")
     }//prepareScrollRect(baseView: CustomViewController, upperView: UIView)
     
     private func prepareContentsRect() throws {
         let w = Int(self.view.frame.width)
         let h = 10000
-        _ = log(90, "CustomViewController#prepareContentsRect Contents:\t\(w) x \(h)")
+        log(90, "CustomViewController#prepareContentsRect Contents:\t\(w) x \(h)")
         scroll.contentSize = CGSize(width: w, height: h)
     }//prepareContentsRect(baseView: CustomViewController, upperView: UIView)
     
     public func layoutScrollView(upperView: UIView, bottomView: UIView, buttonView: UIView) throws {
-        _ = log(90, "CustomViewController#layoutScrollView frame:\t\(self.view.frame))")
-        _ = log(90, "CustomViewController#layoutScrollView safe:\t\(getSafeArea(baseView: self))")
-         if viewState == .menu || viewState == .setting {
+        log(90, "CustomViewController#layoutScrollView frame:\t\(self.view.frame))")
+        log(90, "CustomViewController#layoutScrollView safe:\t\(getSafeArea(baseView: self))")
+        if viewState == .menu || viewState == .setting {
             try updateScrollRect(upperView: nil, buttonView: buttonView)
             try updateContentsRect(upperView: nil, bottomView: bottomView)
         }
@@ -299,40 +307,40 @@ public class CustomViewController: UIViewController {
             y = self.view.frame.minY + safe.top
         }
         let h = buttonView.frame.minY - defaultMargin - y
-        _ = log(90, "CustomViewController#updateScrollRect Scroll:\t\(w) x \(h) at (\(x), \(y))")
+        log(90, "CustomViewController#updateScrollRect Scroll:\t\(w) x \(h) at (\(x), \(y))")
         scroll.frame = CGRect.init(x: x, y: y, width: w, height: h)
     }//updateScrollRect(upperView: UIView, buttonView: UIView)
     
     private func updateContentsRect(upperView: UIView?, bottomView: UIView) throws {
         let w = self.view.frame.width
-//        let h = bottomView.frame.maxY
-//            - upperView.frame.minY + defaultMargin * 10
+        //        let h = bottomView.frame.maxY
+        //            - upperView.frame.minY + defaultMargin * 10
         var h: CGFloat
         if let v = upperView {
             h = bottomView.frame.maxY
-                - v.frame.minY + defaultMargin * 3
+            - v.frame.minY + defaultMargin * 3
         } else {
             h = bottomView.frame.maxY + defaultMargin * 3
         }
-        _ = log(90, "CustomViewController#updateContentsRect Contents:\t\(w) x \(h)")
+        log(90, "CustomViewController#updateContentsRect Contents:\t\(w) x \(h)")
         scroll.contentSize = CGSize(width: w, height: h)
     }//updateContentsRect(upperView: UIView, bottomView: UIView)
     
-
+    
     ////// メッセージ表示 /////
     public func gotoMessageView(message: String, returnView: ViewType) throws {
-        _ = log(50, "gotoMessageView")
+        log(50, "gotoMessageView")
         let storyboard: UIStoryboard = self.storyboard!
-        let messageView = storyboard.instantiateViewController(withIdentifier: "MessageView") as! MessageViewController
+        let messageView = storyboard.instantiateViewController(withIdentifier: "MessageView") as! MessageViewBaseController
         messageView.message = message
         messageView.returnView = returnView
         viewState = .message
         self.present(messageView, animated: false, completion: nil)
     }//gotoMessageView()
     
-//    override public func didReceiveMemoryWarning() {
-//        super.didReceiveMemoryWarning()
-//    }//func didReceiveMemoryWarning()
+    //    override public func didReceiveMemoryWarning() {
+    //        super.didReceiveMemoryWarning()
+    //    }//func didReceiveMemoryWarning()
     
 }//class CustomViewController
 
@@ -342,10 +350,10 @@ public class ExamLabel: UITextView {
     public var fontSize: CGFloat
     let heightMargin: CGFloat = 8
     let leftMargin: CGFloat = 8
-//    // webview 内のテキスト選択禁止
-//    static let disableSelectionScriptString = "document.documentElement.style.webkitUserSelect='none';"
-//    // webview 内の⻑押しによるメニュー表示禁止
-//    static let disableCalloutScriptString = "document.documentElement.style.webkitTouchCallout='none';"
+    //    // webview 内のテキスト選択禁止
+    //    static let disableSelectionScriptString = "document.documentElement.style.webkitUserSelect='none';"
+    //    // webview 内の⻑押しによるメニュー表示禁止
+    //    static let disableCalloutScriptString = "document.documentElement.style.webkitTouchCallout='none';"
     
     init(baseView: CustomViewController, text: String, fontSize: CGFloat, under upperView: UIView?)  throws {
         self.baseView = baseView
@@ -355,7 +363,7 @@ public class ExamLabel: UITextView {
         self.isEditable = false
         self.isSelectable = false
         self.isScrollEnabled = false
-        _ = log(50, "ExamLabel#init(view: UIView):\(text)")
+        log(50, "ExamLabel#init(view: UIView):\(text)")
         setup(text: text, fontSize: fontSize)
     }//init(baseView: CustomViewController, caption: String, upper: UIControl)
     
@@ -366,9 +374,9 @@ public class ExamLabel: UITextView {
     required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }//init?(coder aDecoder: NSCoder)
-
-   public func setup(text: String, fontSize: CGFloat) {
-    _ = log(50, "ExamLabel#setup:\(text)")
+    
+    public func setup(text: String, fontSize: CGFloat) {
+        log(50, "ExamLabel#setup:\(text)")
         //self.font = self.font!.withSize(fontSize)
         self.fontSize = fontSize
         self.text = text
@@ -382,13 +390,13 @@ public class ExamLabel: UITextView {
     public func setup(text: String) {
         self.setup(text: text, fontSize: Repository.defaultFontSize)
     }//setup(text: String)
-
+    
     public func layout() throws {
-        _ = log(50, "ExamLabel#layout: \"\(self.text!)\"")
-//        self.font = UIFont.boldSystemFont(ofSize: self.fontSize)
+        log(50, "ExamLabel#layout: \"\(self.text!)\"")
+        //        self.font = UIFont.boldSystemFont(ofSize: self.fontSize)
         self.font = UIFont.systemFont(ofSize: self.fontSize)
         self.frame = getDrawRect()
-        _ = log(90, "ExamLabel#layout: \(self.frame.size.width) x \(self.frame.size.height) at (\(self.frame.minX), \(self.frame.minY))")
+        log(90, "ExamLabel#layout: \(self.frame.size.width) x \(self.frame.size.height) at (\(self.frame.minX), \(self.frame.minY))")
     }//layout()
     
     public func getDrawRect() -> CGRect {
@@ -425,7 +433,7 @@ public class ExamTitle: ExamLabel {
         self.foot = foot
         try super.init(baseView: baseView, text: text,
                        fontSize: fontSize, under: upperView)
-        _ = log(50, "ExamTitle#init(view: UIView):  \(text)")
+        log(50, "ExamTitle#init(view: UIView):  \(text)")
     }//init(baseView: CustomViewController, ... upperView: UIView?)
     
     convenience public init(baseView: CustomViewController, text: String, fontSize: CGFloat)  throws {
@@ -437,9 +445,9 @@ public class ExamTitle: ExamLabel {
     }//init?(coder aDecoder: NSCoder)
     
     override public func setup(text: String, fontSize: CGFloat) {
-        _ = log(50, "ExamTitle#setup: (\(text))")
+        log(50, "ExamTitle#setup: (\(text))")
         setupColor()
-//        self.baseView!.view.addSubview(self.labelEdge)
+        //        self.baseView!.view.addSubview(self.labelEdge)
         if let scroll = self.baseView!.scroll {
             scroll.addSubview(self.edgeLabel)
         } else {
@@ -481,7 +489,7 @@ public class ExamTopMessage: ExamLabel {
         self.origin = CGPoint(x: 0.0, y: 0.0)
         try super.init(baseView: baseView, text: " ",
                        fontSize: fontSize, under: upperView)
-        _ = log(50, "ExamTopMessage#init")
+        log(50, "ExamTopMessage#init")
     }//init(baseView: CustomViewController, fontSize: CGFloat, under upperView: UIView?)
     
     convenience public init(baseView: CustomViewController)  throws {
@@ -498,7 +506,7 @@ public class ExamTopMessage: ExamLabel {
     
     override public func setup(text: String, fontSize: CGFloat) {
         super.setup(text: text, fontSize: fontSize)
-        _ = log(50, "ExamTopMessage#setup")
+        log(50, "ExamTopMessage#setup")
         setupColor()
     }//setup(text: String, fontSize: CGFloat)
     
@@ -506,7 +514,7 @@ public class ExamTopMessage: ExamLabel {
         self.backgroundColor = UIColor.clear
         self.textColor = ExamColor.normalText.uiColor
     }//setupColor()
-
+    
     override public func setup(text: String) {
         self.setup(text: text, fontSize: Repository.defaultFontSize)
     }//setup(text: String)
@@ -517,7 +525,7 @@ public class ExamTopMessage: ExamLabel {
     
     ///// レイアウト /////
     public func layout(text: String) throws {
-        _ = log(50, "ExamTopMessage#layout(\"\(text)\")")
+        log(50, "ExamTopMessage#layout(\"\(text)\")")
         self.text = text
         // self.font = UIFont.boldSystemFont(ofSize: super.fontSize)
         try super.layout()
@@ -534,14 +542,14 @@ public class ExamTopMessage: ExamLabel {
             self.textColor = self.backgroundColor
             h = Repository.defaultFontSize * 0.5
         default:
-//            throw ExamError.runtime(log(10, "Invalid state: \(String(describing: viewState))"))
-            _ = log(10, "ExamTopMessage#layout(\(viewState.value()): Invalid state)")
+            //            throw ExamAppError.runtime(slog(10, "Invalid state: \(String(describing: viewState))"))
+            log(10, "ExamTopMessage#layout(\(viewState.value()): Invalid state)")
         }//switch viewState
-//        self.backgroundColor = ExamColor.cyan.uiColor
+        //        self.backgroundColor = ExamColor.cyan.uiColor
         self.frame = CGRect.init(x: x, y: y, width: w, height: h)
-        _ = log(90, "ExamTopMessage#layout: \(self.frame.size.width) x \(self.frame.size.height) at (\(self.frame.minX), \(self.frame.minY))")
+        log(90, "ExamTopMessage#layout: \(self.frame.size.width) x \(self.frame.size.height) at (\(self.frame.minX), \(self.frame.minY))")
     }//layout()
- 
+    
 }//class ExamTopMessage
 
 
@@ -578,20 +586,20 @@ public class ExamDividingLine {
     public func draw(upperView: UIView) {
         draw(minY: upperView.frame.maxY, margin: 0)
     }//draw(upperView: UIView)
- 
+    
     public func draw(upperView: UIView, margin: CGFloat) {
-        _ = log(90, "ExamDividingLine#draw upperView = \(upperView.frame.values)")
+        log(90, "ExamDividingLine#draw upperView = \(upperView.frame.values)")
         let minY = upperView.frame.maxY
-            + defaultMargin / 2.0 - ExamDividingLine.lineWidth / 2.0 + margin
-        _ = log(90, "ExamDividingLine#draw:\ttopY \(minY) = upperMaxY \(upperView.frame.maxY) + \(defaultMargin / 2.0 - ExamDividingLine.lineWidth / 2.0 + margin)")
+        + defaultMargin / 2.0 - ExamDividingLine.lineWidth / 2.0 + margin
+        log(90, "ExamDividingLine#draw:\ttopY \(minY) = upperMaxY \(upperView.frame.maxY) + \(defaultMargin / 2.0 - ExamDividingLine.lineWidth / 2.0 + margin)")
         draw(minY: minY, margin: margin)
     }//draw(upperView: UIView, margin: CGFloat)
     
     public func draw(lowerView: UIView, margin: CGFloat) {
-        _ = log(90, "ExamDividingLine#draw lowerView = \(lowerView.frame.values)")
+        log(90, "ExamDividingLine#draw lowerView = \(lowerView.frame.values)")
         let minY = lowerView.frame.minY
-            - defaultMargin / 2.0 - ExamDividingLine.lineWidth / 2.0 - margin
-        _ = log(90, "ExamDividingLine#draw:\ttopY \(minY) = lowerMinY \(lowerView.frame.minY) + \(defaultMargin / 2.0 - ExamDividingLine.lineWidth / 2.0 - margin)")
+        - defaultMargin / 2.0 - ExamDividingLine.lineWidth / 2.0 - margin
+        log(90, "ExamDividingLine#draw:\ttopY \(minY) = lowerMinY \(lowerView.frame.minY) + \(defaultMargin / 2.0 - ExamDividingLine.lineWidth / 2.0 - margin)")
         draw(minY: minY, margin: margin)
     }//draw(lowerView: UIView, margin: CGFloat)
     
@@ -607,7 +615,7 @@ public class ExamDividingLine {
         
         self.paths[1].move(to: CGPoint(x: minX, y: bottomY))
         self.paths[1].addLine(to: CGPoint(x: maxX, y: bottomY))
-        _ = log(90, "ExamDividingLine#draw:\t\(topY),\(bottomY) \(minX)->\(maxX)")
+        log(90, "ExamDividingLine#draw:\t\(topY),\(bottomY) \(minX)->\(maxX)")
     }//draw(upperView: UIView, margin: Int)
     
     public func apply(targetView: UIView) {
@@ -622,5 +630,227 @@ public class ExamDividingLine {
         }//for i in 0 ..< 2
     }//apply()
 }//class ExamDividingLine
+public class QuestionCountGroup {
+    weak var baseView: SettingViewBaseController!
+    var upperView: UIView!
+    var slider: UISlider!
+    var label: UILabel!
+    
+    public static let defaultQuestionCount: Float = 500
+    
+    public init(baseView: SettingViewBaseController, upperView: UIView) {
+        self.baseView = baseView
+        self.upperView = upperView
+    }//init(baseView: SettingViewBaseController, upperView: UIView)
+    
+    public func setup() throws {
+        log(50, "QuestionCountGroup#setup")
+        try setupLabel()
+        try setupSlider()
+    }//setup()
+    
+    private func setupLabel() throws {
+        label = UILabel()
+        //        label.text = "出題画面のフォントサイズ"
+        label.textColor = ExamColor.normalText.uiColor
+        
+        baseView.scroll.addSubview(label)
+    }//setupLabel()
+    
+    private func setupSlider() throws {
+        slider = UISlider()
+        slider.minimumTrackTintColor = ExamColor.tint.uiColor
+        slider.minimumValue = Float(Preference.questionCountMinLimit)
+        slider.maximumValue = Float(Preference.questionCountMaxLimit)
+        slider.value = Float(Preference.questionCount)
+        slider.addTarget(self, action: #selector(self.onQuestionCountChangeListener(_:)), for: .valueChanged)
+        baseView.scroll.addSubview(slider)
+    }//setupSlider)
+    
+    @objc private func onQuestionCountChangeListener(_ sender: UISlider) {
+        do {
+            try update()
+        } catch let e {
+            log(10, "\(e)")
+        }
+    }//onFontSizeChangeListener(_ sender: UIButton)
+    
+    public func layout() throws {
+        log(50, "QuestionCountGroup#layout")
+        log(100, "QuestionCountGroup#layout pcount=\(Preference.questionCount)")
+        try update()
+        try layoutLabel()
+        try layoutSlider()
+    }//layout()
+    
+    private func layoutLabel() throws {
+        let upperRect = upperView!.frame
+        let x = self.baseView!.frameMinX + defaultMargin
+        let y = upperRect.maxY + defaultMargin
+        let w = self.baseView!.frameWidth - defaultMargin
+        let h = upperRect.height
+        label.frame = CGRect.init(x: x, y: y, width: w, height: h)
+        log(100, "QuestionCountGroup#layoutLabel label:\t\(w) x \(h) at (\(x), \(y))")
+        log(100, "QuestionCountGroup#layoutLabel label:\t\(label.frame.width) x \(label.frame.height) at (\(label.frame.minX), \(label.frame.minY))")
+        
+    }//layoutLabel()
+    
+    private func update() throws {
+        log(50, "QuestionCountGroup#update")
+        log(100, String(format:"question count=%.2f", slider.value))
+        slider.value = round(slider.value)
+        log(100, String(format:"question count=%.2f", slider.value))
+        label.text = String(format: "出題数: %2.0f問", slider.value)
+        Preference.questionCount = Int(slider.value)
+        log(100, "QuestionCountGroup#update count=\(Preference.questionCount)")
+    }//update()
+    
+    private func layoutSlider() throws {
+        let x = label.frame.minX + CGFloat(defaultMargin * 2)
+        let y = label.frame.maxY
+        let w = label.frame.width - CGFloat(defaultMargin * 4)
+        let h = label.frame.height
+        slider.frame = CGRect.init(x: x, y: y, width: w, height: h)
+        log(100, "QuestionCountGroup#layoutSlider slider:\t\(w) x \(h) at (\(x), \(y))")
+        log(100, "QuestionCountGroup#layoutSlider slider:\t\(slider.frame.width) x \(slider.frame.height) at (\(slider.frame.minX), \(slider.frame.minY))")
+    }//layoutSlider()
+    
+}//class QuestionCountGroup
 
+public class FontSizeGroup {
+    weak var baseView: SettingViewBaseController!
+    var upperView: UIView!
+    var slider: UISlider!
+    var label: UILabel!
+    var sample: ExamWebView!
+    var fontSampleHtml: String = ""
+    
+    // sliderは、px単位。labelの表示は、pt単位。
+    // 16px == 12pt == 1em
+    public static let px2pt: Float = 12.0 / 16.0
+    public static let addtitionalParagraph  = "<!-- aditional -->"
+    
+    private static let htmlBody = ""
+    + "  <div class='exam_area'"
+    + "   style='width: 4000px; margin: 0; padding: 0; text-indent: 0;'>\n"
+    + "    <p>123abcdeいろはにほへとちりぬるを</p>\n"
+    + "    <p>初春の令月にして気淑く風和ぎ</p>\n"
+    + "    <p>梅は鏡前の粉を披き蘭は珮後の香を薫らす</p>\n"
+    + "    <p>" + FontSizeGroup.addtitionalParagraph + "</p>\n"
+    + "  </div>\n"
+    
+    public init(baseView: SettingViewBaseController, upperView: UIView) {
+        self.baseView = baseView
+        self.upperView = upperView
+    }//init(baseView: SettingViewBaseController, upperView: UIView)
+    
+    public func setup() throws {
+        log(50, "FontSizeGroup#setup")
+        try setupLabel()
+        try setupSlider()
+        try setupSample()
+    }//setup()
+    
+    private func setupLabel() throws {
+        label = UILabel()
+        //        label.text = "出題画面のフォントサイズ"
+        label.textColor = ExamColor.normalText.uiColor
+        label.layer.borderColor = UIColor.red.cgColor
+        baseView.scroll.addSubview(label)
+    }//setupLabel()
+    
+    private func setupSlider() throws {
+        slider = UISlider()
+        slider.minimumTrackTintColor = ExamColor.tint.uiColor
+        slider.minimumValue = Preference.fontSizeMinLimit
+        slider.maximumValue = Preference.fontSizeMaxLimit
+        slider.value = Preference.examFontSize
+        slider.addTarget(self, action: #selector(self.onFontSizeChangeListener(_:)), for: .valueChanged)
+        baseView.scroll.addSubview(slider)
+    }//setupSlider()
+    
+    @objc private func onFontSizeChangeListener(_ sender: UISlider) {
+        //        label.text = "\(sender.value)"
+        do {
+            log(50, "FontSizeGroup#update: \(slider.value)")
+            Preference.examFontSize = slider.value
+            try updateLabel()
+            try updateFontSample()
+        } catch let e {
+            log(10, "\(e)")
+        }
+    }//onFontSizeChangeListener(_ sender: UISlider)
+    
+    private func setupSample() throws {
+        sample = try ExamWebView(baseView: baseView)
+        //        sample.frame = CGRect.init(x: 150, y: 300, width: 100, height: 200)
+        sample.frame = CGRect.zero
+        baseView.scroll.addSubview(sample)
+    }//setupSample()
+    
+    public func updateFontSample() throws {
+        guard let v = sample else {
+            throw ExamAppError.runtime("fontSampleView: nil")
+        }
+        DeviceOrientation.update(baseView: baseView, webView: sample)
+        let fontMetricses = "slider=\((slider.value * FontSizeGroup.px2pt).d1)pt, font=\(slider.value.d1)px"
+        var html = try HtmlPage.getInstance()
+            .getPage(page: FontSizeGroup.htmlBody)
+        html = html.replace(before: "body oncopy",
+                            after: "body style='padding: 0; margin: 0;' oncopy")
+        //            .replace(before: FontSizeGroup.addtitionalParagraph, after: fontMetricses)
+        log(40, "FontSizeGroup#updateFontSample\n\(html)")
+        log(40, "FontSizeGroup#updateFontSample \(fontMetricses)")
+        v.loadHTMLString(html, baseURL: nil)
+        self.fontSampleHtml = html
+    }//updateFontSample()
+    
+    
+    public func layout() throws {
+        log(50, "FontSizeGroup#layout")
+        try layoutLabel()
+        try layoutSlider()
+        try layoutSample()
+    }//layout()
+    
+    private func layoutLabel() throws {
+        try updateLabel()
+        let upperRect = upperView!.frame
+        let x = self.baseView!.frameMinX + defaultMargin
+        let y = upperRect.maxY + defaultMargin
+        let w = self.baseView!.frameWidth - defaultMargin
+        let h = upperRect.height
+        label.frame = CGRect.init(x: x, y: y, width: w, height: h)
+        log(100, "FontSizeGroup#layoutLabel label:\t\(w) x \(h) at (\(x), \(y))")
+        log(100, "FontSizeGroup#layoutLabel label:\t\(label.frame.width) x \(label.frame.height) at (\(label.frame.minX), \(label.frame.minY))")
+        
+    }//layoutLabel()
+    
+    private func updateLabel() throws {
+        label.text = String(format: "出題画面のフォントサイズ: %4.1fポイント", slider.value * FontSizeGroup.px2pt)
+    }//updateLabel()
+    
+    private func layoutSlider() throws {
+        let x = label.frame.minX + CGFloat(defaultMargin * 2)
+        let y = label.frame.maxY
+        let w = label.frame.width - CGFloat(defaultMargin * 4)
+        let h = label.frame.height
+        slider.frame = CGRect.init(x: x, y: y, width: w, height: h)
+        log(100, "FontSizeGroup#layoutSlider slider:\t\(w) x \(h) at (\(x), \(y))")
+        log(100, "FontSizeGroup#layoutSlider slider:\t\(slider.frame.width) x \(slider.frame.height) at (\(slider.frame.minX), \(slider.frame.minY))")
+    }//layoutSlider()
+    
+    private func layoutSample() throws {
+        let x = slider.frame.minX + defaultMargin
+        let y = slider.frame.maxY
+        let w = slider.frame.width - defaultMargin * 2.0
+        let h = slider.frame.height * 2.0
+        //        sample.frame = CGRect.init(x: x, y: y, width: w, height: h)
+        try sample.layout(x: x, y: y, width: w, height: h)
+        DeviceOrientation.update(baseView: baseView, webView: sample)
+        try updateFontSample()
+        log(100, "FontSizeGroup#layoutSample sample:\t\(w) x \(h) at (\(x), \(y))")
+        log(100, "FontSizeGroup#layoutSample sample:\t\(sample.frame.width) x \(sample.frame.height) at (\(sample.frame.minX), \(sample.frame.minY))")
+    }//layoutSample()
+}
 /** End of File **/
