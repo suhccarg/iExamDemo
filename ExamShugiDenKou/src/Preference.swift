@@ -12,7 +12,6 @@ import ExamLib_iOS1
 
 let defaultMargin: CGFloat = 8.0
  let initialQuestionCount: Int = 5
- let initialExamFontSize: Float = 16.0     // 16px = 12pt
 //## var menu: MenuViewController!
  let hiddenCounterLimit =  3
  let defaultFontSize: CGFloat = 16.0
@@ -28,6 +27,7 @@ enum ExamAppError: Error {
 }//enum ExamAppError
 
 public class Preference {
+    public static let exemFontSize = Repository.examFontSize
     public static var menu :MenuViewController!
     public static let examCategories: [ExamCategory] = [
         ExamCategory.sdk21Setsubi,
@@ -71,23 +71,23 @@ public class Preference {
     }//var questionCount
     //##
     //
-    // sliderは、px単位。labelの表示は、pt単位。
-    // 16px == 12pt == 1em
-    public static let px2pt: Float = 12.0 / 16.0
-    public static let fontSizeMinLimit: Float = 5.0 / px2pt         // 5pt
-    public static let fontSizeMaxLimit: Float = 50.0 / px2pt        // 50pt
-    
-    public static var examFontSize: Float {
-        get {
-            let size = UserDefaults.standard.float(forKey: Repository.keyExamFontSize)
-            if size == 0 {
-                return initialExamFontSize
-            }
-            return min(max(size, fontSizeMinLimit), fontSizeMaxLimit)
-        }
-        set {
-            UserDefaults.standard.set(newValue, forKey: Repository.keyExamFontSize)
-        }
-    }//var examFontSize
+//    // sliderは、px単位。labelの表示は、pt単位。
+//    // 16px == 12pt == 1em
+//    public static let px2pt: Float = 12.0 / 16.0
+//    public static let fontSizeMinLimit: Float = 5.0 / px2pt         // 5pt
+//    public static let fontSizeMaxLimit: Float = 50.0 / px2pt        // 50pt
+//    
+//    public static var examFontSize: Float {
+//        get {
+//            let size = UserDefaults.standard.float(forKey: Repository.keyExamFontSize)
+//            if size == 0 {
+//                return initialExamFontSize
+//            }
+//            return min(max(size, fontSizeMinLimit), fontSizeMaxLimit)
+//        }
+//        set {
+//            UserDefaults.standard.set(newValue, forKey: Repository.keyExamFontSize)
+//        }
+//    }//var examFontSize
 
 }

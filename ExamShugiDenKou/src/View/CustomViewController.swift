@@ -758,9 +758,9 @@ public class FontSizeGroup {
     private func setupSlider() throws {
         slider = UISlider()
         slider.minimumTrackTintColor = ExamColor.tint.uiColor
-        slider.minimumValue = Preference.fontSizeMinLimit
-        slider.maximumValue = Preference.fontSizeMaxLimit
-        slider.value = Preference.examFontSize
+        slider.minimumValue = Repository.fontSizeMinLimit
+        slider.maximumValue = Repository.fontSizeMaxLimit
+        slider.value  = Repository.examFontSize
         slider.addTarget(self, action: #selector(self.onFontSizeChangeListener(_:)), for: .valueChanged)
         baseView.scroll.addSubview(slider)
     }//setupSlider()
@@ -769,7 +769,7 @@ public class FontSizeGroup {
         //        label.text = "\(sender.value)"
         do {
             log(50, "FontSizeGroup#update: \(slider.value)")
-            Preference.examFontSize = slider.value
+            Repository.examFontSize = slider.value
             try updateLabel()
             try updateFontSample()
         } catch let e {

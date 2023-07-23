@@ -127,21 +127,21 @@ public class ExamWebView: WKWebView {
         return html
     }//setPage(page: String)
     
-    public static func apply() throws {
-        switch ExamColor.mode {
-        case .bright:
-            mode = .bright
-            changer.setBrightColor()
-        case .dark:
-            changer.setDarkColor()
-        default:
-            throw ExamAppError.runtime(slog(10, "ExamColor - setMode(\(mode))"))
-        }//switch mode
-        normalButtonBaseImage = createImageFromUIColor(color:
-            ExamColor.normalButtonBase.uiColor)
-        pushedButtonBaseImage = createImageFromUIColor(color:
-            ExamColor.pushedButtonBase.uiColor)
-    }//apply()
+//    public static func apply() throws {
+//        switch ExamColor.mode {
+//        case .bright:
+//            mode = .bright
+//            changer.setBrightColor()
+//        case .dark:
+//            changer.setDarkColor()
+//        default:
+//            throw ExamAppError.runtime(slog(10, "ExamColor - setMode(\(mode))"))
+//        }//switch mode
+//        normalButtonBaseImage = createImageFromUIColor(color:
+//            ExamColor.normalButtonBase.uiColor)
+//        pushedButtonBaseImage = createImageFromUIColor(color:
+//            ExamColor.pushedButtonBase.uiColor)
+//    }//apply()
 }//class ExamWebView
 
 
