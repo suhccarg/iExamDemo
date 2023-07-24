@@ -24,6 +24,16 @@ open class ExamRadioConfig {
     var baseColor: UIColor = ExamColor.base.uiColor
     
     public init() {}
+    public func deepCopy(from source: ExamRadioConfig) {
+        self.baseView = source.baseView
+        self.targetView = source.targetView
+        self.upperView = source.upperView
+        self.tag = source.tag
+        self.isSelected = source.isSelected
+        self.action = source.action
+        self.baseColor = source.baseColor
+    }
+    
 }//struct ExamRadioConfig
 
 

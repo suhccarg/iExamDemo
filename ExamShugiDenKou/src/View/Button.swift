@@ -155,7 +155,8 @@ public class ExamRadioGroup {
     private var selected: ExamCategory!
     
     public init(defaultConfig: ExamRadioConfig, categories: [ExamCategory], selectedCode: Int?) {
-        var config = defaultConfig
+        var config = ExamRadioConfig()
+        config.deepCopy(from: defaultConfig)
         self.buttons = []
 //        var previousView = config.upperView
         var previousView: UIView = config.baseView.topMessage
@@ -166,6 +167,8 @@ public class ExamRadioGroup {
             let newButton = ExamRadioButton(config: config, radioGroup: self)
             self.buttons.append(newButton)
             previousView = newButton
+            config = ExamRadioConfig()
+            config.deepCopy(from: defaultConfig)
         }//for i in 0 ..< labels.count
         select(tag: selectedCode!)
     }//init(defaultConfig: ExamRadioConfig, labels: [String], selected: Int?)
