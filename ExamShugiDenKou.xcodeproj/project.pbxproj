@@ -100,12 +100,13 @@
 		D93F5F432A6E105B00E50967 /* SDK1_ControlChart-K.png in Resources */ = {isa = PBXBuildFile; fileRef = D93F5EF32A6E105B00E50967 /* SDK1_ControlChart-K.png */; };
 		D93F5F442A6E105B00E50967 /* SDKb_PWM_inverter-K.png in Resources */ = {isa = PBXBuildFile; fileRef = D93F5EF42A6E105B00E50967 /* SDKb_PWM_inverter-K.png */; };
 		D93F5F452A6E105B00E50967 /* SDK2-FMEA_FTA-K.png in Resources */ = {isa = PBXBuildFile; fileRef = D93F5EF52A6E105B00E50967 /* SDK2-FMEA_FTA-K.png */; };
+		D93F5F472A6E484300E50967 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D93F5F462A6E484300E50967 /* Assets.xcassets */; };
+		D93F5F4F2A6EFD6200E50967 /* ExamPackage in Frameworks */ = {isa = PBXBuildFile; productRef = D93F5F4E2A6EFD6200E50967 /* ExamPackage */; };
 		D952EAE32A61FF3C001A3F04 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D952EACE2A61FF3B001A3F04 /* SettingViewController.swift */; };
 		D952EAE52A61FF3C001A3F04 /* ExamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D952EAD02A61FF3B001A3F04 /* ExamViewController.swift */; };
 		D952EAE62A61FF3C001A3F04 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D952EAD12A61FF3B001A3F04 /* MessageViewController.swift */; };
 		D952EAE82A61FF3C001A3F04 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D952EAD32A61FF3B001A3F04 /* MenuViewController.swift */; };
 		D952EAF02A61FF3C001A3F04 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D952EADC2A61FF3C001A3F04 /* AppDelegate.swift */; };
-		D952EAF32A620145001A3F04 /* ExamLib_iOS1 in Frameworks */ = {isa = PBXBuildFile; productRef = D952EAF22A620145001A3F04 /* ExamLib_iOS1 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -204,6 +205,7 @@
 		D93F5EF32A6E105B00E50967 /* SDK1_ControlChart-K.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SDK1_ControlChart-K.png"; sourceTree = "<group>"; };
 		D93F5EF42A6E105B00E50967 /* SDKb_PWM_inverter-K.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SDKb_PWM_inverter-K.png"; sourceTree = "<group>"; };
 		D93F5EF52A6E105B00E50967 /* SDK2-FMEA_FTA-K.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SDK2-FMEA_FTA-K.png"; sourceTree = "<group>"; };
+		D93F5F462A6E484300E50967 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ExamShugiDenKou/Assets.xcassets; sourceTree = SOURCE_ROOT; };
 		D952EACE2A61FF3B001A3F04 /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		D952EAD02A61FF3B001A3F04 /* ExamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExamViewController.swift; sourceTree = "<group>"; };
 		D952EAD12A61FF3B001A3F04 /* MessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
@@ -216,7 +218,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D952EAF32A620145001A3F04 /* ExamLib_iOS1 in Frameworks */,
+				D93F5F4F2A6EFD6200E50967 /* ExamPackage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,6 +261,7 @@
 		D93F5EA52A6E105B00E50967 /* shugi_densou_koukan */ = {
 			isa = PBXGroup;
 			children = (
+				D93F5F462A6E484300E50967 /* Assets.xcassets */,
 				D93F5EA62A6E105B00E50967 /* SDK5-QPSK_16QAM-K.png */,
 				D93F5EA72A6E105B00E50967 /* SDK8-IPsec_Mode-A.png */,
 				D93F5EA82A6E105B00E50967 /* SDK5-ShiftedPSK-K.png */,
@@ -387,7 +390,7 @@
 			);
 			name = ExamShugiDenKou;
 			packageProductDependencies = (
-				D952EAF22A620145001A3F04 /* ExamLib_iOS1 */,
+				D93F5F4E2A6EFD6200E50967 /* ExamPackage */,
 			);
 			productName = ExamShugiDenKou;
 			productReference = D918032E2A61C1A00038B5A8 /* ExamShugiDenKou.app */;
@@ -418,7 +421,7 @@
 			);
 			mainGroup = D91803252A61C1A00038B5A8;
 			packageReferences = (
-				D952EAF12A620145001A3F04 /* XCRemoteSwiftPackageReference "ExamLib_iOS1" */,
+				D93F5F4D2A6EFD6200E50967 /* XCRemoteSwiftPackageReference "ExamPackage" */,
 			);
 			productRefGroup = D918032F2A61C1A00038B5A8 /* Products */;
 			projectDirPath = "";
@@ -450,6 +453,7 @@
 				D93F5F092A6E105B00E50967 /* SDK8-IPv6_Tunneling-A.png in Resources */,
 				D93F5F392A6E105B00E50967 /* SDK8-IPv6_Tunneling-K.png in Resources */,
 				D93F5F1E2A6E105B00E50967 /* SDK5_B6ZS-A.png in Resources */,
+				D93F5F472A6E484300E50967 /* Assets.xcassets in Resources */,
 				D93F5F182A6E105B00E50967 /* SDK1_KoukiKensetsuHi_Kyokusen-K.png in Resources */,
 				D93F5F272A6E105B00E50967 /* SDKb_SeiryuuHikaku-K.png in Resources */,
 				D93F5F0B2A6E105B00E50967 /* SDK7-CAS-A.png in Resources */,
@@ -761,9 +765,9 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		D952EAF12A620145001A3F04 /* XCRemoteSwiftPackageReference "ExamLib_iOS1" */ = {
+		D93F5F4D2A6EFD6200E50967 /* XCRemoteSwiftPackageReference "ExamPackage" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/suhccarg/ExamLib_iOS1.git";
+			repositoryURL = "https://github.com/suhccarg/ExamPackage.git";
 			requirement = {
 				branch = main;
 				kind = branch;
@@ -772,10 +776,10 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		D952EAF22A620145001A3F04 /* ExamLib_iOS1 */ = {
+		D93F5F4E2A6EFD6200E50967 /* ExamPackage */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = D952EAF12A620145001A3F04 /* XCRemoteSwiftPackageReference "ExamLib_iOS1" */;
-			productName = ExamLib_iOS1;
+			package = D93F5F4D2A6EFD6200E50967 /* XCRemoteSwiftPackageReference "ExamPackage" */;
+			productName = ExamPackage;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

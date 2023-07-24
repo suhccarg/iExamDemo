@@ -5,3 +5,4 @@ V0.6d restore ExamVC
 V0.6g Menu NG
 V0.6h Menu OK
 
+V0.7a rename package

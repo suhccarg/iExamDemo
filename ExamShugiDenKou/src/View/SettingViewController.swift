@@ -9,8 +9,8 @@
 import Foundation
 import UIKit
 import WebKit
-#if canImport(ExamLib_iOS1)
-import ExamLib_iOS1
+#if canImport(ExamPackage)
+import ExamPackage
 #endif
 
 public class SettingViewController: CustomViewController {

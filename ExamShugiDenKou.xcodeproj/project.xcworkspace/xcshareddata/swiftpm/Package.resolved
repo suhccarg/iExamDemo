@@ -10,12 +10,12 @@
       }
     },
     {
-      "identity" : "examlib_ios1",
+      "identity" : "exampackage",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/suhccarg/ExamLib_iOS1.git",
+      "location" : "https://github.com/suhccarg/ExamPackage.git",
       "state" : {
         "branch" : "main",
-        "revision" : "2411144a6ceb795e3096984a9572a737224a258e"
+        "revision" : "33c527226fea4c65bb6083f8fd4f38056e331200"
       }
     }
   ],
