@@ -44,5 +44,5 @@ if [ $? -ne 0 ]
 then
 	exit 17
 fi
-echo -e "\n##" Success! Please update package.
+echo -e "\n##" Success! 
 exit 0
