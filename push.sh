@@ -11,7 +11,7 @@ fi
 tag=${1}
 remark=${2}
 
-echo "$tag $remark" >> READMElib.md
+echo "$tag $remark" >> README.md
 echo -e "\n## add" 
 git add .
 if [ $? -ne 0 ] 
