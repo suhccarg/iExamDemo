@@ -298,7 +298,7 @@ public class ExamRadioButton: UIButton {
         label.text = config.category.description
         label.font = UIFont.systemFont(ofSize: Repository.defaultFontSize)
         log(90, "ExamRadioButton#setupLabel: \(label.tag)")
-        if debugLevel > 100 {
+        if Repository.debugLevel > 100 {
             label.layer.borderColor = UIColor.red.cgColor
             label.layer.borderWidth = 1.0
         }
@@ -403,7 +403,7 @@ public class ExamRadioButton: UIButton {
         let buttonW = scrollFrame.width - defaultMargin * 2.0 - safe.left - safe.right
         let labelW = buttonW - ExamRadioButton.buttonSize
         let h = ExamRadioButton.buttonSize + defaultMargin
-        if debugLevel > 100 {
+        if Repository.debugLevel > 100 {
             self.layer.borderColor = UIColor.red.cgColor
             self.layer.borderWidth = 1.5
             label.layer.borderColor = UIColor.blue.cgColor

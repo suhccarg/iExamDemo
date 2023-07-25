@@ -305,7 +305,7 @@ class ExamViewController: CustomViewController {
    ///// 回転処理 /////
    @objc override public func onOrientationChangeListner() {
        log(10, "ExamViewController#onOrientationChangeListner")
-       if debugLevel > 0 {
+       if Repository.debugLevel > 0 {
            let deviceOrientation = UIDevice.current.orientation
            if deviceOrientation.isLandscape {
                log(90, "ExamViewController#Device orientation: Landscape")

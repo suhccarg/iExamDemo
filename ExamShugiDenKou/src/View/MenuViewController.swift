@@ -48,6 +48,7 @@ public class MenuViewController: CustomViewController {
     override public func viewDidLoad() {
         log(50, "MenuViewController#viewDidLoad:\(viewState)")
         super.viewDidLoad()
+        Repository.debugLevel = 50
         Preference.menu = self
         do {
             try ExamSourceDao.prepare(bundledDbFile: Repository.getDbFileName())
@@ -185,7 +186,8 @@ public class MenuViewController: CustomViewController {
         let storyboard: UIStoryboard = self.storyboard!
         let examView = storyboard.instantiateViewController(withIdentifier: "ExamView") as! ExamViewController
         viewState = .question
-        self.present(examView, animated: false, completion: nil)
+        examView.modalPresentationStyle = .fullScreen
+        self.present(examView, animated:  true, completion: nil)
     }//startExam()
     
     

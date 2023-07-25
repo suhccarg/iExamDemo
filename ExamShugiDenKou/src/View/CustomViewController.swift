@@ -169,7 +169,7 @@ public class CustomViewController: UIViewController {
     @objc public func onOrientationChangeListner() {
         log(10, "CustomViewController#onOrientationChangeListner")
         //Repository.baseViewSize = self.view.frame.size
-        if debugLevel > 0 {
+        if Repository.debugLevel > 0 {
             let deviceOrientation = UIDevice.current.orientation
             if deviceOrientation.isLandscape {
                 log(90, "CustomViewController#Device orientation: Landscape")
@@ -469,7 +469,7 @@ public class ExamTitle: ExamLabel {
         let w = baseView!.view.frame.maxX - baseView!.view.frame.minX
         let h = -(self.frame.height + self.foot + 1.0)
         edgeLabel.frame = CGRect.init(x: x, y: y, width: w, height: h)
-        if debugLevel > 100 {
+        if Repository.debugLevel > 100 {
             edgeLabel.layer.borderColor = UIColor.red.cgColor
             edgeLabel.layer.borderWidth = 1.0
             edgeLabel.backgroundColor = UIColor.green
