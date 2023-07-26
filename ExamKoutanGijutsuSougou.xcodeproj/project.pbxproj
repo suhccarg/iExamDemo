@@ -411,7 +411,7 @@
 					};
 				};
 			};
-			buildConfigurationList = D91803292A61C1A00038B5A8 /* Build configuration list for PBXProject "ExamShugiDenKou" */;
+			buildConfigurationList = D91803292A61C1A00038B5A8 /* Build configuration list for PBXProject "ExamKoutanGijutsuSougou" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -744,7 +744,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		D91803292A61C1A00038B5A8 /* Build configuration list for PBXProject "ExamShugiDenKou" */ = {
+		D91803292A61C1A00038B5A8 /* Build configuration list for PBXProject "ExamKoutanGijutsuSougou" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D91803402A61C1A30038B5A8 /* Debug */,

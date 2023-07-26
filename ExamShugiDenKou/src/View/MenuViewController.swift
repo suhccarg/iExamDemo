@@ -97,7 +97,7 @@ public class MenuViewController: CustomViewController {
     //    }//setupExamRadioButton()
     public func setupRadioGroup() throws {
         self.radioGroup = nil
-        var config = ExamRadioConfig()
+        let config = ExamRadioConfig()
         config.baseView = self
         config.targetView = config.baseView
         config.upperView = topMessage
@@ -194,7 +194,7 @@ public class MenuViewController: CustomViewController {
     @objc private func onStartButtonListener(_ sender: UIButton) {
         log(90, " tapped.")
         do {
-            logPrecisely(90, "MenuViewController: try startExam")
+            _ = logPrecisely(90, "MenuViewController: try startExam")
             try startExam()
         } catch let e {
             fatalError(slog(10, ":\(e)"))
@@ -221,7 +221,7 @@ public class MenuViewController: CustomViewController {
     @objc private  func onshowAllkButtonListener(_ sender: UIButton) {
         log(90, " tapped.")
         do {
-            logPrecisely(90, "MenuViewController: try startExam")
+            _ = logPrecisely(90, "MenuViewController: try startExam")
             try startExam()
         } catch let e {
             log(10, ":\(e)")
@@ -231,7 +231,7 @@ public class MenuViewController: CustomViewController {
     @objc private  func onSelfCheckButtonListener(_ sender: UIButton) {
         log(90, " tapped.")
         do {
-            logPrecisely(90, "MenuViewController: try startExam")
+            _ = logPrecisely(90, "MenuViewController: try startExam")
             try startExam()
         } catch let e {
             log(10, ":\(e)")

@@ -233,7 +233,6 @@ public class CustomViewController: UIViewController {
     }//updateXScale()
     
     private func generateTopMessage() -> String {
-        var headMessage = ""
         let code = viewState.code
         if code == ViewType.setting.code ||  code == ViewType.question.code
             || code == ViewType.answer.code || code == ViewType.message.code {

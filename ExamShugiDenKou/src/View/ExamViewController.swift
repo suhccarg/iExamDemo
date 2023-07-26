@@ -204,11 +204,11 @@ class ExamViewController: CustomViewController {
                  gotoNextButton, gotoNewExamButton, returnButton] where button != nil {
            try button!.layout()
        }
-//        logPrecisely(40, ": try printToWebView")
+//        _ = logPrecisely(40, ": try printToWebView")
        self.htmlInView = try printToWebView()
-       logPrecisely(40, ": try webView!.layout")
+       _ = logPrecisely(40, ": try webView!.layout")
        try self.webView!.layout()
-       logPrecisely(40)
+       _ = logPrecisely(40)
    }//layoutExamView()
    
   private func printToWebView() throws -> String {
