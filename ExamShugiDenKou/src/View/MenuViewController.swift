@@ -46,7 +46,7 @@ public class MenuViewController: CustomViewController {
     public var settingButton: SettingButton!
     
     override public func viewDidLoad() {
-        log(50, "MenuViewController#viewDidLoad:\(viewState)")
+        log(50, ":\(viewState)")
         super.viewDidLoad()
         Repository.debugLevel = 50
         Preference.menu = self
@@ -64,8 +64,8 @@ public class MenuViewController: CustomViewController {
             Repository.allCheck = false
             Repository.checkMode = false
         } catch let e {
-            try! gotoMessageView(message: "## MenuViewController#viewDidLoad:\(e)", returnView: viewState)
-            //            onError(slog(10, "MenuViewController#viewDidLoad:\(e)"))
+            try! gotoMessageView(message: ":\(e)", returnView: viewState)
+            //            onError(slog(10, ":\(e)"))
         }
     }//viewDidLoad()
     
@@ -79,7 +79,7 @@ public class MenuViewController: CustomViewController {
             selfCheckButton.setupColor()
             settingButton.setupColor()
         } catch let e {
-            onError(slog(10, "MenuViewController#viewDidLoad:\(e)"))
+            onError(slog(10, ":\(e)"))
         }
     }//setupColor()
     //    private func setupRadioGroup() throws {
@@ -173,7 +173,7 @@ public class MenuViewController: CustomViewController {
     //}//onStartButtonListener(_ sender: UIButton)
     
     private func startExam() throws {
-        log(50, "MenuViewController#startExam")
+        log(50)
         let selectedCategory = radioGroup.getSelected()
         if selectedCategory ==  nil {
             throw ExamAppError.runtime(slog(10, "radioGroup.getSelected() == nil"))
@@ -192,26 +192,26 @@ public class MenuViewController: CustomViewController {
     
     
     @objc private func onStartButtonListener(_ sender: UIButton) {
-        log(90, "MenuViewController#startButton tapped.")
+        log(90, " tapped.")
         do {
             logPrecisely(90, "MenuViewController: try startExam")
             try startExam()
         } catch let e {
-            fatalError(slog(10, "MenuViewController#onStartButtonListener:\(e)"))
+            fatalError(slog(10, ":\(e)"))
             // try! gotoMessageView(message: log(10,
-            //"MenuViewController#onStartButtonListener:\(e)"), returnView: viewState)
+            //":\(e)"), returnView: viewState)
         }
     }//onStartButtonListener(_ sender: UIButton)
     
     
     
 //    @objc private func radioButtonListner(_ sender: UIButton) {
-//        log(10, "ExamViewController#radioButtonClicked(\(sender.titleLabel!.text!))")
+//        log(10, "(\(sender.titleLabel!.text!))")
 //        super.radioButtonListner(sender)
 //    }//radioButtonListner(_ sender: UIButton)
 
     @objc public func radioButtonListner(_ sender: UIButton) {
-        log(10, "ExamViewController#radioButtonClicked(\(sender.titleLabel!.text!))")
+        log(10, "(\(sender.titleLabel!.text!))")
         self.radioGroup.select(sender: sender)
         self.messageArea.text = ""
     }//radioButtonListner(_ sender: UIButton)
@@ -219,49 +219,49 @@ public class MenuViewController: CustomViewController {
     
     
     @objc private  func onshowAllkButtonListener(_ sender: UIButton) {
-        log(90, "MenuViewController#hiddenButton tapped.")
+        log(90, " tapped.")
         do {
             logPrecisely(90, "MenuViewController: try startExam")
             try startExam()
         } catch let e {
-            log(10, "MenuViewController#onshowAllkButtonListener:\(e)")
+            log(10, ":\(e)")
         }
     }//onshowAllkButtonListener(_ sender: UIButton)
     
     @objc private  func onSelfCheckButtonListener(_ sender: UIButton) {
-        log(90, "MenuViewController#hiddenButton tapped.")
+        log(90, " tapped.")
         do {
             logPrecisely(90, "MenuViewController: try startExam")
             try startExam()
         } catch let e {
-            log(10, "MenuViewController#onSelfCheckButtonListener:\(e)")
+            log(10, ":\(e)")
         }
     }//onSelfCheckButtonListener(_ sender: UIButton)
     
     @objc private  func onSettingButtonListener(_ sender: UIButton) {
-        log(50, "MenuViewController#onSettingButtonListener")
+        log(50)
         let storyboard: UIStoryboard = self.storyboard!
         let settingView = storyboard.instantiateViewController(withIdentifier: "SettingView") as! SettingViewController
         viewState = .setting
         self.present(settingView, animated: false, completion: nil)
-        log(50, "MenuViewController#onSettingButtonListener:\(viewState)")
+        log(50, ":\(viewState)")
     }//onSettingButtonListener
     
     @objc override public func onSwipeListener(sender: UISwipeGestureRecognizer) {
-        log(50, "MenuViewController#onSwipeListener: \(sender.direction.value)")
+        log(50, ": \(sender.direction.value)")
         do {
             if sender.direction == .left {     // forward(->)
-                log(90, "MenuViewController#onSwipeListener: startExam")
+                log(90, ": startExam")
                 try startExam()
             } else if sender.direction == .up {     // up(↑)
                 if Repository.checkMode {
                     try gotoMessageView(message: getSelfCheck(), returnView: viewState)
                 }
             } else {
-                log(90, "MenuViewController#onSwipeListener: undefined swipe")
+                log(90, ": undefined swipe")
             }
         } catch let e {
-            log(10, "MenuViewController#onSwipeListener:\(e)")
+            log(10, ":\(e)")
         }
     }//onSwipeListener(sender: UISwipeGestureRecognizer)
     
@@ -269,19 +269,19 @@ public class MenuViewController: CustomViewController {
     ///
     /// ///// 回転処理 /////
     override public  func onOrientationChangeListner() {
-        log(10, "MenuViewController#onOrientationChangeListner")
+        log(10)
         super.onOrientationChangeListner()
     }//onOrientationChangeListner()
     
     @objc override public func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        log(100, "MenuViewController#touchesEnded")
+        log(100)
         var location: CGPoint = CGPoint.zero
         for touch in touches {
             location = touch.location(in: self.view)
-            log(90, "MenuViewController#touchesEnded() location: \(location)")
+            log(90, "() location: \(location)")
         }
         if checkHiddenMode(location: location) {
-            log(50, "MenuViewController#touchesEnded: HiddenModeCounter=\(HiddenModeCounter.counter)")
+            log(50, ": HiddenModeCounter=\(HiddenModeCounter.counter)")
             if HiddenModeCounter.check() {
                 if showAllButton.isHidden {
                     showAllButton.isHidden = false
@@ -303,7 +303,7 @@ public class MenuViewController: CustomViewController {
                     try showAllButton!.layout()
                     try selfCheckButton!.layout()
                 } catch let e {
-                    log(10, "MenuViewController#touchesEnded:\(e)")
+                    log(10, ":\(e)")
                 }
             }
             return
@@ -314,7 +314,7 @@ public class MenuViewController: CustomViewController {
     private func getTouchedPoint(touches: Set<UITouch>) -> CGPoint {
         for touch in touches {
             let location = touch.location(in: self.view)
-            log(90, "MenuViewController#touchesEnded() location: \(location)")
+            log(90, "() location: \(location)")
             return location
         }
         return CGPoint.zero
@@ -336,7 +336,7 @@ public class MenuViewController: CustomViewController {
     
     ////// viewDidLayoutSubviews#layout //////
     override public func viewDidLayoutSubviews() {
-        log(50, "MenuViewController#viewDidLayoutSubviews")
+        log(50)
         if isError() {
             try! gotoMessageView(message: getError(), returnView: viewState)
             return
@@ -345,7 +345,7 @@ public class MenuViewController: CustomViewController {
         do {
             try layoutMenuView()
         } catch let e {
-            log(10, "MenuViewController#viewDidLayoutSubviews:\(e)")
+            log(10, ":\(e)")
         }
     }//viewDidLayoutSubviews()
     
@@ -377,8 +377,8 @@ public class MenuViewController: CustomViewController {
         let y = upperView.frame.maxY + defaultMargin * 2.0
         let h = Repository.defaultFontSize * 3.0
         messageArea.frame = CGRect.init(x: x, y: y, width: w, height: h)
-        log(90, "MenuViewController#layoutMessageArea:\t\(w) x \(h) at (\(x), \(y))")
-        log(90, "MenuViewController#layoutMessageArea:\t\(messageArea.frame.width) x \(messageArea.frame.height) at (\(messageArea.frame.minX), \(messageArea.frame.minY))")
+        log(90, ":\t\(w) x \(h) at (\(x), \(y))")
+        log(90, ":\t\(messageArea.frame.width) x \(messageArea.frame.height) at (\(messageArea.frame.minX), \(messageArea.frame.minY))")
         
     }//layoutMessageArea(upperView: UIView)
 }//class MenuViewController
@@ -405,7 +405,7 @@ public class HiddenModeCounter {
             if thresholdX * 2.0 < location.x {
                 previousSide = .right
                 HiddenModeCounter.counter += 1
-                log(90, "HiddenModeCounter#update: \(HiddenModeCounter.counter)")
+                log(90, ": \(HiddenModeCounter.counter)")
                 return true
             } else {
                 previousSide = .left
@@ -415,7 +415,7 @@ public class HiddenModeCounter {
             if  location.x < thresholdX * 1.0 {
                 previousSide = .left
                 HiddenModeCounter.counter += 1
-                log(90, "HiddenModeCounter#update: \(HiddenModeCounter.counter)")
+                log(90, ": \(HiddenModeCounter.counter)")
                 return true
             } else {
                 previousSide = .right
@@ -429,7 +429,7 @@ public class HiddenModeCounter {
             }
             HiddenModeCounter.counter = 0
         }
-        log(90, "HiddenModeCounter#update: \(HiddenModeCounter.counter)")
+        log(90, ": \(HiddenModeCounter.counter)")
         return false
     }//update(baseView: CustomViewController, location: CGPoint)
     
@@ -471,16 +471,16 @@ public class SettingButton: UIButton {
     init(baseView: CustomViewController, action: Selector)  throws {
         self.baseView = baseView
         super.init(frame: CGRect.zero)
-        log(50, "SettingButton#init")
+        log(50)
         setup(action: action)
     }//init()
     
     required public init?(coder aDecoder: NSCoder) {
-        fatalError("SettingButton#init(coder:) has not been implemented")
+        fatalError(slog(0,"init(coder:) has not been implemented"))
     }//init?(coder aDecoder: NSCoder)
     
     private func setup(action: Selector) {
-        log(50, "SettingButton#setup(caption: String)")
+        log(50, "action: Selector")
         setupColor()
         self.addTarget(baseView, action: action, for: UIControl.Event.touchUpInside)
         baseView.view.addSubview(self)

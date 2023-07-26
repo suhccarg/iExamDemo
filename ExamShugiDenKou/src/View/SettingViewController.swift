@@ -20,7 +20,7 @@ public class SettingViewController: CustomViewController {
     public var fontSizeGroup: FontSizeGroup!
     
     override public func viewDidLoad() {
-        log(50, "SettingViewController#viewDidLoad:\(viewState)")
+        log(50, ":\(viewState)")
         super.viewDidLoad()
         do {
             darkModeGroup = DarkModeGroup(baseView: self, upperView: super.topMessage)
@@ -58,7 +58,7 @@ public class SettingViewController: CustomViewController {
     }//createScrollView()
     
     @objc override public func onSwipeListener(sender: UISwipeGestureRecognizer) {
-        log(50, "MenuViewController#onSwipeListener: \(sender.direction.value)")
+        log(50, ": \(sender.direction.value)")
         do {
             if sender.direction == .up {     // up(↑)
                 if Repository.checkMode {
@@ -67,32 +67,32 @@ public class SettingViewController: CustomViewController {
                     try gotoMessageView(message: s, returnView: viewState)
                 }
             } else {
-                log(90, "SettingViewController#onSwipeListener: undefined swipe")
+                log(90, ": undefined swipe")
             }
         } catch let e {
-            log(10, "SettingViewController#onSwipeListener:\(e)")
+            log(10, ":\(e)")
         }
     }//onSwipeListener(sender: UISwipeGestureRecognizer)
     
     ///// 回転処理 /////
     @objc override public func onOrientationChangeListner() {
-        log(10, "SettingViewController#onOrientationChangeListner(...)")
+        log(10, "(...)")
         do {
             try fontSizeGroup.updateFontSample()
         } catch let e {
-            try! gotoMessageView(message:  slog(10, "SettingViewController#viewDidLayoutSubviews:\(e)"), returnView: viewState)
+            try! gotoMessageView(message:  slog(10, ":\(e)"), returnView: viewState)
         }
     }//onOrientationChangeListner
     
     ///// レイアウト /////
     override public func viewDidLayoutSubviews() {
-        log(50, "SettingViewController#viewDidLayoutSubviews")
+        log(50)
         super.viewDidLayoutSubviews()
         //       if viewState == .setting {
         do {
             try layoutSettingView()
         } catch let e {
-            log(10, "ViewController#viewDidLayoutSubviews:\(e)")
+            log(10, ":\(e)")
         }
         //        }
     }//viewDidLayoutSubviews()
@@ -138,7 +138,7 @@ public class DarkModeGroup {
     
 
     public func setup() throws {
-       log(50, "DarkModeGroup#setup")
+       log(50)
         try setupLabel()
         try setupOnOffSwitch()
     }//setupDarkModeGroup()
@@ -166,7 +166,7 @@ public class DarkModeGroup {
     }//onOnOffSwitchChangeListener(_ sender: UISwitch)
     
     public func update(darkMode: Bool) {
-        log(50, "DarkModeGroup#update")
+        log(50)
         if darkMode {
             ExamColor.mode = .dark
         } else {
@@ -179,7 +179,7 @@ public class DarkModeGroup {
     }//apply()
     ///// レイアウト /////
     public func layout(top: CGFloat) throws {
-        log(50, "DarkModeGroup#layout")
+        log(50)
         try layoutLabel(top: top)
         try layoutSwitch()
     }//layout()
@@ -197,7 +197,7 @@ public class DarkModeGroup {
         let w = self.baseView!.frameWidth - defaultMargin
         let h = Repository.defaultFontSize * 2 + defaultMargin
     label.layer.borderColor = UIColor.red.cgColor
-        log(90, "DarkModeGroup#llayoutLabel:\t\(w) x \(h) at (\(x), \(y))")
+        log(90, ":\t\(w) x \(h) at (\(x), \(y))")
         label.frame = CGRect.init(x: x, y: y, width: w, height: h)
         //        darkModeLabel.layer.borderColor = UIColor.red.cgColor
         //        darkModeLabel.layer.borderWidth = 1.0
@@ -218,18 +218,18 @@ public class DarkModeGroup {
         //        darkModeSwitch.layer.borderWidth = 1.0
         
         let labelFrame = label.frame
-        log(100, "DarkModeGroup#layoutSwitch frame:\t\(labelFrame.size.width) x \(labelFrame.size.height) at (\(labelFrame.minX), \(labelFrame.minY))")
+        log(100, " frame:\t\(labelFrame.size.width) x \(labelFrame.size.height) at (\(labelFrame.minX), \(labelFrame.minY))")
         let switchSize:CGSize = CGSize(width: 40, height: 20)
-        log(90, "DarkModeGroup#layoutSwitch size:\t\(switchSize.width) x \(switchSize.height)")
+        log(90, " size:\t\(switchSize.width) x \(switchSize.height)")
         let frame = onOffSwitch.frame
-        log(90, "DarkModeGroup#layoutSwitch frame:\t\(frame.size.width) x \(frame.size.height) at (\(frame.minX), \(frame.minY))")
+        log(90, " frame:\t\(frame.size.width) x \(frame.size.height) at (\(frame.minX), \(frame.minY))")
         let newMinX = labelFrame.maxX - frame.size.width - CGFloat(defaultMargin)
         let newWidth = frame.size.width
         let newMinY = label.frame.minY + (labelFrame.size.height - frame.size.height) / 2
         let newHeight = frame.size.height
         onOffSwitch.frame = CGRect.init(x: newMinX, y: newMinY, width: newWidth, height: newHeight)
         let newFrame = onOffSwitch.frame
-        log(90, "DarkModeGroup#layoutSwitch frame:\t\(newFrame.size.width) x \(newFrame.size.height) at (\(newFrame.minX), \(newFrame.minY))")
+        log(90, " frame:\t\(newFrame.size.width) x \(newFrame.size.height) at (\(newFrame.minX), \(newFrame.minY))")
     }//layoutSwitch()
     
 }//class DarkModeGroup
@@ -247,7 +247,7 @@ public class OptionGroup: NSObject {
     }//init(baseView: SettingViewController, upperView: UIView)
     
     public func setup() throws {
-        log(50, "OptionGroup#setup")
+        log(50)
         try setupLabel()
         try setupButtons()
     }//setup()
@@ -286,13 +286,13 @@ public class OptionGroup: NSObject {
 //                _ = Repository.getSelectedOption()
 //            }
 //        } catch let e {
-//            onError(slog(10, "OptionGroup#onOptionButtonListener:\(e)"))
+//            onError(slog(10, ":\(e)"))
 //        }
 //    }//onOptionButtonListener(_ sender: UIButton)
 //
     ///// レイアウト /////
     public func layout() throws {
-        log(50, "OptionGroup#layout")
+        log(50)
         try layoutLabel()
         for b in buttons {
             try b.layout(label: self.label)
@@ -306,8 +306,8 @@ public class OptionGroup: NSObject {
         let w = self.baseView!.frameWidth - defaultMargin
         let h = upperRect.height
         label.frame = CGRect.init(x: x, y: y, width: w, height: h)
-        log(90, "OptionGroup#layoutLabel label:\t\(w) x \(h) at (\(x), \(y))")
-        log(90, "OptionGroup#layoutLabel label:\t\(label.frame.width) x \(label.frame.height) at (\(label.frame.minX), \(label.frame.minY))")
+        log(90, " label:\t\(w) x \(h) at (\(x), \(y))")
+        log(90, " label:\t\(label.frame.width) x \(label.frame.height) at (\(label.frame.minX), \(label.frame.minY))")
     }//layoutLabel()
 
 }//OptionGroup
@@ -327,11 +327,11 @@ class OptionButton: ExamButton {
     }//init(...)
     
     required public init?(coder aDecoder: NSCoder) {
-        fatalError("OptionButton#init(coder:) has not been implemented")
+        fatalError("init(coder:) has not been implemented")
     }//init?(coder aDecoder: NSCoder)
     
     override public func setup(config: ExamButtonConfig) {
-        log(90, "OptionButton#setup:\(config.caption)")
+        log(90, ":\(config.caption)")
         do {
             //        self.backgroundColor = ExamColor.normalButtonBase.uiColor  // ボタンの背景色を設定.
             self.layer.masksToBounds = true     // ボタンの枠を丸く
@@ -345,7 +345,7 @@ class OptionButton: ExamButton {
             self.addTarget(self, action: #selector(onOptionButtonListener),
                            for: UIControl.Event.touchUpInside)
         } catch let e {
-            onError(slog(10, "OptionButton#setup:\(e)"))
+            onError(slog(10, ":\(e)"))
         }
     }//setup(config: ExamButtonConfig)
     
@@ -358,7 +358,7 @@ class OptionButton: ExamButton {
                 _ = Repository.getSelectedOption()
             }
         } catch let e {
-            onError(slog(10, "OptionButton#onOptionButtonListener:\(e)"))
+            onError(slog(10, ":\(e)"))
         }
     }//onOptionButtonListener(_ sender: UIButton)
     
@@ -385,8 +385,8 @@ class OptionButton: ExamButton {
         let h = config.height
         let y = label.frame.minY + (label.frame.height - CGFloat(h)) / 2.0
         self.frame = CGRect.init(x: x, y: y, width: w, height: h)
-        log(90, "OptionButton##layout: [\(self.tag)]\t\(w) x \(h) at (\(x), \(y))")
-        log(90, "OptionButton##layout: \(label.text!)")
+        log(90, ": [\(self.tag)]\t\(w) x \(h) at (\(x), \(y))")
+        log(90, ": \(label.text!)")
     }
     
     private func getIndex() throws -> Int {
@@ -399,7 +399,7 @@ class OptionButton: ExamButton {
                 return i
             }
         }//for i in 0 ..< keys.count
-        throw ExamAppError.runtime("OptionButton#getIndex: Invalid option type: \(optionType)")
+        throw ExamAppError.runtime(": Invalid option type: \(optionType)")
     }//getIndex(optionType: optionType)
 
 }//class OptionButton

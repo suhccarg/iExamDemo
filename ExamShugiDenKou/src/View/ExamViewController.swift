@@ -25,7 +25,7 @@ class ExamViewController: CustomViewController {
    
    
    override func viewDidLoad() {
-       log(50, "ExamViewController#viewDidLoad:\(viewState)")
+       log(50, ":\(viewState)")
        super.viewDidLoad()
        do {
            try setupGotoAnswerButton()
@@ -39,8 +39,8 @@ class ExamViewController: CustomViewController {
            try setupSwipeListener(action: #selector(onSwipeListener(sender: )))
            try startExam()
        } catch let e {
-           onError(slog(10, "ExamViewController#viewDidLoad:\(e)"))
-//            try! gotoMessageView(message: log(10, "ExamViewController#viewDidLoad:\(e)"))
+           onError(slog(10, ":\(e)"))
+//            try! gotoMessageView(message: log(10, ":\(e)"))
        }
    }//viewDidLoad()
    
@@ -127,8 +127,7 @@ class ExamViewController: CustomViewController {
        do {
            try gotoQuestion()
        } catch let e {
-//            fatalError(slog(10, "ExamViewController#onGotoBackButtonListener:\(e)"))
-           try! gotoMessageView(message: slog(10, "ExamViewController#onGotoBackButtonListener:\(e)"), returnView: viewState)
+           try! gotoMessageView(message: slog(10, ":\(e)"), returnView: viewState)
        } // do ... catch let e
    }//onGotoBackButtonListener(_ sender: UIButton)
    
@@ -137,8 +136,7 @@ class ExamViewController: CustomViewController {
        do {
            try gotoNext()
        } catch let e {
-//            fatalError(slog(10, "ExamViewController#onGotoNextButtonListener:\(e)"))
-           try! gotoMessageView(message: slog(10, "ExamViewController#onGotoNextButtonListener:\(e)"), returnView: viewState)
+           try! gotoMessageView(message: slog(10, ":\(e)"), returnView: viewState)
        } // do ... catch let e
    }//onGotoNextButtonListener(_ sender: UIButton)
    
@@ -165,31 +163,30 @@ class ExamViewController: CustomViewController {
    
    private func gotoQuestion() throws {
        viewState = .question
-      log(50, "ExamViewController#gotoQuestion:\(viewState)")
+      log(50, ":\(viewState)")
        try layout()
    }//gotoQuestion()
 
    private func gotoAnswer() throws {
        viewState = .answer
-       log(50, "ExamViewController#gotoAnswer:\(viewState)")
+       log(50, ":\(viewState)")
        try layout()
    }//gotoAnswer()
    
    private func gotoReview() throws {
        viewState = .review
-       log(50, "ExamViewController#gotoReview:\(viewState)")
+       log(50, ":\(viewState)")
        try layout()
    }//gotoReview()
 
    ///// レイアウト /////
    override func viewDidLayoutSubviews() {
-       log(50, "ExamViewController#viewDidLayoutSubviews:\(viewState)")
+       log(50, ":\(viewState)")
        super.viewDidLayoutSubviews()
        do {
             try layout()
        } catch let e {
-//            fatalError(slog(10, "ExamViewController#viewDidLayoutSubviews:\(e)"))
-           try! gotoMessageView(message: slog(10, "ExamViewController#viewDidLayoutSubviews:\(e)"), returnView: viewState)
+           try! gotoMessageView(message: slog(10, ":\(e)"), returnView: viewState)
        }
    }//viewDidLayoutSubviews()
 
@@ -207,11 +204,11 @@ class ExamViewController: CustomViewController {
                  gotoNextButton, gotoNewExamButton, returnButton] where button != nil {
            try button!.layout()
        }
-//        logPrecisely(40, "ExamViewController#layoutExamView: try printToWebView")
+//        logPrecisely(40, ": try printToWebView")
        self.htmlInView = try printToWebView()
-       logPrecisely(40, "ExamViewController#layoutExamView: try webView!.layout")
+       logPrecisely(40, ": try webView!.layout")
        try self.webView!.layout()
-       logPrecisely(40, "ExamViewController#layoutExamView")
+       logPrecisely(40)
    }//layoutExamView()
    
   private func printToWebView() throws -> String {
@@ -246,8 +243,8 @@ class ExamViewController: CustomViewController {
            }//for (int i = 0 i < reviews.length i++)
            return try self.webView.setPage(paragraphs: reviews, comment: comment)
        default:
-//            throw ExamAppError.runtime(slog(10, "ExamViewController#printToWebView() - Invalid state: \(String(describing: viewState))"))
-           return slog(10, "ExamViewController#printToWebView() - Invalid state: \(String(describing: viewState))")
+//            throw ExamAppError.runtime(slog(10, "() - Invalid state: \(String(describing: viewState))"))
+           return slog(10, "() - Invalid state: \(String(describing: viewState))")
        }///switch viewState
    }//printToWebView()
    
@@ -304,23 +301,22 @@ class ExamViewController: CustomViewController {
 
    ///// 回転処理 /////
    @objc override public func onOrientationChangeListner() {
-       log(10, "ExamViewController#onOrientationChangeListner")
+       log(10)
        if Repository.debugLevel > 0 {
            let deviceOrientation = UIDevice.current.orientation
            if deviceOrientation.isLandscape {
-               log(90, "ExamViewController#Device orientation: Landscape")
+               log(90, " orientation: Landscape")
            } else if deviceOrientation.isPortrait {
-               log(90, "ExamViewController#Device orientation: Portrait")
+               log(90, " orientation: Portrait")
            } else {
-               log(90, "ExamViewController#Device orientation: Unknown")
+               log(90, " orientation: Unknown")
            }
        }
 //        //_ = self.webView.reload()
 //        do {
 //            _ = try printToWebView()
 //        } catch let e {
-////            fatalError(slog(10, "ExamViewController#viewDidLayoutSubviews:\(e)"))
-//            try! gotoMessageView(message: log(10, "ExamViewController#viewDidLayoutSubviews:\(e)"), returnView: viewState)
+//            try! gotoMessageView(message: log(10, ":\(e)"), returnView: viewState)
 //        }
        //        self.loadView()
        //        self.viewDidLoad()
@@ -328,7 +324,7 @@ class ExamViewController: CustomViewController {
    
    ///// スワイプ関連 /////
    @objc override public func onSwipeListener(sender: UISwipeGestureRecognizer) {
-       log(50, "ExamViewController#onSwipeListener: \(sender.direction.value)")
+       log(50, ": \(sender.direction.value)")
        do {
            if sender.direction == .left {     // forward(->)
                switch viewState {
@@ -357,10 +353,10 @@ class ExamViewController: CustomViewController {
                    try gotoMessageView(message: htmlInView, returnView: viewState)
                }
            } else {
-               log(90, "ExamViewController#onSwipeListener: undefined swipe")
+               log(90, ": undefined swipe")
            }
        } catch let e {
-           log(10, "ExamViewController#onSwipeListener:\(e)")
+           log(10, ":\(e)")
        }
    }//onSwipeListener(sender: UISwipeGestureRecognizer)
 

@@ -107,8 +107,8 @@ public class ExamWebView: WKWebView {
         // self.loadHTMLString(html, baseURL: nil)
         self.loadHTMLString(html,
             baseURL: URL(fileURLWithPath: Bundle.main.path(forResource: nil, ofType: "png")!))
-        log(50, "ExamWebView#setPage \n\(html)")
-        //        log(90, "ExamWebView#setPage fontRate=\(DeviceOrientation.fontRate), \(HtmlPage.getWebFontSize(fontSize: Repository.examFontSize))px")
+        log(50, " \n\(html)")
+        //        log(90, " fontRate=\(DeviceOrientation.fontRate), \(HtmlPage.getWebFontSize(fontSize: Repository.examFontSize))px")
         return html
     }//setPage(page: String, comment: String)
     
@@ -122,8 +122,8 @@ public class ExamWebView: WKWebView {
         // self.loadHTMLString(html, baseURL: nil)
         self.loadHTMLString(html,
                             baseURL: URL(fileURLWithPath: Bundle.main.path(forResource: nil, ofType: "png")!))
-        log(90, "ExamWebView#setPage \n\(html)")
-        //        log(90, "ExamWebView#setPage fontRate=\(DeviceOrientation.fontRate), \(HtmlPage.getWebFontSize(fontSize: Repository.examFontSize))px")
+        log(90, " \n\(html)")
+        //        log(90, " fontRate=\(DeviceOrientation.fontRate), \(HtmlPage.getWebFontSize(fontSize: Repository.examFontSize))px")
         return html
     }//setPage(page: String)
     
@@ -158,7 +158,7 @@ public class ExamFullWebView: ExamWebView {
     }//init?(coder aDecoder: NSCoder)
     
     public func layout() throws {
-        log(50, "ExamFullWebView#layout")
+        log(50)
         let rect = ExamFullWebView.getRect(baseView: self.baseView, upperView: self.upperView)
         try layout(x: rect.minX, y: rect.minY, width: rect.width, height: rect.height)
         //        let frame = baseView.view.frame

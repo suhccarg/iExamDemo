@@ -19,14 +19,14 @@ public class MessageViewController: CustomViewController {
     
     override public func viewDidLoad() {
         viewState = .message
-        log(50, "MessageViewController#viewDidLoad:\(viewState)")
+        log(50, ":\(viewState)")
         super.viewDidLoad()
         do {
             try setupMessageView()
             try setupReturnButton()
             returnButton.setTitle("戻る", for: .normal)
         } catch let e {
-            log(10, "MessageViewController#viewDidLoad:\(e)")
+            log(10, ":\(e)")
         }
     }//viewDidLoad()
     
@@ -47,18 +47,18 @@ public class MessageViewController: CustomViewController {
     
     ///// レイアウト /////
     override public func viewDidLayoutSubviews() {
-        log(50, "MessageViewController#viewDidLayoutSubviews:\(viewState)")
+        log(50, ":\(viewState)")
         super.viewDidLayoutSubviews()
         do {
             try returnButton.layout()
             try layoutMessageViewArea()
         } catch let e {
-            log(10, "MessageViewController#viewDidLayoutSubviews:\(e)")
+            log(10, ":\(e)")
         }
     }//viewDidLayoutSubviews()
 
     public func layoutMessageViewArea() throws {
-        log(50, "MessageViewController#layoutMessageViewArea")
+        log(50)
         let frame = self.view.frame
         let safe = getSafeArea(baseView: self)
         let x = safe.left + defaultMargin

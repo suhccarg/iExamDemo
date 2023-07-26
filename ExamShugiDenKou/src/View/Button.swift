@@ -57,16 +57,16 @@ public class ExamButton: UIButton {
             self.addTarget(config.baseView, action: action, for: UIControl.Event.touchUpInside)
         }
         log(90, "hoge")
-        log(90, "ExamButton#init(...) :\(config.caption)")
+        log(90, "(...) :\(config.caption)")
         setup(config: config)
     }//init(...)
     
     required public init?(coder aDecoder: NSCoder) {
-        fatalError("ExamButton#init(coder:) has not been implemented")
+        fatalError("init(coder:) has not been implemented")
     }//init?(coder aDecoder: NSCoder)
     
     public func setup(config: ExamButtonConfig) {
-        log(90, "ExamButton#setup:\(config.caption)")
+        log(90, ":\(config.caption)")
         setupColor()
         self.layer.masksToBounds = true     // ボタンの枠を丸く
         self.layer.cornerRadius = 5.0      // コーナーの半径
@@ -84,7 +84,7 @@ public class ExamButton: UIButton {
 
     ///// レイアウト /////
     public func layout() throws {
-        log(90, "ExamButton#layout: \(config!.caption)")
+        log(90, ": \(config!.caption)")
         guard let c = self.config else {
             throw ExamAppError.runtime("ExamButton#layout: config=nil")
         }
@@ -94,10 +94,10 @@ public class ExamButton: UIButton {
             let h = Int(config!.height)
             let rect: CGRect = CGRect.init(x: try getX(), y: try getY(), width: w, height: h)
             self.frame = rect
-            log(90, "ExamButton#layout() [\(self.tag)]: \(self.frame.size.width) x \(self.frame.size.height) at (\(self.frame.minX), \(self.frame.minY))")
+            log(90, "() [\(self.tag)]: \(self.frame.size.width) x \(self.frame.size.height) at (\(self.frame.minX), \(self.frame.minY))")
             self.isHidden = false
         } else {
-            log(90, "ExamButton#layout() [\(self.tag)]: hidden -> true")
+            log(90, "() [\(self.tag)]: hidden -> true")
             self.isHidden = true
         }//if c.hiddenStates.contains(viewState) ... else
     }//layout()
@@ -217,7 +217,7 @@ public class ExamRadioGroup {
                 self.selected = try ExamCategory.find(code: buttons[0].tag)
             }
         } catch let e {
-            log(10, "CustomViewController#select(\(tag)):\(e)")
+            log(10, "(\(tag)):\(e)")
         }
     }//select(sender: UIButton)
     
@@ -260,16 +260,16 @@ public class ExamRadioButton: UIButton {
                            action: config.action!,
                            for: UIControl.Event.touchUpInside)
         }
-        log(90, "ExamRadioButton#init(...): \(self.tag)")
+        log(90, "(...): \(self.tag)")
         setup()
     }//init(...)
     
     required public init?(coder aDecoder: NSCoder) {
-        fatalError("ExamRadioButton#init(coder:) has not been implemented")
+        fatalError("init(coder:) has not been implemented")
     }//init?(coder aDecoder: NSCoder)
     
     @objc public func radioButtonClicked(_ sender: UIButton) {
-        log(90, "ExamRadioButton#radioButtonClicked(...): \(self.tag)")
+        log(90, "(...): \(self.tag)")
         isSelected = !isSelected
         check(selected: isSelected)
     }
@@ -284,7 +284,7 @@ public class ExamRadioButton: UIButton {
         self.setTitleColor(UIColor.clear, for: .highlighted)
         self.backgroundColor = UIColor.clear
         self.tag = config.category.code
-        log(90, "ExamRadioButton#setup:\(self.tag)")
+        log(90, ":\(self.tag)")
 //        let base = config.baseView as! MenuViewController
 //        base.scroll.addSubview(self)
         config.baseView.scroll.addSubview(self)
@@ -297,7 +297,7 @@ public class ExamRadioButton: UIButton {
         setupLabelColor()
         label.text = config.category.description
         label.font = UIFont.systemFont(ofSize: Repository.defaultFontSize)
-        log(90, "ExamRadioButton#setupLabel: \(label.tag)")
+        log(90, ": \(label.tag)")
         if Repository.debugLevel > 100 {
             label.layer.borderColor = UIColor.red.cgColor
             label.layer.borderWidth = 1.0
@@ -315,7 +315,7 @@ public class ExamRadioButton: UIButton {
     }//setupLabelColor()
     
     override public func draw(_ rect: CGRect) {
-        log(90, "ExamRadioButton#draw:\(self.tag)  \(rect.width) x \(rect.height) at (\(rect.minX), \(rect.minY))")
+        log(90, ":\(self.tag)  \(rect.width) x \(rect.height) at (\(rect.minX), \(rect.minY))")
         super.draw(rect)
         drawFrame()
         drawCheck()
@@ -377,13 +377,13 @@ public class ExamRadioButton: UIButton {
     
     public func check(selected: Bool) {
         //setNeedsDisplay()
-        log(90, "ExamRadioButton#check(\(selected)): \(self.tag)")
+        log(90, "(\(selected)): \(self.tag)")
         self.isSelected = selected
         return
     }//check(selected: Bool)
     
     public func layout() throws {
-        log(90, "ExamRadioButton#layout: \(self.tag)")
+        log(90, ": \(self.tag)")
         if self.label != nil {
             self.label.removeFromSuperview()
         }
@@ -411,10 +411,10 @@ public class ExamRadioButton: UIButton {
             label.backgroundColor = UIColor.cyan
         }
         self.frame = CGRect.init(x: buttonX, y: y, width: buttonW, height: h )
-        log(90, "ExamRadioButton#layoutLabel:\(self.tag) \(self.frame.size.width) x \(self.frame.size.height) at (\(self.frame.minX), \(self.frame.minY)) ")
+        log(90, ":\(self.tag) \(self.frame.size.width) x \(self.frame.size.height) at (\(self.frame.minX), \(self.frame.minY)) ")
 
         label.frame = CGRect.init(x: labelX, y: y, width: labelW, height: h )
-        log(90, "ExamRadioButton#layoutLabel:\(label.tag) \(label.frame.size.width) x \(label.frame.size.height) at (\(label.frame.minX), \(label.frame.minY)) ")
+        log(90, ":\(label.tag) \(label.frame.size.width) x \(label.frame.size.height) at (\(label.frame.minX), \(label.frame.minY)) ")
 //        drawFrame()
 //        drawCheck()
     }//layoutLabel()
