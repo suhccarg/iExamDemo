@@ -19,11 +19,6 @@ V0.7i log message
 V0.7j rename repo, push test
 V0.8 release
 <<<<<<< HEAD
-V0.8b before merge
-=======
-<<<<<<< HEAD
 >>>>>>> develop8
 =======
 >>>>>>> develop8
->>>>>>> main
-V0.8d merged 1
