@@ -12,3 +12,4 @@ V0.7j rename repo, push test
 V0.8 release
 V0.8b before merge
 V0.8f test base
+V0.8g
