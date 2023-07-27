@@ -10,12 +10,12 @@
       }
     },
     {
-      "identity" : "exampackage",
+      "identity" : "iexamlib",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/suhccarg/ExamPackage.git",
+      "location" : "https://github.com/suhccarg/iExamLib.git",
       "state" : {
         "branch" : "main",
-        "revision" : "b589fd76852dafa9750f44a183075f7140e22395"
+        "revision" : "952eea656d4d84aab9cc51188641c3e133866c27"
       }
     }
   ],

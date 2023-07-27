@@ -7,8 +7,8 @@
 
 import Foundation
 import UIKit
-#if canImport(ExamPackage)
-import ExamPackage
+#if canImport(ExamLib)
+import ExamLib
 #endif
 
 public class DeviceOrientation {

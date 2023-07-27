@@ -11,8 +11,8 @@ import Foundation
 import UIKit
 #endif
 import WebKit
-#if canImport(ExamPackage)
-import ExamPackage
+#if canImport(ExamLib)
+import ExamLib
 #endif
 // webview 内のテキスト選択禁止
 let disableSelectionScriptString = "document.documentElement.style.webkitUserSelect='none';"

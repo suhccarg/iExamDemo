@@ -6,8 +6,8 @@
 //
 
 import Foundation
-#if canImport(ExamPackage)
-import ExamPackage
+#if canImport(ExamLib)
+import ExamLib
 #endif
 
 let defaultMargin: CGFloat = 8.0

@@ -8,8 +8,8 @@
 
 import UIKit
 public enum TouchedView { case base, title, other }
-#if canImport(ExamPackage)
-import ExamPackage
+#if canImport(ExamLib)
+import ExamLib
 #endif
 
 

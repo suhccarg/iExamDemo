@@ -101,12 +101,12 @@
 		D93F5F442A6E105B00E50967 /* SDKb_PWM_inverter-K.png in Resources */ = {isa = PBXBuildFile; fileRef = D93F5EF42A6E105B00E50967 /* SDKb_PWM_inverter-K.png */; };
 		D93F5F452A6E105B00E50967 /* SDK2-FMEA_FTA-K.png in Resources */ = {isa = PBXBuildFile; fileRef = D93F5EF52A6E105B00E50967 /* SDK2-FMEA_FTA-K.png */; };
 		D93F5F472A6E484300E50967 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D93F5F462A6E484300E50967 /* Assets.xcassets */; };
-		D93F5F4F2A6EFD6200E50967 /* ExamPackage in Frameworks */ = {isa = PBXBuildFile; productRef = D93F5F4E2A6EFD6200E50967 /* ExamPackage */; };
 		D952EAE32A61FF3C001A3F04 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D952EACE2A61FF3B001A3F04 /* SettingViewController.swift */; };
 		D952EAE52A61FF3C001A3F04 /* ExamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D952EAD02A61FF3B001A3F04 /* ExamViewController.swift */; };
 		D952EAE62A61FF3C001A3F04 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D952EAD12A61FF3B001A3F04 /* MessageViewController.swift */; };
 		D952EAE82A61FF3C001A3F04 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D952EAD32A61FF3B001A3F04 /* MenuViewController.swift */; };
 		D952EAF02A61FF3C001A3F04 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D952EADC2A61FF3C001A3F04 /* AppDelegate.swift */; };
+		D972A9FF2A716D0A00C5361D /* ExamLib in Frameworks */ = {isa = PBXBuildFile; productRef = D972A9FE2A716D0A00C5361D /* ExamLib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -218,7 +218,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D93F5F4F2A6EFD6200E50967 /* ExamPackage in Frameworks */,
+				D972A9FF2A716D0A00C5361D /* ExamLib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -390,7 +390,7 @@
 			);
 			name = ExamShugiDenKou;
 			packageProductDependencies = (
-				D93F5F4E2A6EFD6200E50967 /* ExamPackage */,
+				D972A9FE2A716D0A00C5361D /* ExamLib */,
 			);
 			productName = ExamShugiDenKou;
 			productReference = D918032E2A61C1A00038B5A8 /* ExamShugiDenKou.app */;
@@ -411,7 +411,7 @@
 					};
 				};
 			};
-			buildConfigurationList = D91803292A61C1A00038B5A8 /* Build configuration list for PBXProject "ExamKoutanGijutsuSougou" */;
+			buildConfigurationList = D91803292A61C1A00038B5A8 /* Build configuration list for PBXProject "ExamShugiDenKou" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -421,7 +421,7 @@
 			);
 			mainGroup = D91803252A61C1A00038B5A8;
 			packageReferences = (
-				D93F5F4D2A6EFD6200E50967 /* XCRemoteSwiftPackageReference "ExamPackage" */,
+				D972A9FD2A716D0A00C5361D /* XCRemoteSwiftPackageReference "iExamLib" */,
 			);
 			productRefGroup = D918032F2A61C1A00038B5A8 /* Products */;
 			projectDirPath = "";
@@ -744,7 +744,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		D91803292A61C1A00038B5A8 /* Build configuration list for PBXProject "ExamKoutanGijutsuSougou" */ = {
+		D91803292A61C1A00038B5A8 /* Build configuration list for PBXProject "ExamShugiDenKou" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D91803402A61C1A30038B5A8 /* Debug */,
@@ -765,9 +765,9 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		D93F5F4D2A6EFD6200E50967 /* XCRemoteSwiftPackageReference "ExamPackage" */ = {
+		D972A9FD2A716D0A00C5361D /* XCRemoteSwiftPackageReference "iExamLib" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/suhccarg/ExamPackage.git";
+			repositoryURL = "https://github.com/suhccarg/iExamLib.git";
 			requirement = {
 				branch = main;
 				kind = branch;
@@ -776,10 +776,10 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		D93F5F4E2A6EFD6200E50967 /* ExamPackage */ = {
+		D972A9FE2A716D0A00C5361D /* ExamLib */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = D93F5F4D2A6EFD6200E50967 /* XCRemoteSwiftPackageReference "ExamPackage" */;
-			productName = ExamPackage;
+			package = D972A9FD2A716D0A00C5361D /* XCRemoteSwiftPackageReference "iExamLib" */;
+			productName = ExamLib;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

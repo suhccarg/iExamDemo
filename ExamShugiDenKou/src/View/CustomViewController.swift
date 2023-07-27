@@ -11,8 +11,8 @@ import Foundation
 import UIKit
 #endif
 import MediaPlayer
-#if canImport(ExamPackage)
-import ExamPackage
+#if canImport(ExamLib)
+import ExamLib
 #endif
 
 
@@ -358,7 +358,7 @@ public class ExamLabel: UITextView {
         self.isEditable = false
         self.isSelectable = false
         self.isScrollEnabled = false
-        log(50, "(view: UIView):\(text)")
+        log(50, "UIView - \(text)")
         setup(text: text, fontSize: fontSize)
     }//init(baseView: CustomViewController, caption: String, upper: UIControl)
     
@@ -428,7 +428,7 @@ public class ExamTitle: ExamLabel {
         self.foot = foot
         try super.init(baseView: baseView, text: text,
                        fontSize: fontSize, under: upperView)
-        log(50, "(view: UIView):  \(text)")
+        log(50, "UIView -   \(text)")
     }//init(baseView: CustomViewController, ... upperView: UIView?)
     
     convenience public init(baseView: CustomViewController, text: String, fontSize: CGFloat)  throws {

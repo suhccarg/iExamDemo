@@ -9,8 +9,8 @@
 import UIKit
 import WebKit
 import SQLite3
-#if canImport(ExamPackage)
-import ExamPackage
+#if canImport(ExamLib)
+import ExamLib
 #endif
 
 
