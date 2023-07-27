@@ -10,6 +10,34 @@ import UIKit
 import ExamLib_iOS1
 
 public enum TouchedView { case base, title, other }
+#if canImport(ExamLib)
+import ExamLib
+#endif
+
+
+open class ExamRadioConfig {
+    var category: ExamCategory!
+    weak var baseView: CustomViewController! = nil
+    weak var targetView: NSObject! = nil
+    var upperView: UIView? = nil
+    var tag: Int  = 0
+    var isSelected: Bool = false
+    var action: Selector! = nil
+    var baseColor: UIColor = ExamColor.base.uiColor
+    
+    public init() {}
+    public func deepCopy(from source: ExamRadioConfig) {
+        self.baseView = source.baseView
+        self.targetView = source.targetView
+        self.upperView = source.upperView
+        self.tag = source.tag
+        self.isSelected = source.isSelected
+        self.action = source.action
+        self.baseColor = source.baseColor
+    }
+    
+}//struct ExamRadioConfig
+
 
 public class MenuViewController: MenuViewBaseController {
     public var radioGroup: ExamRadioGroup!
@@ -18,11 +46,12 @@ public class MenuViewController: MenuViewBaseController {
     public var showAllButton: ExamButton!
     public var selfCheckButton: ExamButton!
     public var settingButton: SettingButton!
-
+    
     override public func viewDidLoad() {
-        _ = log(50, "MenuViewController#viewDidLoad:\(viewState)")
+        log(50, ":\(viewState)")
         super.viewDidLoad()
-        Repository.menu = self
+        Repository.debugLevel = 50
+        Preference.menu = self
         do {
             try ExamSourceDao.prepare(bundledDbFile: Repository.getDbFileName())
             try setupRadioGroup()
@@ -37,8 +66,8 @@ public class MenuViewController: MenuViewBaseController {
             Repository.allCheck = false
             Repository.checkMode = false
         } catch let e {
-            try! gotoMessageView(message: "## MenuViewController#viewDidLoad:\(e)", returnView: viewState)
-//            onError(log(10, "MenuViewController#viewDidLoad:\(e)"))
+            try! gotoMessageView(message: ":\(e)", returnView: viewState)
+            //            onError(slog(10, ":\(e)"))
         }
     }//viewDidLoad()
     
@@ -52,30 +81,37 @@ public class MenuViewController: MenuViewBaseController {
             selfCheckButton.setupColor()
             settingButton.setupColor()
         } catch let e {
-            onError(log(10, "MenuViewController#viewDidLoad:\(e)"))
+            onError(slog(10, ":\(e)"))
         }
     }//setupColor()
-    
-    private func setupRadioGroup() throws {
+    //    private func setupRadioGroup() throws {
+    //        self.radioGroup = nil
+    //        var config = ExamRadioConfig()
+    //        config.baseView = self
+    //        config.targetView = config.baseView
+    //        config.upperView = topMessage
+    //        config.isSelected = false
+    //        config.action = #selector(radioButtonListner(_:))
+    //        self.radioGroup  = ExamRadioGroup(defaultConfig: config,
+    //                                          categories: Preference.examCategories,
+    //                                          selectedCode: Preference.categoryCode)
+    //        self.radioGroup.setup()
+    //    }//setupExamRadioButton()
+    public func setupRadioGroup() throws {
         self.radioGroup = nil
-        var config = ExamRadioConfig()
+        let config = ExamRadioConfig()
         config.baseView = self
         config.targetView = config.baseView
         config.upperView = topMessage
         config.isSelected = false
         config.action = #selector(radioButtonListner(_:))
         self.radioGroup  = ExamRadioGroup(defaultConfig: config,
-                                          categories: Repository.examCategories,
-                                          selectedCode: Repository.categoryCode)
+                                          categories: Preference.examCategories,
+                                          selectedCode: Preference.categoryCode)
         self.radioGroup.setup()
     }//setupExamRadioButton()
     
-    @objc public func radioButtonListner(_ sender: UIButton) {
-        _ = log(10, "ExamViewController#radioButtonClicked(\(sender.titleLabel!.text!))")
-        self.radioGroup.select(sender: sender)
-        self.messageArea.text = ""
-    }//radioButtonListner(_ sender: UIButton)
-    
+
     private func setupMessageArea() throws {
         self.messageArea = UILabel()
         self.messageArea.numberOfLines = 0
@@ -90,19 +126,19 @@ public class MenuViewController: MenuViewBaseController {
         self.messageArea.backgroundColor = ExamColor.base.uiColor
     }//setupColorMessageArea()
     
-    private func setupStartButton() throws {
+    public func setupStartButton() throws {
         self.startButton  = nil
         var config = ExamButtonConfig()
         config.caption = "開始"
         config.action = #selector(onStartButtonListener(_: ))
         config.baseView = self
         config.targetView = config.baseView
-        config.align = .center
+        config.align = ButtonAlign.center
         config.activeStates = [ .always ]
         self.startButton  = try ExamButton(config: config)
     }//setupStartButton()
     
-    private func setupHiddenButton() throws {
+    public func setupHiddenButton() throws {
         self.showAllButton  = nil
         self.selfCheckButton = nil
         var configShowAll = ExamButtonConfig()
@@ -110,7 +146,7 @@ public class MenuViewController: MenuViewBaseController {
         configShowAll.action = #selector(onshowAllkButtonListener(_: ))
         configShowAll.baseView = self
         configShowAll.targetView = configShowAll.baseView
-        configShowAll.align = .left
+        configShowAll.align = ButtonAlign.left
         configShowAll.activeStates = [ ]
         self.showAllButton  = try ExamButton(config: configShowAll)
         var configSelfCheck = ExamButtonConfig()
@@ -124,31 +160,27 @@ public class MenuViewController: MenuViewBaseController {
         
         self.showAllButton.isHidden = true
         self.selfCheckButton.isHidden = true
-     }//setupHiddenButton)
+    }//setupHiddenButton)
     
     private func setupSettingButton() throws {
         self.settingButton  = try SettingButton(baseView: self,
-            action: #selector(onSettingButtonListener))
+                                                action: #selector(onSettingButtonListener))
     }//setupSettingButton)
     
-    @objc private func onStartButtonListener(_ sender: UIButton) {
-        _ = log(90, "MenuViewController#startButton tapped.")
-        do {
-            _ = logPrecisely(90, "MenuViewController: try startExam")
-            try startExam()
-        } catch let e {
-            fatalError(log(10, "MenuViewController#onStartButtonListener:\(e)"))
-//            try! gotoMessageView(message: log(10, "MenuViewController#onStartButtonListener:\(e)"), returnView: viewState)
-        }
-    }//onStartButtonListener(_ sender: UIButton)
+    //    private func setupSettingButton() throws {
+    //        self.settingButton  = try SettingButton(baseView: self,
+    //            action: #selector(onSettingButtonListener))
+    //    }//setupSettingButton)
+    //}
+    //}//onStartButtonListener(_ sender: UIButton)
     
     private func startExam() throws {
-        _ = log(50, "MenuViewController#startExam")
+        log(50)
         let selectedCategory = radioGroup.getSelected()
         if selectedCategory ==  nil {
-            throw ExamError.runtime(log(10, "radioGroup.getSelected() == nil"))
+            throw ExamAppError.runtime(slog(10, "radioGroup.getSelected() == nil"))
         }
-        Repository.categoryCode = selectedCategory!.code
+        Preference.categoryCode = selectedCategory!.code
         if !(try setupExam()) {
             self.messageArea.text = "該当する問題がありません。"
             return
@@ -156,73 +188,109 @@ public class MenuViewController: MenuViewBaseController {
         let storyboard: UIStoryboard = self.storyboard!
         let examView = storyboard.instantiateViewController(withIdentifier: "ExamView") as! ExamViewController
         viewState = .question
-        self.present(examView, animated: false, completion: nil)
+        examView.modalPresentationStyle = .fullScreen
+        self.present(examView, animated:  true, completion: nil)
     }//startExam()
     
-    @objc private func onshowAllkButtonListener(_ sender: UIButton) {
-        _ = log(90, "MenuViewController#hiddenButton tapped.")
+    
+    @objc private func onStartButtonListener(_ sender: UIButton) {
+        log(90, " tapped.")
         do {
             _ = logPrecisely(90, "MenuViewController: try startExam")
             try startExam()
         } catch let e {
-            _ = log(10, "MenuViewController#onshowAllkButtonListener:\(e)")
+            fatalError(slog(10, ":\(e)"))
+            // try! gotoMessageView(message: log(10,
+            //":\(e)"), returnView: viewState)
+        }
+    }//onStartButtonListener(_ sender: UIButton)
+    
+    
+    
+//    @objc private func radioButtonListner(_ sender: UIButton) {
+//        log(10, "(\(sender.titleLabel!.text!))")
+//        super.radioButtonListner(sender)
+//    }//radioButtonListner(_ sender: UIButton)
+
+    @objc public func radioButtonListner(_ sender: UIButton) {
+        log(10, "(\(sender.titleLabel!.text!))")
+        self.radioGroup.select(sender: sender)
+        self.messageArea.text = ""
+    }//radioButtonListner(_ sender: UIButton)
+    
+    
+    
+    @objc private  func onshowAllkButtonListener(_ sender: UIButton) {
+        log(90, " tapped.")
+        do {
+            _ = logPrecisely(90, "MenuViewController: try startExam")
+            try startExam()
+        } catch let e {
+            log(10, ":\(e)")
         }
     }//onshowAllkButtonListener(_ sender: UIButton)
     
-    @objc private func onSelfCheckButtonListener(_ sender: UIButton) {
-        _ = log(90, "MenuViewController#hiddenButton tapped.")
+    @objc private  func onSelfCheckButtonListener(_ sender: UIButton) {
+        log(90, " tapped.")
         do {
             _ = logPrecisely(90, "MenuViewController: try startExam")
             try startExam()
         } catch let e {
-            _ = log(10, "MenuViewController#onSelfCheckButtonListener:\(e)")
+            log(10, ":\(e)")
         }
     }//onSelfCheckButtonListener(_ sender: UIButton)
     
-    @objc private func onSettingButtonListener(_ sender: UIButton) {
-        _ = log(50, "MenuViewController#onSettingButtonListener")
+    @objc private  func onSettingButtonListener(_ sender: UIButton) {
+        log(50)
         let storyboard: UIStoryboard = self.storyboard!
         let settingView = storyboard.instantiateViewController(withIdentifier: "SettingView") as! SettingViewController
         viewState = .setting
         self.present(settingView, animated: false, completion: nil)
-        _ = log(50, "MenuViewController#onSettingButtonListener:\(viewState)")
+        log(50, ":\(viewState)")
     }//onSettingButtonListener
     
     @objc override public func onSwipeListener(sender: UISwipeGestureRecognizer) {
-        _ = log(50, "MenuViewController#onSwipeListener: \(sender.direction.value)")
+        log(50, ": \(sender.direction.value)")
         do {
             if sender.direction == .left {     // forward(->)
-                _ = log(90, "MenuViewController#onSwipeListener: startExam")
+                log(90, ": startExam")
                 try startExam()
-           } else if sender.direction == .up {     // up(↑)
+            } else if sender.direction == .up {     // up(↑)
                 if Repository.checkMode {
                     try gotoMessageView(message: getSelfCheck(), returnView: viewState)
                 }
             } else {
-                _ = log(90, "MenuViewController#onSwipeListener: undefined swipe")
+                log(90, ": undefined swipe")
             }
         } catch let e {
-            _ = log(10, "MenuViewController#onSwipeListener:\(e)")
+            log(10, ":\(e)")
         }
     }//onSwipeListener(sender: UISwipeGestureRecognizer)
     
-    ///// 画面操作 /////
-    override public func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        _ = log(100, "MenuViewController#touchesEnded")
+    /// 画面操作 /////
+    ///
+    /// ///// 回転処理 /////
+    override public  func onOrientationChangeListner() {
+        log(10)
+        super.onOrientationChangeListner()
+    }//onOrientationChangeListner()
+    
+    @objc override public func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        log(100)
         var location: CGPoint = CGPoint.zero
         for touch in touches {
             location = touch.location(in: self.view)
-            _ = log(90, "MenuViewController#touchesEnded() location: \(location)")
+            log(90, "() location: \(location)")
         }
         if checkHiddenMode(location: location) {
-            _ = log(50, "MenuViewController#touchesEnded: HiddenModeCounter=\(HiddenModeCounter.counter)")
+            log(50, ": HiddenModeCounter=\(HiddenModeCounter.counter)")
             if HiddenModeCounter.check() {
                 if showAllButton.isHidden {
                     showAllButton.isHidden = false
                     showAllButton.config.activeStates = [ .always ]
                     selfCheckButton.isHidden = false
                     selfCheckButton.config.activeStates = [ .always ]
-                   Repository.allCheck = true
+                    Repository.allCheck = true
                     Repository.checkMode = true
                 } else {
                     showAllButton.isHidden = true
@@ -237,7 +305,7 @@ public class MenuViewController: MenuViewBaseController {
                     try showAllButton!.layout()
                     try selfCheckButton!.layout()
                 } catch let e {
-                    _ = log(10, "MenuViewController#touchesEnded:\(e)")
+                    log(10, ":\(e)")
                 }
             }
             return
@@ -248,7 +316,7 @@ public class MenuViewController: MenuViewBaseController {
     private func getTouchedPoint(touches: Set<UITouch>) -> CGPoint {
         for touch in touches {
             let location = touch.location(in: self.view)
-            _ = log(90, "MenuViewController#touchesEnded() location: \(location)")
+            log(90, "() location: \(location)")
             return location
         }
         return CGPoint.zero
@@ -262,26 +330,16 @@ public class MenuViewController: MenuViewBaseController {
     override public func setupOrientationChangeListner(action: Selector) {
         UIDevice.current.beginGeneratingDeviceOrientationNotifications()
         NotificationCenter.default.addObserver(self,
-           selector: action,
-           name:UIDevice.orientationDidChangeNotification, object:nil)
+                                               selector: action,
+                                               name:UIDevice.orientationDidChangeNotification, object:nil)
     }//setupOrientationChangeListner()
     
-    @objc override public func onOrientationChangeListner() {
-        _ = log(10, "MenuViewController#onOrientationChangeListner")
-        super.onOrientationChangeListner()
-        //        radioGroup.redrawLabel()
-        do {
-            try layout()
-        } catch let e {
-            _ = log(10, "MenuViewController#onOrientationChangeListner:\(e)")
-        }        //        self.loadView()
-        //        self.viewDidLoad()
-    }//onOrientationChangeListner()
+
     
     ////// viewDidLayoutSubviews#layout //////
     override public func viewDidLayoutSubviews() {
-        _ = log(50, "MenuViewController#viewDidLayoutSubviews")
-       if isError() {
+        log(50)
+        if isError() {
             try! gotoMessageView(message: getError(), returnView: viewState)
             return
         }
@@ -289,9 +347,11 @@ public class MenuViewController: MenuViewBaseController {
         do {
             try layoutMenuView()
         } catch let e {
-            _ = log(10, "MenuViewController#viewDidLayoutSubviews:\(e)")
+            log(10, ":\(e)")
         }
     }//viewDidLayoutSubviews()
+    
+    ////// viewDidLayoutSubviews#layout //////
     
     public func layoutMenuView() throws {
         //let dividingLine = ExamDividingLine(baseView: self)
@@ -299,8 +359,8 @@ public class MenuViewController: MenuViewBaseController {
         try prepareScrollView(upperView: topMessage!)
         try radioGroup.layout()
         try layoutMessageArea(upperView: radioGroup.getBottomButton())
-//        try messageArea.layout()
-         try startButton!.layout()
+        //        try messageArea.layout()
+        try startButton!.layout()
         try showAllButton!.layout()
         try selfCheckButton!.layout()
         try settingButton!.layout(top: startButton.frame.minY)
@@ -308,9 +368,9 @@ public class MenuViewController: MenuViewBaseController {
         try layoutButtonArea(upperView: scroll!)
         //dividingLine.draw(upperView: scroll!, margin: ExamDividingLine.lineWidth)
         //dividingLine.apply(targetView: self.view)
-
+        
     }//layoutMenuView()
-
+    
     private func layoutMessageArea(upperView: UIView) throws {
         messageArea.text = ""
         let safe = getSafeArea(baseView: self)
@@ -319,16 +379,16 @@ public class MenuViewController: MenuViewBaseController {
         let y = upperView.frame.maxY + defaultMargin * 2.0
         let h = Repository.defaultFontSize * 3.0
         messageArea.frame = CGRect.init(x: x, y: y, width: w, height: h)
-        _ = log(90, "MenuViewController#layoutMessageArea:\t\(w) x \(h) at (\(x), \(y))")
-        _ = log(90, "MenuViewController#layoutMessageArea:\t\(messageArea.frame.width) x \(messageArea.frame.height) at (\(messageArea.frame.minX), \(messageArea.frame.minY))")
-
+        log(90, ":\t\(w) x \(h) at (\(x), \(y))")
+        log(90, ":\t\(messageArea.frame.width) x \(messageArea.frame.height) at (\(messageArea.frame.minX), \(messageArea.frame.minY))")
+        
     }//layoutMessageArea(upperView: UIView)
 }//class MenuViewController
 
 public class HiddenModeCounter {
     public static var counter: Int = 0
-//    public static var previouseView : TouchedView = .other
-//    public static var thresholdX: CGFloat
+    //    public static var previouseView : TouchedView = .other
+    //    public static var thresholdX: CGFloat
     
     enum TappedSide  { case left, right, none}
     private static var previousSide: TappedSide = .none
@@ -339,7 +399,7 @@ public class HiddenModeCounter {
         HiddenModeCounter.counter = 0
         //HiddenModeCounter.previouseView = .other
     }//clear()
-
+    
     public static func update(baseView: CustomViewController, location: CGPoint) -> Bool {
         let thresholdX = baseView.view.frame.maxX / 3.0
         switch previousSide {
@@ -347,7 +407,7 @@ public class HiddenModeCounter {
             if thresholdX * 2.0 < location.x {
                 previousSide = .right
                 HiddenModeCounter.counter += 1
-                _ = log(90, "HiddenModeCounter#update: \(HiddenModeCounter.counter)")
+                log(90, ": \(HiddenModeCounter.counter)")
                 return true
             } else {
                 previousSide = .left
@@ -357,7 +417,7 @@ public class HiddenModeCounter {
             if  location.x < thresholdX * 1.0 {
                 previousSide = .left
                 HiddenModeCounter.counter += 1
-                _ = log(90, "HiddenModeCounter#update: \(HiddenModeCounter.counter)")
+                log(90, ": \(HiddenModeCounter.counter)")
                 return true
             } else {
                 previousSide = .right
@@ -371,36 +431,36 @@ public class HiddenModeCounter {
             }
             HiddenModeCounter.counter = 0
         }
-        _ = log(90, "HiddenModeCounter#update: \(HiddenModeCounter.counter)")
+        log(90, ": \(HiddenModeCounter.counter)")
         return false
     }//update(baseView: CustomViewController, location: CGPoint)
     
-//    public static func update(touched: TouchedView) -> Bool {
-//        switch touched {
-//        case .base:
-//            if HiddenModeCounter.previouseView == .base {
-//                //clear()
-//            } else {
-//                HiddenModeCounter.counter += 1
-//                HiddenModeCounter.previouseView = .base
-//            }
-//            return true
-//        case .title:
-//            if HiddenModeCounter.previouseView == .title {
-//                //clear()
-//            } else {
-//                HiddenModeCounter.counter += 1
-//                HiddenModeCounter.previouseView = .title
-//            }
-//            return true
-//        default:
-//            clear()
-//        }
-//        return false
-//    }//update(touched: TouchedView)
+    //    public static func update(touched: TouchedView) -> Bool {
+    //        switch touched {
+    //        case .base:
+    //            if HiddenModeCounter.previouseView == .base {
+    //                //clear()
+    //            } else {
+    //                HiddenModeCounter.counter += 1
+    //                HiddenModeCounter.previouseView = .base
+    //            }
+    //            return true
+    //        case .title:
+    //            if HiddenModeCounter.previouseView == .title {
+    //                //clear()
+    //            } else {
+    //                HiddenModeCounter.counter += 1
+    //                HiddenModeCounter.previouseView = .title
+    //            }
+    //            return true
+    //        default:
+    //            clear()
+    //        }
+    //        return false
+    //    }//update(touched: TouchedView)
     
     public static func check() -> Bool {
-        return HiddenModeCounter.counter > Repository.hiddenCounterLimit
+        return HiddenModeCounter.counter > hiddenCounterLimit
     }//check()
 }//class HiddenModeCounter
 
@@ -413,21 +473,21 @@ public class SettingButton: UIButton {
     init(baseView: CustomViewController, action: Selector)  throws {
         self.baseView = baseView
         super.init(frame: CGRect.zero)
-        _ = log(50, "SettingButton#init")
+        log(50)
         setup(action: action)
     }//init()
     
     required public init?(coder aDecoder: NSCoder) {
-        fatalError("SettingButton#init(coder:) has not been implemented")
+        fatalError(slog(0,"init(coder:) has not been implemented"))
     }//init?(coder aDecoder: NSCoder)
     
     private func setup(action: Selector) {
-        _ = log(50, "SettingButton#setup(caption: String)")
+        log(50, "action: Selector")
         setupColor()
         self.addTarget(baseView, action: action, for: UIControl.Event.touchUpInside)
         baseView.view.addSubview(self)
     }//setup(action: Selector)
-
+    
     public func setupColor() {
         self.backgroundColor = UIColor.clear  // ボタンの背景色
         if ExamColor.mode == .bright {
@@ -450,7 +510,7 @@ public class SettingButton: UIButton {
     }//setupColor()
     
     public func layout(top: CGFloat) throws {
-        _ = log(50, "SettingButton:#layout")
+        log(50, "SettingButton:#layout")
         let safe =  getSafeArea(baseView: baseView)
         let w = Int(defaultButtonHeight)
         let h = Int(defaultButtonHeight)
@@ -458,10 +518,10 @@ public class SettingButton: UIButton {
         let y = Int(top)
         let rect: CGRect = CGRect.init(x: x, y: y, width: w, height: h)
         self.frame = rect
-        _ = log(90, "Setting: \(self.frame.size.width) x \(self.frame.size.height) at (\(self.frame.minX), \(self.frame.minY))")
+        log(90, "Setting: \(self.frame.size.width) x \(self.frame.size.height) at (\(self.frame.minX), \(self.frame.minY))")
         
     }//layout()
-
+    
 }//SettingButton
 
 /** End of File **/
