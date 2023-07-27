@@ -7,7 +7,39 @@
 //
 
 import UIKit
+<<<<<<< HEAD:ExamShugiDenKou/src/VIew/MenuViewController.swift
 import ExamLib_iOS1
+=======
+public enum TouchedView { case base, title, other }
+#if canImport(ExamLib)
+import ExamLib
+#endif
+
+
+open class ExamRadioConfig {
+    var category: ExamCategory!
+    weak var baseView: CustomViewController! = nil
+    weak var targetView: NSObject! = nil
+    var upperView: UIView? = nil
+    var tag: Int  = 0
+    var isSelected: Bool = false
+    var action: Selector! = nil
+    var baseColor: UIColor = ExamColor.base.uiColor
+    
+    public init() {}
+    public func deepCopy(from source: ExamRadioConfig) {
+        self.baseView = source.baseView
+        self.targetView = source.targetView
+        self.upperView = source.upperView
+        self.tag = source.tag
+        self.isSelected = source.isSelected
+        self.action = source.action
+        self.baseColor = source.baseColor
+    }
+    
+}//struct ExamRadioConfig
+
+>>>>>>> develop8:ExamShugiDenKou/src/View/MenuViewController.swift
 
 public enum TouchedView { case base, title, other }
 #if canImport(ExamLib)

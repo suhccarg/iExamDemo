@@ -9,7 +9,13 @@
 import Foundation
 import UIKit
 <<<<<<< HEAD:ExamShugiDenKou/src/VIew/MessageViewController.swift
+<<<<<<< HEAD:ExamShugiDenKou/src/VIew/MessageViewController.swift
 import ExamLib_iOS1
+=======
+#if canImport(ExamLib)
+import ExamLib
+#endif
+>>>>>>> develop8:ExamShugiDenKou/src/View/MessageViewController.swift
 =======
 #if canImport(ExamLib)
 import ExamLib

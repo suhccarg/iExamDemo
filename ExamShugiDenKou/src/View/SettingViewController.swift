@@ -10,7 +10,13 @@ import Foundation
 import UIKit
 import WebKit
 <<<<<<< HEAD:ExamShugiDenKou/src/VIew/SettingViewController.swift
+<<<<<<< HEAD:ExamShugiDenKou/src/VIew/SettingViewController.swift
 import ExamLib_iOS1
+=======
+#if canImport(ExamLib)
+import ExamLib
+#endif
+>>>>>>> develop8:ExamShugiDenKou/src/View/SettingViewController.swift
 =======
 #if canImport(ExamLib)
 import ExamLib

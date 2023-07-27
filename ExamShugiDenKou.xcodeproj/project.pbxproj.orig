@@ -102,11 +102,22 @@
 		D93F5F452A6E105B00E50967 /* SDK2-FMEA_FTA-K.png in Resources */ = {isa = PBXBuildFile; fileRef = D93F5EF52A6E105B00E50967 /* SDK2-FMEA_FTA-K.png */; };
 		D93F5F472A6E484300E50967 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D93F5F462A6E484300E50967 /* Assets.xcassets */; };
 		D952EAE32A61FF3C001A3F04 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D952EACE2A61FF3B001A3F04 /* SettingViewController.swift */; };
+<<<<<<< HEAD
+		D952EAF02A61FF3C001A3F04 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D952EADC2A61FF3C001A3F04 /* AppDelegate.swift */; };
+		D952EAF32A620145001A3F04 /* ExamLib_iOS1 in Frameworks */ = {isa = PBXBuildFile; productRef = D952EAF22A620145001A3F04 /* ExamLib_iOS1 */; };
+		D952EAF82A64C069001A3F04 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D952EAF42A64C068001A3F04 /* MenuViewController.swift */; };
+		D952EAF92A64C069001A3F04 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D952EAF52A64C068001A3F04 /* MessageViewController.swift */; };
+		D952EAFA2A64C069001A3F04 /* ExamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D952EAF62A64C068001A3F04 /* ExamViewController.swift */; };
+=======
 		D952EAE52A61FF3C001A3F04 /* ExamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D952EAD02A61FF3B001A3F04 /* ExamViewController.swift */; };
 		D952EAE62A61FF3C001A3F04 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D952EAD12A61FF3B001A3F04 /* MessageViewController.swift */; };
 		D952EAE82A61FF3C001A3F04 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D952EAD32A61FF3B001A3F04 /* MenuViewController.swift */; };
 		D952EAF02A61FF3C001A3F04 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D952EADC2A61FF3C001A3F04 /* AppDelegate.swift */; };
 		D972A9FF2A716D0A00C5361D /* ExamLib in Frameworks */ = {isa = PBXBuildFile; productRef = D972A9FE2A716D0A00C5361D /* ExamLib */; };
+<<<<<<< HEAD
+>>>>>>> develop8
+=======
+>>>>>>> develop8
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -212,6 +223,10 @@
 		D952EAD02A61FF3B001A3F04 /* ExamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExamViewController.swift; sourceTree = "<group>"; };
 		D952EAD12A61FF3B001A3F04 /* MessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
 		D952EAD32A61FF3B001A3F04 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+<<<<<<< HEAD
+>>>>>>> develop8
+=======
+>>>>>>> develop8
 		D952EADC2A61FF3C001A3F04 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D952EAF42A64C068001A3F04 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		D952EAF52A64C068001A3F04 /* MessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
@@ -379,6 +394,10 @@
 				D905CDF82A6A2A270046BED8 /* WebView.swift */,
 				D952EAD32A61FF3B001A3F04 /* MenuViewController.swift */,
 				D905CDFD2A6A2BE40046BED8 /* Device.swift */,
+<<<<<<< HEAD
+>>>>>>> develop8
+=======
+>>>>>>> develop8
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -543,6 +562,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+<<<<<<< HEAD
+<<<<<<< HEAD
+				D91803362A61C1A00038B5A8 /* ViewController.swift in Sources */,
+				D952EAF82A64C069001A3F04 /* MenuViewController.swift in Sources */,
+				D952EAE32A61FF3C001A3F04 /* SettingViewController.swift in Sources */,
+				D952EAFA2A64C069001A3F04 /* ExamViewController.swift in Sources */,
+				D91803342A61C1A00038B5A8 /* SceneDelegate.swift in Sources */,
+				D952EAF92A64C069001A3F04 /* MessageViewController.swift in Sources */,
+=======
+=======
+>>>>>>> develop8
 				D905CDFE2A6A2BE40046BED8 /* Device.swift in Sources */,
 				D952EAE82A61FF3C001A3F04 /* MenuViewController.swift in Sources */,
 				D952EAE62A61FF3C001A3F04 /* MessageViewController.swift in Sources */,
@@ -553,6 +583,10 @@
 				D905CDFC2A6A2A280046BED8 /* Button.swift in Sources */,
 				D91803342A61C1A00038B5A8 /* SceneDelegate.swift in Sources */,
 				D905CDFB2A6A2A280046BED8 /* WebView.swift in Sources */,
+<<<<<<< HEAD
+>>>>>>> develop8
+=======
+>>>>>>> develop8
 				D952EAF02A61FF3C001A3F04 /* AppDelegate.swift in Sources */,
 				D905CE002A6A50350046BED8 /* Preference.swift in Sources */,
 				D905CDFA2A6A2A280046BED8 /* CustomViewController.swift in Sources */,
