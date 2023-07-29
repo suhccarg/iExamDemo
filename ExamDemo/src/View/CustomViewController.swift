@@ -60,7 +60,8 @@ public class CustomViewController: UIViewController {
         log(50, "\(viewState)")
         super.viewDidLoad()
         clearError()
-        
+        _ = Preference()
+
         currentViewController = self
         self.view.tag = baseViewTag
         //Repository.baseViewSize = self.view.frame.size

@@ -10,7 +10,6 @@
 		D905CDFA2A6A2A280046BED8 /* CustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D905CDF72A6A2A270046BED8 /* CustomViewController.swift */; };
 		D905CDFB2A6A2A280046BED8 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D905CDF82A6A2A270046BED8 /* WebView.swift */; };
 		D905CDFC2A6A2A280046BED8 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = D905CDF92A6A2A280046BED8 /* Button.swift */; };
-		D905CDFE2A6A2BE40046BED8 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = D905CDFD2A6A2BE40046BED8 /* Device.swift */; };
 		D905CE002A6A50350046BED8 /* Preference.swift in Sources */ = {isa = PBXBuildFile; fileRef = D905CDFF2A6A50350046BED8 /* Preference.swift */; };
 		D905CE3C2A6B78BC0046BED8 /* AppRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D905CE3B2A6B78BC0046BED8 /* AppRepository.swift */; };
 		D91803342A61C1A00038B5A8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91803332A61C1A00038B5A8 /* SceneDelegate.swift */; };
@@ -18,6 +17,7 @@
 		D91803392A61C1A00038B5A8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D91803372A61C1A00038B5A8 /* Main.storyboard */; };
 		D918033B2A61C1A30038B5A8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D918033A2A61C1A30038B5A8 /* Assets.xcassets */; };
 		D918033E2A61C1A30038B5A8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D918033C2A61C1A30038B5A8 /* LaunchScreen.storyboard */; };
+		D92219B22A75D583000CC00A /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92219B12A75D583000CC00A /* Device.swift */; };
 		D93F5EA22A6DFAF800E50967 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = D93F5EA12A6DFAF800E50967 /* README.md */; };
 		D93F5EA42A6E101100E50967 /* ExamDemo.db in Resources */ = {isa = PBXBuildFile; fileRef = D93F5EA32A6E101100E50967 /* ExamDemo.db */; };
 		D93F5EF62A6E105B00E50967 /* SDK5-QPSK_16QAM-K.png in Resources */ = {isa = PBXBuildFile; fileRef = D93F5EA62A6E105B00E50967 /* SDK5-QPSK_16QAM-K.png */; };
@@ -113,7 +113,6 @@
 		D905CDF72A6A2A270046BED8 /* CustomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomViewController.swift; sourceTree = "<group>"; };
 		D905CDF82A6A2A270046BED8 /* WebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		D905CDF92A6A2A280046BED8 /* Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
-		D905CDFD2A6A2BE40046BED8 /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
 		D905CDFF2A6A50350046BED8 /* Preference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preference.swift; sourceTree = "<group>"; };
 		D905CE3B2A6B78BC0046BED8 /* AppRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRepository.swift; sourceTree = "<group>"; };
 		D918032E2A61C1A00038B5A8 /* ExamDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExamDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -123,6 +122,7 @@
 		D918033A2A61C1A30038B5A8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D918033D2A61C1A30038B5A8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D918033F2A61C1A30038B5A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D92219B12A75D583000CC00A /* Device.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
 		D93F5EA12A6DFAF800E50967 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		D93F5EA32A6E101100E50967 /* ExamDemo.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = ExamDemo.db; sourceTree = SOURCE_ROOT; };
 		D93F5EA62A6E105B00E50967 /* SDK5-QPSK_16QAM-K.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SDK5-QPSK_16QAM-K.png"; sourceTree = "<group>"; };
@@ -363,12 +363,12 @@
 			children = (
 				D952EACE2A61FF3B001A3F04 /* SettingViewController.swift */,
 				D952EAD02A61FF3B001A3F04 /* ExamViewController.swift */,
+				D92219B12A75D583000CC00A /* Device.swift */,
 				D952EAD12A61FF3B001A3F04 /* MessageViewController.swift */,
 				D905CDF92A6A2A280046BED8 /* Button.swift */,
 				D905CDF72A6A2A270046BED8 /* CustomViewController.swift */,
 				D905CDF82A6A2A270046BED8 /* WebView.swift */,
 				D952EAD32A61FF3B001A3F04 /* MenuViewController.swift */,
-				D905CDFD2A6A2BE40046BED8 /* Device.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -533,7 +533,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D905CDFE2A6A2BE40046BED8 /* Device.swift in Sources */,
+				D92219B22A75D583000CC00A /* Device.swift in Sources */,
 				D952EAE82A61FF3C001A3F04 /* MenuViewController.swift in Sources */,
 				D952EAE62A61FF3C001A3F04 /* MessageViewController.swift in Sources */,
 				D91803362A61C1A00038B5A8 /* ViewController.swift in Sources */,
@@ -694,7 +694,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = K27J2FQ63C;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = ExamShugiDenKou/Info.plist;
+				INFOPLIST_FILE = ExamDemo/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -722,7 +722,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = K27J2FQ63C;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = ExamShugiDenKou/Info.plist;
+				INFOPLIST_FILE = ExamDemo/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

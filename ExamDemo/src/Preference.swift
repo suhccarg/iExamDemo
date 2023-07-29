@@ -3,7 +3,7 @@
 //  ExamShugiDenKou
 //
 //  Created by suhccarg on 2023/07/20.
-//
+//00
 
 import Foundation
 #if canImport(ExamLib)
@@ -27,6 +27,69 @@ enum ExamAppError: Error {
 }//enum ExamAppError
 
 public class Preference {
+    ///////////////////////////////////////////////////////////////////////////
+    //    public static let applicationType = ApplicationType.shugiHouki
+    //    private static let baseName = "Exam"
+    //    public static let defaultOptionType: OptionType = .optionS
+    // ///////////////
+    //    public static let applicationType = ApplicationType.roumuSample
+    //    //        public static let applicationType = ApplicationType.sample
+    //    private static let baseName = "Exam"
+    //    public static let defaultOptionType: OptionType = .optionT
+    //    //    public static let defaultOptionType: OptionType = .optionD
+
+///////////////////
+    //    public static let applicationType = ApplicationType.koutanGijutsuDigital1
+    //        private static let baseName = "Exam"
+    //        public static let defaultOptionType: OptionType = .optionD
+    //        public static let examCategories: //////////////
+    public static var debugLevel: Int {
+        get {
+            return Repository.debugLevel
+        }
+        set {
+            Repository.debugLevel = newValue
+        }
+    }
+    public static var applicationType: ApplicationType {
+        get {
+            return Repository.applicationType
+        }
+        set {
+            Repository.applicationType = newValue
+        }
+    }
+    public static var defaultOptionType: OptionType {
+        get {
+            return Repository.defaultOptionType
+        }
+        set {
+            Repository.defaultOptionType = newValue
+            //            Preference.defaultOptionType              = Repository.defaultOptionType
+        }
+    }
+    public static  let baseName = "Exam"
+     ///////////////
+    //    public static let examCategories: [ExamCategory] = [
+    //        ExamCategory.sho01Jigyouhou ,
+    //        ExamCategory.sho02JigyouyouSetsubi ,
+    //        ExamCategory.sho03TanmatsuSetsubi ,
+    //        ExamCategory.sho04YuusenTsuushin ,
+    //        ExamCategory.sho09Other
+    //    ]
+    //    public static let initialCategoryCode = ExamCategory.sho01Jigyouhou
+    // //////////////////
+    //    public static let examCategories: [ExamCategory] = [
+    //        ExamCategory.roumuSample1, ExamCategory.roumuSample2, ExamCategory.roumuSample3 ]
+    //    public static let initialCategoryCode = ExamCategory.roumuSample1
+    ////////////////////
+    //        public static let examCategories: [ExamCategory] = [
+    //            ExamCategory.kg1Terminal,
+    //            ExamCategory.kg2Construction,
+    //            ExamCategory.kg3Network,
+    //            ExamCategory.kg4Security]
+    //        public static let initialCategoryCode = ExamCategory.kg1Terminal
+    ////////////////////
     public static let exemFontSize = Repository.examFontSize
     public static var menu :MenuViewController!
     public static let examCategories: [ExamCategory] = [
@@ -89,5 +152,14 @@ public class Preference {
 //            UserDefaults.standard.set(newValue, forKey: Repository.keyExamFontSize)
 //        }
 //    }//var examFontSize
-
+    private static var isPrepared = false
+    
+    public init() {
+        if (!Preference.isPrepared) {
+            Self.debugLevel = 60
+            Self.applicationType = .demo
+            Self.defaultOptionType = .optionA
+        }
+        Preference.isPrepared = true
+    }
 }

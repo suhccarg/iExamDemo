@@ -48,7 +48,6 @@ public class MenuViewController: CustomViewController {
     override public func viewDidLoad() {
         log(50, ":\(viewState)")
         super.viewDidLoad()
-        Repository.debugLevel = 50
         Preference.menu = self
         do {
             try ExamSourceDao.prepare(bundledDbFile: Repository.getDbFileName())
@@ -109,7 +108,7 @@ public class MenuViewController: CustomViewController {
         self.radioGroup.setup()
     }//setupExamRadioButton()
     
-
+    
     private func setupMessageArea() throws {
         self.messageArea = UILabel()
         self.messageArea.numberOfLines = 0
