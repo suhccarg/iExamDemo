@@ -19,7 +19,7 @@
 		D918033B2A61C1A30038B5A8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D918033A2A61C1A30038B5A8 /* Assets.xcassets */; };
 		D918033E2A61C1A30038B5A8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D918033C2A61C1A30038B5A8 /* LaunchScreen.storyboard */; };
 		D93F5EA22A6DFAF800E50967 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = D93F5EA12A6DFAF800E50967 /* README.md */; };
-		D93F5EA42A6E101100E50967 /* ExamShugiDenKou.db in Resources */ = {isa = PBXBuildFile; fileRef = D93F5EA32A6E101100E50967 /* ExamShugiDenKou.db */; };
+		D93F5EA42A6E101100E50967 /* ExamDemo.db in Resources */ = {isa = PBXBuildFile; fileRef = D93F5EA32A6E101100E50967 /* ExamDemo.db */; };
 		D93F5EF62A6E105B00E50967 /* SDK5-QPSK_16QAM-K.png in Resources */ = {isa = PBXBuildFile; fileRef = D93F5EA62A6E105B00E50967 /* SDK5-QPSK_16QAM-K.png */; };
 		D93F5EF72A6E105B00E50967 /* SDK8-IPsec_Mode-A.png in Resources */ = {isa = PBXBuildFile; fileRef = D93F5EA72A6E105B00E50967 /* SDK8-IPsec_Mode-A.png */; };
 		D93F5EF82A6E105B00E50967 /* SDK5-ShiftedPSK-K.png in Resources */ = {isa = PBXBuildFile; fileRef = D93F5EA82A6E105B00E50967 /* SDK5-ShiftedPSK-K.png */; };
@@ -116,7 +116,7 @@
 		D905CDFD2A6A2BE40046BED8 /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
 		D905CDFF2A6A50350046BED8 /* Preference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preference.swift; sourceTree = "<group>"; };
 		D905CE3B2A6B78BC0046BED8 /* AppRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRepository.swift; sourceTree = "<group>"; };
-		D918032E2A61C1A00038B5A8 /* ExamShugiDenKou.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExamShugiDenKou.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D918032E2A61C1A00038B5A8 /* ExamDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExamDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D91803332A61C1A00038B5A8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		D91803352A61C1A00038B5A8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D91803382A61C1A00038B5A8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -124,7 +124,7 @@
 		D918033D2A61C1A30038B5A8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D918033F2A61C1A30038B5A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D93F5EA12A6DFAF800E50967 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
-		D93F5EA32A6E101100E50967 /* ExamShugiDenKou.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = ExamShugiDenKou.db; sourceTree = SOURCE_ROOT; };
+		D93F5EA32A6E101100E50967 /* ExamDemo.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = ExamDemo.db; sourceTree = SOURCE_ROOT; };
 		D93F5EA62A6E105B00E50967 /* SDK5-QPSK_16QAM-K.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SDK5-QPSK_16QAM-K.png"; sourceTree = "<group>"; };
 		D93F5EA72A6E105B00E50967 /* SDK8-IPsec_Mode-A.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SDK8-IPsec_Mode-A.png"; sourceTree = "<group>"; };
 		D93F5EA82A6E105B00E50967 /* SDK5-ShiftedPSK-K.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SDK5-ShiftedPSK-K.png"; sourceTree = "<group>"; };
@@ -228,7 +228,7 @@
 		D91803252A61C1A00038B5A8 = {
 			isa = PBXGroup;
 			children = (
-				D91803302A61C1A00038B5A8 /* ExamShugiDenKou */,
+				D91803302A61C1A00038B5A8 /* ExamDemo */,
 				D918032F2A61C1A00038B5A8 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -236,16 +236,16 @@
 		D918032F2A61C1A00038B5A8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D918032E2A61C1A00038B5A8 /* ExamShugiDenKou.app */,
+				D918032E2A61C1A00038B5A8 /* ExamDemo.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		D91803302A61C1A00038B5A8 /* ExamShugiDenKou */ = {
+		D91803302A61C1A00038B5A8 /* ExamDemo */ = {
 			isa = PBXGroup;
 			children = (
-				D93F5EA52A6E105B00E50967 /* shugi_densou_koukan */,
-				D93F5EA32A6E101100E50967 /* ExamShugiDenKou.db */,
+				D93F5EA52A6E105B00E50967 /* demo */,
+				D93F5EA32A6E101100E50967 /* ExamDemo.db */,
 				D93F5EA12A6DFAF800E50967 /* README.md */,
 				D91803332A61C1A00038B5A8 /* SceneDelegate.swift */,
 				D91803352A61C1A00038B5A8 /* ViewController.swift */,
@@ -255,10 +255,10 @@
 				D918033C2A61C1A30038B5A8 /* LaunchScreen.storyboard */,
 				D918033F2A61C1A30038B5A8 /* Info.plist */,
 			);
-			path = ExamShugiDenKou;
+			path = ExamDemo;
 			sourceTree = "<group>";
 		};
-		D93F5EA52A6E105B00E50967 /* shugi_densou_koukan */ = {
+		D93F5EA52A6E105B00E50967 /* demo */ = {
 			isa = PBXGroup;
 			children = (
 				D93F5F462A6E484300E50967 /* Assets.xcassets */,
@@ -343,8 +343,8 @@
 				D93F5EF42A6E105B00E50967 /* SDKb_PWM_inverter-K.png */,
 				D93F5EF52A6E105B00E50967 /* SDK2-FMEA_FTA-K.png */,
 			);
-			name = shugi_densou_koukan;
-			path = ../shugi_densou_koukan;
+			name = demo;
+			path = ../demo;
 			sourceTree = "<group>";
 		};
 		D952EAC42A61FF3B001A3F04 /* src */ = {
@@ -376,9 +376,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		D918032D2A61C1A00038B5A8 /* ExamShugiDenKou */ = {
+		D918032D2A61C1A00038B5A8 /* ExamDemo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D91803422A61C1A30038B5A8 /* Build configuration list for PBXNativeTarget "ExamShugiDenKou" */;
+			buildConfigurationList = D91803422A61C1A30038B5A8 /* Build configuration list for PBXNativeTarget "ExamDemo" */;
 			buildPhases = (
 				D918032A2A61C1A00038B5A8 /* Sources */,
 				D918032B2A61C1A00038B5A8 /* Frameworks */,
@@ -388,12 +388,12 @@
 			);
 			dependencies = (
 			);
-			name = ExamShugiDenKou;
+			name = ExamDemo;
 			packageProductDependencies = (
 				D972A9FE2A716D0A00C5361D /* ExamLib */,
 			);
 			productName = ExamShugiDenKou;
-			productReference = D918032E2A61C1A00038B5A8 /* ExamShugiDenKou.app */;
+			productReference = D918032E2A61C1A00038B5A8 /* ExamDemo.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -411,7 +411,7 @@
 					};
 				};
 			};
-			buildConfigurationList = D91803292A61C1A00038B5A8 /* Build configuration list for PBXProject "ExamShugiDenKou" */;
+			buildConfigurationList = D91803292A61C1A00038B5A8 /* Build configuration list for PBXProject "ExamDemo" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -427,7 +427,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D918032D2A61C1A00038B5A8 /* ExamShugiDenKou */,
+				D918032D2A61C1A00038B5A8 /* ExamDemo */,
 			);
 		};
 /* End PBXProject section */
@@ -507,7 +507,7 @@
 				D93F5F042A6E105B00E50967 /* SDK1-ShasenShiki-A.png in Resources */,
 				D93F5F2A2A6E105B00E50967 /* SDKb_HenAtsuKi-A.png in Resources */,
 				D93F5F332A6E105B00E50967 /* SDK8-IPsec_Mode-K.png in Resources */,
-				D93F5EA42A6E101100E50967 /* ExamShugiDenKou.db in Resources */,
+				D93F5EA42A6E101100E50967 /* ExamDemo.db in Resources */,
 				D93F5F2C2A6E105B00E50967 /* SDK7-EthernetFrame-K.png in Resources */,
 				D93F5F342A6E105B00E50967 /* SDK5-QPSK_16QAM-A.png in Resources */,
 				D93F5F3C2A6E105B00E50967 /* SDK5-QPSK-K.png in Resources */,
@@ -705,7 +705,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = jp.co.manifold.ExamShugiDenKou;
+				PRODUCT_BUNDLE_IDENTIFIER = jp.co.manifold.exam.demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -733,7 +733,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = jp.co.manifold.ExamShugiDenKou;
+				PRODUCT_BUNDLE_IDENTIFIER = jp.co.manifold.exam.demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -744,7 +744,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		D91803292A61C1A00038B5A8 /* Build configuration list for PBXProject "ExamShugiDenKou" */ = {
+		D91803292A61C1A00038B5A8 /* Build configuration list for PBXProject "ExamDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D91803402A61C1A30038B5A8 /* Debug */,
@@ -753,7 +753,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D91803422A61C1A30038B5A8 /* Build configuration list for PBXNativeTarget "ExamShugiDenKou" */ = {
+		D91803422A61C1A30038B5A8 /* Build configuration list for PBXNativeTarget "ExamDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D91803432A61C1A30038B5A8 /* Debug */,
