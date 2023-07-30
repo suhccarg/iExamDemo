@@ -20,87 +20,6 @@
 		D92219B22A75D583000CC00A /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92219B12A75D583000CC00A /* Device.swift */; };
 		D93F5EA22A6DFAF800E50967 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = D93F5EA12A6DFAF800E50967 /* README.md */; };
 		D93F5EA42A6E101100E50967 /* ExamDemo.db in Resources */ = {isa = PBXBuildFile; fileRef = D93F5EA32A6E101100E50967 /* ExamDemo.db */; };
-		D93F5EF62A6E105B00E50967 /* SDK5-QPSK_16QAM-K.png in Resources */ = {isa = PBXBuildFile; fileRef = D93F5EA62A6E105B00E50967 /* SDK5-QPSK_16QAM-K.png */; };
-		D93F5EF72A6E105B00E50967 /* SDK8-IPsec_Mode-A.png in Resources */ = {isa = PBXBuildFile; fileRef = D93F5EA72A6E105B00E50967 /* SDK8-IPsec_Mode-A.png */; };
-		D93F5EF82A6E105B00E50967 /* SDK5-ShiftedPSK-K.png in Resources */ = {isa = PBXBuildFile; fileRef = D93F5EA82A6E105B00E50967 /* SDK5-ShiftedPSK-K.png */; };
-		D93F5EF92A6E105B00E50967 /* SDK3-Cloud_ServiceType-A.png in Resources */ = {isa = PBXBuildFile; fileRef = D93F5EA92A6E105B00E50967 /* SDK3-Cloud_ServiceType-A.png */; };
-		D93F5EFA2A6E105B00E50967 /* SDK1-Histogram-A.png in Resources */ = {isa = PBXBuildFile; fileRef = D93F5EAA2A6E105B00E50967 /* SDK1-Histogram-A.png */; };
-		D93F5EFB2A6E105B00E50967 /* SDK5-Bunsan-K.png in Resources */ = {isa = PBXBuildFile; fileRef = D93F5EAB2A6E105B00E50967 /* SDK5-Bunsan-K.png */; };
-		D93F5EFC2A6E105B00E50967 /* SDK7-SDN_Separate-A.png in Resources */ = {isa = PBXBuildFile; fileRef = D93F5EAC2A6E105B00E50967 /* SDK7-SDN_Separate-A.png */; };
-		D93F5EFD2A6E105B00E50967 /* SDK7-SDN_HopByHop_Overlay-K.png in Resources */ = {isa = PBXBuildFile; fileRef = D93F5EAD2A6E105B00E50967 /* SDK7-SDN_HopByHop_Overlay-K.png */; };
-		D93F5EFE2A6E105B00E50967 /* SDK7-EthernetFrame_FCS_EColor-A.png in Resources */ = {isa = PBXBuildFile; fileRef = D93F5EAE2A6E105B00E50967 /* SDK7-EthernetFrame_FCS_EColor-A.png */; };
-		D93F5EFF2A6E105B00E50967 /* SDK5-QPSK-A.png in Resources */ = {isa = PBXBuildFile; fileRef = D93F5EAF2A6E105B00E50967 /* SDK5-QPSK-A.png */; };
-		D93F5F002A6E105B00E50967 /* SDK5Q-BipolerNRZ-A.png in Resources */ = {isa = PBXBuildFile; fileRef = D93F5EB02A6E105B00E50967 /* SDK5Q-BipolerNRZ-A.png */; };
-		D93F5F012A6E105B00E50967 /* SDK7-GbE-K.png in Resources */ = {isa = PBXBuildFile; fileRef = D93F5EB12A6E105B00E50967 /* SDK7-GbE-K.png */; };
-		D93F5F022A6E105B00E50967 /* SDK7-ROADM-A.png in Resources */ = {isa = PBXBuildFile; fileRef = D93F5EB22A6E105B00E50967 /* SDK7-ROADM-A.png */; };
-		D93F5F032A6E105B00E50967 /* SDKb_DenAtasu-A.png in Resources */ = {isa = PBXBuildFile; fileRef = D93F5EB32A6E105B00E50967 /* SDKb_DenAtasu-A.png */; };
-		D93F5F042A6E105B00E50967 /* SDK1-ShasenShiki-A.png in Resources */ = {isa = PBXBuildFile; fileRef = D93F5EB42A6E105B00E50967 /* SDK1-ShasenShiki-A.png */; };
-		D93F5F052A6E105B00E50967 /* SDK1-Pareto-K.png in Resources */ = {isa = PBXBuildFile; fileRef = D93F5EB52A6E105B00E50967 /* SDK1-Pareto-K.png */; };
-		D93F5F062A6E105B00E50967 /* SDK1_ControlChart-A.png in Resources */ = {isa = PBXBuildFile; fileRef = D93F5EB62A6E105B00E50967 /* SDK1_ControlChart-A.png */; };
-		D93F5F072A6E105B00E50967 /* SDKb_PWM_inverter-A.png in Resources */ = {isa = PBXBuildFile; fileRef = D93F5EB72A6E105B00E50967 /* SDKb_PWM_inverter-A.png */; };
-		D93F5F082A6E105B00E50967 /* SDK2-FMEA_FTA-A.png in Resources */ = {isa = PBXBuildFile; fileRef = D93F5EB82A6E105B00E50967 /* SDK2-FMEA_FTA-A.png */; };
-		D93F5F092A6E105B00E50967 /* SDK8-IPv6_Tunneling-A.png in Resources */ = {isa = PBXBuildFile; fileRef = D93F5EB92A6E105B00E50967 /* SDK8-IPv6_Tunneling-A.png */; };
-		D93F5F0A2A6E105B00E50967 /* SDK2-Jouchou-A.png in Resources */ = {isa = PBXBuildFile; fileRef = D93F5EBA2A6E105B00E50967 /* SDK2-Jouchou-A.png */; };
-		D93F5F0B2A6E105B00E50967 /* SDK7-CAS-A.png in Resources */ = {isa = PBXBuildFile; fileRef = D93F5EBB2A6E105B00E50967 /* SDK7-CAS-A.png */; };
-		D93F5F0C2A6E105B00E50967 /* SDK4-HornAnntena-A.png in Resources */ = {isa = PBXBuildFile; fileRef = D93F5EBC2A6E105B00E50967 /* SDK4-HornAnntena-A.png */; };
-		D93F5F0D2A6E105B00E50967 /* SDK8-3WayHandShake-A.png in Resources */ = {isa = PBXBuildFile; fileRef = D93F5EBD2A6E105B00E50967 /* SDK8-3WayHandShake-A.png */; };
-		D93F5F0E2A6E105B00E50967 /* SDK1_ETA-K.png in Resources */ = {isa = PBXBuildFile; fileRef = D93F5EBE2A6E105B00E50967 /* SDK1_ETA-K.png */; };
-		D93F5F0F2A6E105B00E50967 /* SDK7-SDN_Overlay_HopByHop-A.png in Resources */ = {isa = PBXBuildFile; fileRef = D93F5EBF2A6E105B00E50967 /* SDK7-SDN_Overlay_HopByHop-A.png */; };
-		D93F5F102A6E105B00E50967 /* SDK1-BarChart_GanttChart-K.png in Resources */ = {isa = PBXBuildFile; fileRef = D93F5EC02A6E105B00E50967 /* SDK1-BarChart_GanttChart-K.png */; };
-		D93F5F112A6E105B00E50967 /* SDK7-SDN_Layer-K.png in Resources */ = {isa = PBXBuildFile; fileRef = D93F5EC12A6E105B00E50967 /* SDK7-SDN_Layer-K.png */; };
-		D93F5F122A6E105B00E50967 /* SDK5_B6ZS-K.png in Resources */ = {isa = PBXBuildFile; fileRef = D93F5EC22A6E105B00E50967 /* SDK5_B6ZS-K.png */; };
-		D93F5F132A6E105B00E50967 /* SDK5-AMI-K.png in Resources */ = {isa = PBXBuildFile; fileRef = D93F5EC32A6E105B00E50967 /* SDK5-AMI-K.png */; };
-		D93F5F142A6E105B00E50967 /* SDK5-RZ_NRZ-A.png in Resources */ = {isa = PBXBuildFile; fileRef = D93F5EC42A6E105B00E50967 /* SDK5-RZ_NRZ-A.png */; };
-		D93F5F152A6E105B00E50967 /* SDKb_HenAtsuKi-K.png in Resources */ = {isa = PBXBuildFile; fileRef = D93F5EC52A6E105B00E50967 /* SDKb_HenAtsuKi-K.png */; };
-		D93F5F162A6E105B00E50967 /* SDK7-EthernetFrame-A.png in Resources */ = {isa = PBXBuildFile; fileRef = D93F5EC62A6E105B00E50967 /* SDK7-EthernetFrame-A.png */; };
-		D93F5F172A6E105B00E50967 /* SDKb-SecchiKouji-K.png in Resources */ = {isa = PBXBuildFile; fileRef = D93F5EC72A6E105B00E50967 /* SDKb-SecchiKouji-K.png */; };
-		D93F5F182A6E105B00E50967 /* SDK1_KoukiKensetsuHi_Kyokusen-K.png in Resources */ = {isa = PBXBuildFile; fileRef = D93F5EC82A6E105B00E50967 /* SDK1_KoukiKensetsuHi_Kyokusen-K.png */; };
-		D93F5F192A6E105B00E50967 /* SDK5-EyePattern-A.png in Resources */ = {isa = PBXBuildFile; fileRef = D93F5EC92A6E105B00E50967 /* SDK5-EyePattern-A.png */; };
-		D93F5F1A2A6E105B00E50967 /* SDK1_SonEkiBunkiTen-A.png in Resources */ = {isa = PBXBuildFile; fileRef = D93F5ECA2A6E105B00E50967 /* SDK1_SonEkiBunkiTen-A.png */; };
-		D93F5F1B2A6E105B00E50967 /* SDKb_SeiryuuHikaku-A.png in Resources */ = {isa = PBXBuildFile; fileRef = D93F5ECB2A6E105B00E50967 /* SDKb_SeiryuuHikaku-A.png */; };
-		D93F5F1C2A6E105B00E50967 /* SDK7-10GbE-A.png in Resources */ = {isa = PBXBuildFile; fileRef = D93F5ECC2A6E105B00E50967 /* SDK7-10GbE-A.png */; };
-		D93F5F1D2A6E105B00E50967 /* SDK5-Shaping_Policing-K.png in Resources */ = {isa = PBXBuildFile; fileRef = D93F5ECD2A6E105B00E50967 /* SDK5-Shaping_Policing-K.png */; };
-		D93F5F1E2A6E105B00E50967 /* SDK5_B6ZS-A.png in Resources */ = {isa = PBXBuildFile; fileRef = D93F5ECE2A6E105B00E50967 /* SDK5_B6ZS-A.png */; };
-		D93F5F1F2A6E105B00E50967 /* SDK5-AMI-A.png in Resources */ = {isa = PBXBuildFile; fileRef = D93F5ECF2A6E105B00E50967 /* SDK5-AMI-A.png */; };
-		D93F5F202A6E105B00E50967 /* SDK5-RZ_NRZ-K.png in Resources */ = {isa = PBXBuildFile; fileRef = D93F5ED02A6E105B00E50967 /* SDK5-RZ_NRZ-K.png */; };
-		D93F5F212A6E105B00E50967 /* SDK8-3WayHandShake-K.png in Resources */ = {isa = PBXBuildFile; fileRef = D93F5ED12A6E105B00E50967 /* SDK8-3WayHandShake-K.png */; };
-		D93F5F222A6E105B00E50967 /* SDK4-HornAnntena-K.png in Resources */ = {isa = PBXBuildFile; fileRef = D93F5ED22A6E105B00E50967 /* SDK4-HornAnntena-K.png */; };
-		D93F5F232A6E105B00E50967 /* SDK1_ETA-A.png in Resources */ = {isa = PBXBuildFile; fileRef = D93F5ED32A6E105B00E50967 /* SDK1_ETA-A.png */; };
-		D93F5F242A6E105B00E50967 /* SDK7-SDN_Overlay_HopByHop-K.png in Resources */ = {isa = PBXBuildFile; fileRef = D93F5ED42A6E105B00E50967 /* SDK7-SDN_Overlay_HopByHop-K.png */; };
-		D93F5F252A6E105B00E50967 /* SDK1-BarChart_GanttChart-A.png in Resources */ = {isa = PBXBuildFile; fileRef = D93F5ED52A6E105B00E50967 /* SDK1-BarChart_GanttChart-A.png */; };
-		D93F5F262A6E105B00E50967 /* SDK7-SDN_Layer-A.png in Resources */ = {isa = PBXBuildFile; fileRef = D93F5ED62A6E105B00E50967 /* SDK7-SDN_Layer-A.png */; };
-		D93F5F272A6E105B00E50967 /* SDKb_SeiryuuHikaku-K.png in Resources */ = {isa = PBXBuildFile; fileRef = D93F5ED72A6E105B00E50967 /* SDKb_SeiryuuHikaku-K.png */; };
-		D93F5F282A6E105B00E50967 /* SDK7-10GbE-K.png in Resources */ = {isa = PBXBuildFile; fileRef = D93F5ED82A6E105B00E50967 /* SDK7-10GbE-K.png */; };
-		D93F5F292A6E105B00E50967 /* SDK5-Shaping_Policing-A.png in Resources */ = {isa = PBXBuildFile; fileRef = D93F5ED92A6E105B00E50967 /* SDK5-Shaping_Policing-A.png */; };
-		D93F5F2A2A6E105B00E50967 /* SDKb_HenAtsuKi-A.png in Resources */ = {isa = PBXBuildFile; fileRef = D93F5EDA2A6E105B00E50967 /* SDKb_HenAtsuKi-A.png */; };
-		D93F5F2B2A6E105B00E50967 /* SDKb-SecchiKouji-A.png in Resources */ = {isa = PBXBuildFile; fileRef = D93F5EDB2A6E105B00E50967 /* SDKb-SecchiKouji-A.png */; };
-		D93F5F2C2A6E105B00E50967 /* SDK7-EthernetFrame-K.png in Resources */ = {isa = PBXBuildFile; fileRef = D93F5EDC2A6E105B00E50967 /* SDK7-EthernetFrame-K.png */; };
-		D93F5F2D2A6E105B00E50967 /* SDK1_KoukiKensetsuHi_Kyokusen-A.png in Resources */ = {isa = PBXBuildFile; fileRef = D93F5EDD2A6E105B00E50967 /* SDK1_KoukiKensetsuHi_Kyokusen-A.png */; };
-		D93F5F2E2A6E105B00E50967 /* SDK5-EyePattern-K.png in Resources */ = {isa = PBXBuildFile; fileRef = D93F5EDE2A6E105B00E50967 /* SDK5-EyePattern-K.png */; };
-		D93F5F2F2A6E105B00E50967 /* SDK1_SonEkiBunkiTen-K.png in Resources */ = {isa = PBXBuildFile; fileRef = D93F5EDF2A6E105B00E50967 /* SDK1_SonEkiBunkiTen-K.png */; };
-		D93F5F302A6E105B00E50967 /* SDK7-SDN_Separate-K.png in Resources */ = {isa = PBXBuildFile; fileRef = D93F5EE02A6E105B00E50967 /* SDK7-SDN_Separate-K.png */; };
-		D93F5F312A6E105B00E50967 /* SDK7-SDN_HopByHop_Overlay-A.png in Resources */ = {isa = PBXBuildFile; fileRef = D93F5EE12A6E105B00E50967 /* SDK7-SDN_HopByHop_Overlay-A.png */; };
-		D93F5F322A6E105B00E50967 /* SDK7-EthernetFrame_FCS_EColor-K.png in Resources */ = {isa = PBXBuildFile; fileRef = D93F5EE22A6E105B00E50967 /* SDK7-EthernetFrame_FCS_EColor-K.png */; };
-		D93F5F332A6E105B00E50967 /* SDK8-IPsec_Mode-K.png in Resources */ = {isa = PBXBuildFile; fileRef = D93F5EE32A6E105B00E50967 /* SDK8-IPsec_Mode-K.png */; };
-		D93F5F342A6E105B00E50967 /* SDK5-QPSK_16QAM-A.png in Resources */ = {isa = PBXBuildFile; fileRef = D93F5EE42A6E105B00E50967 /* SDK5-QPSK_16QAM-A.png */; };
-		D93F5F352A6E105B00E50967 /* SDK5-ShiftedPSK-A.png in Resources */ = {isa = PBXBuildFile; fileRef = D93F5EE52A6E105B00E50967 /* SDK5-ShiftedPSK-A.png */; };
-		D93F5F362A6E105B00E50967 /* SDK3-Cloud_ServiceType-K.png in Resources */ = {isa = PBXBuildFile; fileRef = D93F5EE62A6E105B00E50967 /* SDK3-Cloud_ServiceType-K.png */; };
-		D93F5F372A6E105B00E50967 /* SDK1-Histogram-K.png in Resources */ = {isa = PBXBuildFile; fileRef = D93F5EE72A6E105B00E50967 /* SDK1-Histogram-K.png */; };
-		D93F5F382A6E105B00E50967 /* SDK5-Bunsan-A.png in Resources */ = {isa = PBXBuildFile; fileRef = D93F5EE82A6E105B00E50967 /* SDK5-Bunsan-A.png */; };
-		D93F5F392A6E105B00E50967 /* SDK8-IPv6_Tunneling-K.png in Resources */ = {isa = PBXBuildFile; fileRef = D93F5EE92A6E105B00E50967 /* SDK8-IPv6_Tunneling-K.png */; };
-		D93F5F3A2A6E105B00E50967 /* SDK2-Jouchou-K.png in Resources */ = {isa = PBXBuildFile; fileRef = D93F5EEA2A6E105B00E50967 /* SDK2-Jouchou-K.png */; };
-		D93F5F3B2A6E105B00E50967 /* SDK7-CAS-K.png in Resources */ = {isa = PBXBuildFile; fileRef = D93F5EEB2A6E105B00E50967 /* SDK7-CAS-K.png */; };
-		D93F5F3C2A6E105B00E50967 /* SDK5-QPSK-K.png in Resources */ = {isa = PBXBuildFile; fileRef = D93F5EEC2A6E105B00E50967 /* SDK5-QPSK-K.png */; };
-		D93F5F3D2A6E105B00E50967 /* SDK5Q-BipolerNRZ-K.png in Resources */ = {isa = PBXBuildFile; fileRef = D93F5EED2A6E105B00E50967 /* SDK5Q-BipolerNRZ-K.png */; };
-		D93F5F3E2A6E105B00E50967 /* SDK7-GbE-A.png in Resources */ = {isa = PBXBuildFile; fileRef = D93F5EEE2A6E105B00E50967 /* SDK7-GbE-A.png */; };
-		D93F5F3F2A6E105B00E50967 /* SDK7-ROADM-K.png in Resources */ = {isa = PBXBuildFile; fileRef = D93F5EEF2A6E105B00E50967 /* SDK7-ROADM-K.png */; };
-		D93F5F402A6E105B00E50967 /* SDKb_DenAtasu-K.png in Resources */ = {isa = PBXBuildFile; fileRef = D93F5EF02A6E105B00E50967 /* SDKb_DenAtasu-K.png */; };
-		D93F5F412A6E105B00E50967 /* SDK1-ShasenShiki-K.png in Resources */ = {isa = PBXBuildFile; fileRef = D93F5EF12A6E105B00E50967 /* SDK1-ShasenShiki-K.png */; };
-		D93F5F422A6E105B00E50967 /* SDK1-Pareto-A.png in Resources */ = {isa = PBXBuildFile; fileRef = D93F5EF22A6E105B00E50967 /* SDK1-Pareto-A.png */; };
-		D93F5F432A6E105B00E50967 /* SDK1_ControlChart-K.png in Resources */ = {isa = PBXBuildFile; fileRef = D93F5EF32A6E105B00E50967 /* SDK1_ControlChart-K.png */; };
-		D93F5F442A6E105B00E50967 /* SDKb_PWM_inverter-K.png in Resources */ = {isa = PBXBuildFile; fileRef = D93F5EF42A6E105B00E50967 /* SDKb_PWM_inverter-K.png */; };
-		D93F5F452A6E105B00E50967 /* SDK2-FMEA_FTA-K.png in Resources */ = {isa = PBXBuildFile; fileRef = D93F5EF52A6E105B00E50967 /* SDK2-FMEA_FTA-K.png */; };
-		D93F5F472A6E484300E50967 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D93F5F462A6E484300E50967 /* Assets.xcassets */; };
 		D952EAE32A61FF3C001A3F04 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D952EACE2A61FF3B001A3F04 /* SettingViewController.swift */; };
 		D952EAE52A61FF3C001A3F04 /* ExamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D952EAD02A61FF3B001A3F04 /* ExamViewController.swift */; };
 		D952EAE62A61FF3C001A3F04 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D952EAD12A61FF3B001A3F04 /* MessageViewController.swift */; };
@@ -437,92 +356,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D93F5F0D2A6E105B00E50967 /* SDK8-3WayHandShake-A.png in Resources */,
-				D93F5F452A6E105B00E50967 /* SDK2-FMEA_FTA-K.png in Resources */,
-				D93F5F302A6E105B00E50967 /* SDK7-SDN_Separate-K.png in Resources */,
-				D93F5F1B2A6E105B00E50967 /* SDKb_SeiryuuHikaku-A.png in Resources */,
-				D93F5F3D2A6E105B00E50967 /* SDK5Q-BipolerNRZ-K.png in Resources */,
-				D93F5F1C2A6E105B00E50967 /* SDK7-10GbE-A.png in Resources */,
-				D93F5F2D2A6E105B00E50967 /* SDK1_KoukiKensetsuHi_Kyokusen-A.png in Resources */,
-				D93F5F0E2A6E105B00E50967 /* SDK1_ETA-K.png in Resources */,
-				D93F5F152A6E105B00E50967 /* SDKb_HenAtsuKi-K.png in Resources */,
-				D93F5F1A2A6E105B00E50967 /* SDK1_SonEkiBunkiTen-A.png in Resources */,
-				D93F5EFE2A6E105B00E50967 /* SDK7-EthernetFrame_FCS_EColor-A.png in Resources */,
-				D93F5EF92A6E105B00E50967 /* SDK3-Cloud_ServiceType-A.png in Resources */,
-				D93F5F2E2A6E105B00E50967 /* SDK5-EyePattern-K.png in Resources */,
-				D93F5F092A6E105B00E50967 /* SDK8-IPv6_Tunneling-A.png in Resources */,
-				D93F5F392A6E105B00E50967 /* SDK8-IPv6_Tunneling-K.png in Resources */,
-				D93F5F1E2A6E105B00E50967 /* SDK5_B6ZS-A.png in Resources */,
-				D93F5F472A6E484300E50967 /* Assets.xcassets in Resources */,
-				D93F5F182A6E105B00E50967 /* SDK1_KoukiKensetsuHi_Kyokusen-K.png in Resources */,
-				D93F5F272A6E105B00E50967 /* SDKb_SeiryuuHikaku-K.png in Resources */,
-				D93F5F0B2A6E105B00E50967 /* SDK7-CAS-A.png in Resources */,
-				D93F5F312A6E105B00E50967 /* SDK7-SDN_HopByHop_Overlay-A.png in Resources */,
-				D93F5F0A2A6E105B00E50967 /* SDK2-Jouchou-A.png in Resources */,
-				D93F5F022A6E105B00E50967 /* SDK7-ROADM-A.png in Resources */,
-				D93F5F3E2A6E105B00E50967 /* SDK7-GbE-A.png in Resources */,
-				D93F5F262A6E105B00E50967 /* SDK7-SDN_Layer-A.png in Resources */,
-				D93F5F422A6E105B00E50967 /* SDK1-Pareto-A.png in Resources */,
-				D93F5F282A6E105B00E50967 /* SDK7-10GbE-K.png in Resources */,
-				D93F5F172A6E105B00E50967 /* SDKb-SecchiKouji-K.png in Resources */,
-				D93F5F352A6E105B00E50967 /* SDK5-ShiftedPSK-A.png in Resources */,
 				D918033E2A61C1A30038B5A8 /* LaunchScreen.storyboard in Resources */,
-				D93F5F3F2A6E105B00E50967 /* SDK7-ROADM-K.png in Resources */,
-				D93F5F2F2A6E105B00E50967 /* SDK1_SonEkiBunkiTen-K.png in Resources */,
-				D93F5F3B2A6E105B00E50967 /* SDK7-CAS-K.png in Resources */,
-				D93F5F002A6E105B00E50967 /* SDK5Q-BipolerNRZ-A.png in Resources */,
-				D93F5EF82A6E105B00E50967 /* SDK5-ShiftedPSK-K.png in Resources */,
-				D93F5F252A6E105B00E50967 /* SDK1-BarChart_GanttChart-A.png in Resources */,
 				D918033B2A61C1A30038B5A8 /* Assets.xcassets in Resources */,
-				D93F5F072A6E105B00E50967 /* SDKb_PWM_inverter-A.png in Resources */,
-				D93F5F222A6E105B00E50967 /* SDK4-HornAnntena-K.png in Resources */,
-				D93F5F012A6E105B00E50967 /* SDK7-GbE-K.png in Resources */,
 				D93F5EA22A6DFAF800E50967 /* README.md in Resources */,
-				D93F5F442A6E105B00E50967 /* SDKb_PWM_inverter-K.png in Resources */,
-				D93F5EF72A6E105B00E50967 /* SDK8-IPsec_Mode-A.png in Resources */,
-				D93F5F1F2A6E105B00E50967 /* SDK5-AMI-A.png in Resources */,
 				D91803392A61C1A00038B5A8 /* Main.storyboard in Resources */,
-				D93F5F3A2A6E105B00E50967 /* SDK2-Jouchou-K.png in Resources */,
-				D93F5F122A6E105B00E50967 /* SDK5_B6ZS-K.png in Resources */,
-				D93F5F292A6E105B00E50967 /* SDK5-Shaping_Policing-A.png in Resources */,
-				D93F5EFA2A6E105B00E50967 /* SDK1-Histogram-A.png in Resources */,
-				D93F5F142A6E105B00E50967 /* SDK5-RZ_NRZ-A.png in Resources */,
-				D93F5F232A6E105B00E50967 /* SDK1_ETA-A.png in Resources */,
-				D93F5EFB2A6E105B00E50967 /* SDK5-Bunsan-K.png in Resources */,
-				D93F5EF62A6E105B00E50967 /* SDK5-QPSK_16QAM-K.png in Resources */,
-				D93F5F162A6E105B00E50967 /* SDK7-EthernetFrame-A.png in Resources */,
-				D93F5F052A6E105B00E50967 /* SDK1-Pareto-K.png in Resources */,
-				D93F5F242A6E105B00E50967 /* SDK7-SDN_Overlay_HopByHop-K.png in Resources */,
-				D93F5F2B2A6E105B00E50967 /* SDKb-SecchiKouji-A.png in Resources */,
-				D93F5F082A6E105B00E50967 /* SDK2-FMEA_FTA-A.png in Resources */,
-				D93F5F132A6E105B00E50967 /* SDK5-AMI-K.png in Resources */,
-				D93F5EFD2A6E105B00E50967 /* SDK7-SDN_HopByHop_Overlay-K.png in Resources */,
-				D93F5EFF2A6E105B00E50967 /* SDK5-QPSK-A.png in Resources */,
-				D93F5F372A6E105B00E50967 /* SDK1-Histogram-K.png in Resources */,
-				D93F5F032A6E105B00E50967 /* SDKb_DenAtasu-A.png in Resources */,
-				D93F5F382A6E105B00E50967 /* SDK5-Bunsan-A.png in Resources */,
-				D93F5F212A6E105B00E50967 /* SDK8-3WayHandShake-K.png in Resources */,
-				D93F5F412A6E105B00E50967 /* SDK1-ShasenShiki-K.png in Resources */,
-				D93F5F202A6E105B00E50967 /* SDK5-RZ_NRZ-K.png in Resources */,
-				D93F5F042A6E105B00E50967 /* SDK1-ShasenShiki-A.png in Resources */,
-				D93F5F2A2A6E105B00E50967 /* SDKb_HenAtsuKi-A.png in Resources */,
-				D93F5F332A6E105B00E50967 /* SDK8-IPsec_Mode-K.png in Resources */,
 				D93F5EA42A6E101100E50967 /* ExamDemo.db in Resources */,
-				D93F5F2C2A6E105B00E50967 /* SDK7-EthernetFrame-K.png in Resources */,
-				D93F5F342A6E105B00E50967 /* SDK5-QPSK_16QAM-A.png in Resources */,
-				D93F5F3C2A6E105B00E50967 /* SDK5-QPSK-K.png in Resources */,
-				D93F5EFC2A6E105B00E50967 /* SDK7-SDN_Separate-A.png in Resources */,
-				D93F5F402A6E105B00E50967 /* SDKb_DenAtasu-K.png in Resources */,
-				D93F5F0F2A6E105B00E50967 /* SDK7-SDN_Overlay_HopByHop-A.png in Resources */,
-				D93F5F362A6E105B00E50967 /* SDK3-Cloud_ServiceType-K.png in Resources */,
-				D93F5F112A6E105B00E50967 /* SDK7-SDN_Layer-K.png in Resources */,
-				D93F5F432A6E105B00E50967 /* SDK1_ControlChart-K.png in Resources */,
-				D93F5F322A6E105B00E50967 /* SDK7-EthernetFrame_FCS_EColor-K.png in Resources */,
-				D93F5F1D2A6E105B00E50967 /* SDK5-Shaping_Policing-K.png in Resources */,
-				D93F5F192A6E105B00E50967 /* SDK5-EyePattern-A.png in Resources */,
-				D93F5F0C2A6E105B00E50967 /* SDK4-HornAnntena-A.png in Resources */,
-				D93F5F062A6E105B00E50967 /* SDK1_ControlChart-A.png in Resources */,
-				D93F5F102A6E105B00E50967 /* SDK1-BarChart_GanttChart-K.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
