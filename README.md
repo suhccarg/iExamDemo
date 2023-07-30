@@ -1,4 +1,4 @@
-# ExamShugiDenKouV2.0
+# ExamDemo
 V0.3c
 V0.6
 V0.6d restore ExamVC
@@ -15,3 +15,4 @@ v0.8m0 check Demo
 v0.8m1 check Demo
 v0.8m2 check Demo
 v0/8m3 rename remote repo.
+v0.8m4 rename remote repo.
