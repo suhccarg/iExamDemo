@@ -104,6 +104,7 @@ public class Preference {
         ExamCategory.demo1,
         ExamCategory.demo2,
         ExamCategory.demo3 ]
+    public static let initialCategoryCode = ExamCategory.demo1
     public static var categoryCode: Int {
         get {
             let code = UserDefaults.standard.integer(forKey: Repository.keyExamCategory)
