@@ -44,97 +44,11 @@
 		D92219B12A75D583000CC00A /* Device.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
 		D93F5EA12A6DFAF800E50967 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		D93F5EA32A6E101100E50967 /* ExamDemo.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = ExamDemo.db; sourceTree = SOURCE_ROOT; };
-		D93F5EA62A6E105B00E50967 /* SDK5-QPSK_16QAM-K.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SDK5-QPSK_16QAM-K.png"; sourceTree = "<group>"; };
-		D93F5EA72A6E105B00E50967 /* SDK8-IPsec_Mode-A.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SDK8-IPsec_Mode-A.png"; sourceTree = "<group>"; };
-		D93F5EA82A6E105B00E50967 /* SDK5-ShiftedPSK-K.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SDK5-ShiftedPSK-K.png"; sourceTree = "<group>"; };
-		D93F5EA92A6E105B00E50967 /* SDK3-Cloud_ServiceType-A.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SDK3-Cloud_ServiceType-A.png"; sourceTree = "<group>"; };
-		D93F5EAA2A6E105B00E50967 /* SDK1-Histogram-A.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SDK1-Histogram-A.png"; sourceTree = "<group>"; };
-		D93F5EAB2A6E105B00E50967 /* SDK5-Bunsan-K.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SDK5-Bunsan-K.png"; sourceTree = "<group>"; };
-		D93F5EAC2A6E105B00E50967 /* SDK7-SDN_Separate-A.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SDK7-SDN_Separate-A.png"; sourceTree = "<group>"; };
-		D93F5EAD2A6E105B00E50967 /* SDK7-SDN_HopByHop_Overlay-K.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SDK7-SDN_HopByHop_Overlay-K.png"; sourceTree = "<group>"; };
-		D93F5EAE2A6E105B00E50967 /* SDK7-EthernetFrame_FCS_EColor-A.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SDK7-EthernetFrame_FCS_EColor-A.png"; sourceTree = "<group>"; };
-		D93F5EAF2A6E105B00E50967 /* SDK5-QPSK-A.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SDK5-QPSK-A.png"; sourceTree = "<group>"; };
-		D93F5EB02A6E105B00E50967 /* SDK5Q-BipolerNRZ-A.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SDK5Q-BipolerNRZ-A.png"; sourceTree = "<group>"; };
-		D93F5EB12A6E105B00E50967 /* SDK7-GbE-K.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SDK7-GbE-K.png"; sourceTree = "<group>"; };
-		D93F5EB22A6E105B00E50967 /* SDK7-ROADM-A.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SDK7-ROADM-A.png"; sourceTree = "<group>"; };
-		D93F5EB32A6E105B00E50967 /* SDKb_DenAtasu-A.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SDKb_DenAtasu-A.png"; sourceTree = "<group>"; };
-		D93F5EB42A6E105B00E50967 /* SDK1-ShasenShiki-A.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SDK1-ShasenShiki-A.png"; sourceTree = "<group>"; };
-		D93F5EB52A6E105B00E50967 /* SDK1-Pareto-K.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SDK1-Pareto-K.png"; sourceTree = "<group>"; };
-		D93F5EB62A6E105B00E50967 /* SDK1_ControlChart-A.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SDK1_ControlChart-A.png"; sourceTree = "<group>"; };
-		D93F5EB72A6E105B00E50967 /* SDKb_PWM_inverter-A.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SDKb_PWM_inverter-A.png"; sourceTree = "<group>"; };
-		D93F5EB82A6E105B00E50967 /* SDK2-FMEA_FTA-A.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SDK2-FMEA_FTA-A.png"; sourceTree = "<group>"; };
-		D93F5EB92A6E105B00E50967 /* SDK8-IPv6_Tunneling-A.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SDK8-IPv6_Tunneling-A.png"; sourceTree = "<group>"; };
-		D93F5EBA2A6E105B00E50967 /* SDK2-Jouchou-A.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SDK2-Jouchou-A.png"; sourceTree = "<group>"; };
-		D93F5EBB2A6E105B00E50967 /* SDK7-CAS-A.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SDK7-CAS-A.png"; sourceTree = "<group>"; };
-		D93F5EBC2A6E105B00E50967 /* SDK4-HornAnntena-A.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SDK4-HornAnntena-A.png"; sourceTree = "<group>"; };
-		D93F5EBD2A6E105B00E50967 /* SDK8-3WayHandShake-A.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SDK8-3WayHandShake-A.png"; sourceTree = "<group>"; };
-		D93F5EBE2A6E105B00E50967 /* SDK1_ETA-K.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SDK1_ETA-K.png"; sourceTree = "<group>"; };
-		D93F5EBF2A6E105B00E50967 /* SDK7-SDN_Overlay_HopByHop-A.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SDK7-SDN_Overlay_HopByHop-A.png"; sourceTree = "<group>"; };
-		D93F5EC02A6E105B00E50967 /* SDK1-BarChart_GanttChart-K.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SDK1-BarChart_GanttChart-K.png"; sourceTree = "<group>"; };
-		D93F5EC12A6E105B00E50967 /* SDK7-SDN_Layer-K.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SDK7-SDN_Layer-K.png"; sourceTree = "<group>"; };
-		D93F5EC22A6E105B00E50967 /* SDK5_B6ZS-K.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SDK5_B6ZS-K.png"; sourceTree = "<group>"; };
-		D93F5EC32A6E105B00E50967 /* SDK5-AMI-K.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SDK5-AMI-K.png"; sourceTree = "<group>"; };
-		D93F5EC42A6E105B00E50967 /* SDK5-RZ_NRZ-A.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SDK5-RZ_NRZ-A.png"; sourceTree = "<group>"; };
-		D93F5EC52A6E105B00E50967 /* SDKb_HenAtsuKi-K.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SDKb_HenAtsuKi-K.png"; sourceTree = "<group>"; };
-		D93F5EC62A6E105B00E50967 /* SDK7-EthernetFrame-A.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SDK7-EthernetFrame-A.png"; sourceTree = "<group>"; };
-		D93F5EC72A6E105B00E50967 /* SDKb-SecchiKouji-K.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SDKb-SecchiKouji-K.png"; sourceTree = "<group>"; };
-		D93F5EC82A6E105B00E50967 /* SDK1_KoukiKensetsuHi_Kyokusen-K.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SDK1_KoukiKensetsuHi_Kyokusen-K.png"; sourceTree = "<group>"; };
-		D93F5EC92A6E105B00E50967 /* SDK5-EyePattern-A.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SDK5-EyePattern-A.png"; sourceTree = "<group>"; };
-		D93F5ECA2A6E105B00E50967 /* SDK1_SonEkiBunkiTen-A.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SDK1_SonEkiBunkiTen-A.png"; sourceTree = "<group>"; };
-		D93F5ECB2A6E105B00E50967 /* SDKb_SeiryuuHikaku-A.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SDKb_SeiryuuHikaku-A.png"; sourceTree = "<group>"; };
-		D93F5ECC2A6E105B00E50967 /* SDK7-10GbE-A.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SDK7-10GbE-A.png"; sourceTree = "<group>"; };
-		D93F5ECD2A6E105B00E50967 /* SDK5-Shaping_Policing-K.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SDK5-Shaping_Policing-K.png"; sourceTree = "<group>"; };
-		D93F5ECE2A6E105B00E50967 /* SDK5_B6ZS-A.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SDK5_B6ZS-A.png"; sourceTree = "<group>"; };
-		D93F5ECF2A6E105B00E50967 /* SDK5-AMI-A.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SDK5-AMI-A.png"; sourceTree = "<group>"; };
-		D93F5ED02A6E105B00E50967 /* SDK5-RZ_NRZ-K.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SDK5-RZ_NRZ-K.png"; sourceTree = "<group>"; };
-		D93F5ED12A6E105B00E50967 /* SDK8-3WayHandShake-K.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SDK8-3WayHandShake-K.png"; sourceTree = "<group>"; };
-		D93F5ED22A6E105B00E50967 /* SDK4-HornAnntena-K.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SDK4-HornAnntena-K.png"; sourceTree = "<group>"; };
-		D93F5ED32A6E105B00E50967 /* SDK1_ETA-A.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SDK1_ETA-A.png"; sourceTree = "<group>"; };
-		D93F5ED42A6E105B00E50967 /* SDK7-SDN_Overlay_HopByHop-K.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SDK7-SDN_Overlay_HopByHop-K.png"; sourceTree = "<group>"; };
-		D93F5ED52A6E105B00E50967 /* SDK1-BarChart_GanttChart-A.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SDK1-BarChart_GanttChart-A.png"; sourceTree = "<group>"; };
-		D93F5ED62A6E105B00E50967 /* SDK7-SDN_Layer-A.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SDK7-SDN_Layer-A.png"; sourceTree = "<group>"; };
-		D93F5ED72A6E105B00E50967 /* SDKb_SeiryuuHikaku-K.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SDKb_SeiryuuHikaku-K.png"; sourceTree = "<group>"; };
-		D93F5ED82A6E105B00E50967 /* SDK7-10GbE-K.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SDK7-10GbE-K.png"; sourceTree = "<group>"; };
-		D93F5ED92A6E105B00E50967 /* SDK5-Shaping_Policing-A.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SDK5-Shaping_Policing-A.png"; sourceTree = "<group>"; };
-		D93F5EDA2A6E105B00E50967 /* SDKb_HenAtsuKi-A.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SDKb_HenAtsuKi-A.png"; sourceTree = "<group>"; };
-		D93F5EDB2A6E105B00E50967 /* SDKb-SecchiKouji-A.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SDKb-SecchiKouji-A.png"; sourceTree = "<group>"; };
-		D93F5EDC2A6E105B00E50967 /* SDK7-EthernetFrame-K.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SDK7-EthernetFrame-K.png"; sourceTree = "<group>"; };
-		D93F5EDD2A6E105B00E50967 /* SDK1_KoukiKensetsuHi_Kyokusen-A.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SDK1_KoukiKensetsuHi_Kyokusen-A.png"; sourceTree = "<group>"; };
-		D93F5EDE2A6E105B00E50967 /* SDK5-EyePattern-K.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SDK5-EyePattern-K.png"; sourceTree = "<group>"; };
-		D93F5EDF2A6E105B00E50967 /* SDK1_SonEkiBunkiTen-K.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SDK1_SonEkiBunkiTen-K.png"; sourceTree = "<group>"; };
-		D93F5EE02A6E105B00E50967 /* SDK7-SDN_Separate-K.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SDK7-SDN_Separate-K.png"; sourceTree = "<group>"; };
-		D93F5EE12A6E105B00E50967 /* SDK7-SDN_HopByHop_Overlay-A.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SDK7-SDN_HopByHop_Overlay-A.png"; sourceTree = "<group>"; };
-		D93F5EE22A6E105B00E50967 /* SDK7-EthernetFrame_FCS_EColor-K.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SDK7-EthernetFrame_FCS_EColor-K.png"; sourceTree = "<group>"; };
-		D93F5EE32A6E105B00E50967 /* SDK8-IPsec_Mode-K.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SDK8-IPsec_Mode-K.png"; sourceTree = "<group>"; };
-		D93F5EE42A6E105B00E50967 /* SDK5-QPSK_16QAM-A.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SDK5-QPSK_16QAM-A.png"; sourceTree = "<group>"; };
-		D93F5EE52A6E105B00E50967 /* SDK5-ShiftedPSK-A.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SDK5-ShiftedPSK-A.png"; sourceTree = "<group>"; };
-		D93F5EE62A6E105B00E50967 /* SDK3-Cloud_ServiceType-K.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SDK3-Cloud_ServiceType-K.png"; sourceTree = "<group>"; };
-		D93F5EE72A6E105B00E50967 /* SDK1-Histogram-K.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SDK1-Histogram-K.png"; sourceTree = "<group>"; };
-		D93F5EE82A6E105B00E50967 /* SDK5-Bunsan-A.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SDK5-Bunsan-A.png"; sourceTree = "<group>"; };
-		D93F5EE92A6E105B00E50967 /* SDK8-IPv6_Tunneling-K.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SDK8-IPv6_Tunneling-K.png"; sourceTree = "<group>"; };
-		D93F5EEA2A6E105B00E50967 /* SDK2-Jouchou-K.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SDK2-Jouchou-K.png"; sourceTree = "<group>"; };
-		D93F5EEB2A6E105B00E50967 /* SDK7-CAS-K.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SDK7-CAS-K.png"; sourceTree = "<group>"; };
-		D93F5EEC2A6E105B00E50967 /* SDK5-QPSK-K.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SDK5-QPSK-K.png"; sourceTree = "<group>"; };
-		D93F5EED2A6E105B00E50967 /* SDK5Q-BipolerNRZ-K.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SDK5Q-BipolerNRZ-K.png"; sourceTree = "<group>"; };
-		D93F5EEE2A6E105B00E50967 /* SDK7-GbE-A.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SDK7-GbE-A.png"; sourceTree = "<group>"; };
-		D93F5EEF2A6E105B00E50967 /* SDK7-ROADM-K.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SDK7-ROADM-K.png"; sourceTree = "<group>"; };
-		D93F5EF02A6E105B00E50967 /* SDKb_DenAtasu-K.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SDKb_DenAtasu-K.png"; sourceTree = "<group>"; };
-		D93F5EF12A6E105B00E50967 /* SDK1-ShasenShiki-K.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SDK1-ShasenShiki-K.png"; sourceTree = "<group>"; };
-		D93F5EF22A6E105B00E50967 /* SDK1-Pareto-A.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SDK1-Pareto-A.png"; sourceTree = "<group>"; };
-		D93F5EF32A6E105B00E50967 /* SDK1_ControlChart-K.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SDK1_ControlChart-K.png"; sourceTree = "<group>"; };
-		D93F5EF42A6E105B00E50967 /* SDKb_PWM_inverter-K.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SDKb_PWM_inverter-K.png"; sourceTree = "<group>"; };
-		D93F5EF52A6E105B00E50967 /* SDK2-FMEA_FTA-K.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SDK2-FMEA_FTA-K.png"; sourceTree = "<group>"; };
-		D93F5F462A6E484300E50967 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ExamShugiDenKou/Assets.xcassets; sourceTree = SOURCE_ROOT; };
 		D952EACE2A61FF3B001A3F04 /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
-<<<<<<< HEAD
-=======
 		D952EAD02A61FF3B001A3F04 /* ExamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExamViewController.swift; sourceTree = "<group>"; };
 		D952EAD12A61FF3B001A3F04 /* MessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
 		D952EAD32A61FF3B001A3F04 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		D952EADC2A61FF3C001A3F04 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D952EAF42A64C068001A3F04 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
-		D952EAF52A64C068001A3F04 /* MessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
-		D952EAF62A64C068001A3F04 /* ExamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExamViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,87 +99,6 @@
 		D93F5EA52A6E105B00E50967 /* demo */ = {
 			isa = PBXGroup;
 			children = (
-				D93F5F462A6E484300E50967 /* Assets.xcassets */,
-				D93F5EA62A6E105B00E50967 /* SDK5-QPSK_16QAM-K.png */,
-				D93F5EA72A6E105B00E50967 /* SDK8-IPsec_Mode-A.png */,
-				D93F5EA82A6E105B00E50967 /* SDK5-ShiftedPSK-K.png */,
-				D93F5EA92A6E105B00E50967 /* SDK3-Cloud_ServiceType-A.png */,
-				D93F5EAA2A6E105B00E50967 /* SDK1-Histogram-A.png */,
-				D93F5EAB2A6E105B00E50967 /* SDK5-Bunsan-K.png */,
-				D93F5EAC2A6E105B00E50967 /* SDK7-SDN_Separate-A.png */,
-				D93F5EAD2A6E105B00E50967 /* SDK7-SDN_HopByHop_Overlay-K.png */,
-				D93F5EAE2A6E105B00E50967 /* SDK7-EthernetFrame_FCS_EColor-A.png */,
-				D93F5EAF2A6E105B00E50967 /* SDK5-QPSK-A.png */,
-				D93F5EB02A6E105B00E50967 /* SDK5Q-BipolerNRZ-A.png */,
-				D93F5EB12A6E105B00E50967 /* SDK7-GbE-K.png */,
-				D93F5EB22A6E105B00E50967 /* SDK7-ROADM-A.png */,
-				D93F5EB32A6E105B00E50967 /* SDKb_DenAtasu-A.png */,
-				D93F5EB42A6E105B00E50967 /* SDK1-ShasenShiki-A.png */,
-				D93F5EB52A6E105B00E50967 /* SDK1-Pareto-K.png */,
-				D93F5EB62A6E105B00E50967 /* SDK1_ControlChart-A.png */,
-				D93F5EB72A6E105B00E50967 /* SDKb_PWM_inverter-A.png */,
-				D93F5EB82A6E105B00E50967 /* SDK2-FMEA_FTA-A.png */,
-				D93F5EB92A6E105B00E50967 /* SDK8-IPv6_Tunneling-A.png */,
-				D93F5EBA2A6E105B00E50967 /* SDK2-Jouchou-A.png */,
-				D93F5EBB2A6E105B00E50967 /* SDK7-CAS-A.png */,
-				D93F5EBC2A6E105B00E50967 /* SDK4-HornAnntena-A.png */,
-				D93F5EBD2A6E105B00E50967 /* SDK8-3WayHandShake-A.png */,
-				D93F5EBE2A6E105B00E50967 /* SDK1_ETA-K.png */,
-				D93F5EBF2A6E105B00E50967 /* SDK7-SDN_Overlay_HopByHop-A.png */,
-				D93F5EC02A6E105B00E50967 /* SDK1-BarChart_GanttChart-K.png */,
-				D93F5EC12A6E105B00E50967 /* SDK7-SDN_Layer-K.png */,
-				D93F5EC22A6E105B00E50967 /* SDK5_B6ZS-K.png */,
-				D93F5EC32A6E105B00E50967 /* SDK5-AMI-K.png */,
-				D93F5EC42A6E105B00E50967 /* SDK5-RZ_NRZ-A.png */,
-				D93F5EC52A6E105B00E50967 /* SDKb_HenAtsuKi-K.png */,
-				D93F5EC62A6E105B00E50967 /* SDK7-EthernetFrame-A.png */,
-				D93F5EC72A6E105B00E50967 /* SDKb-SecchiKouji-K.png */,
-				D93F5EC82A6E105B00E50967 /* SDK1_KoukiKensetsuHi_Kyokusen-K.png */,
-				D93F5EC92A6E105B00E50967 /* SDK5-EyePattern-A.png */,
-				D93F5ECA2A6E105B00E50967 /* SDK1_SonEkiBunkiTen-A.png */,
-				D93F5ECB2A6E105B00E50967 /* SDKb_SeiryuuHikaku-A.png */,
-				D93F5ECC2A6E105B00E50967 /* SDK7-10GbE-A.png */,
-				D93F5ECD2A6E105B00E50967 /* SDK5-Shaping_Policing-K.png */,
-				D93F5ECE2A6E105B00E50967 /* SDK5_B6ZS-A.png */,
-				D93F5ECF2A6E105B00E50967 /* SDK5-AMI-A.png */,
-				D93F5ED02A6E105B00E50967 /* SDK5-RZ_NRZ-K.png */,
-				D93F5ED12A6E105B00E50967 /* SDK8-3WayHandShake-K.png */,
-				D93F5ED22A6E105B00E50967 /* SDK4-HornAnntena-K.png */,
-				D93F5ED32A6E105B00E50967 /* SDK1_ETA-A.png */,
-				D93F5ED42A6E105B00E50967 /* SDK7-SDN_Overlay_HopByHop-K.png */,
-				D93F5ED52A6E105B00E50967 /* SDK1-BarChart_GanttChart-A.png */,
-				D93F5ED62A6E105B00E50967 /* SDK7-SDN_Layer-A.png */,
-				D93F5ED72A6E105B00E50967 /* SDKb_SeiryuuHikaku-K.png */,
-				D93F5ED82A6E105B00E50967 /* SDK7-10GbE-K.png */,
-				D93F5ED92A6E105B00E50967 /* SDK5-Shaping_Policing-A.png */,
-				D93F5EDA2A6E105B00E50967 /* SDKb_HenAtsuKi-A.png */,
-				D93F5EDB2A6E105B00E50967 /* SDKb-SecchiKouji-A.png */,
-				D93F5EDC2A6E105B00E50967 /* SDK7-EthernetFrame-K.png */,
-				D93F5EDD2A6E105B00E50967 /* SDK1_KoukiKensetsuHi_Kyokusen-A.png */,
-				D93F5EDE2A6E105B00E50967 /* SDK5-EyePattern-K.png */,
-				D93F5EDF2A6E105B00E50967 /* SDK1_SonEkiBunkiTen-K.png */,
-				D93F5EE02A6E105B00E50967 /* SDK7-SDN_Separate-K.png */,
-				D93F5EE12A6E105B00E50967 /* SDK7-SDN_HopByHop_Overlay-A.png */,
-				D93F5EE22A6E105B00E50967 /* SDK7-EthernetFrame_FCS_EColor-K.png */,
-				D93F5EE32A6E105B00E50967 /* SDK8-IPsec_Mode-K.png */,
-				D93F5EE42A6E105B00E50967 /* SDK5-QPSK_16QAM-A.png */,
-				D93F5EE52A6E105B00E50967 /* SDK5-ShiftedPSK-A.png */,
-				D93F5EE62A6E105B00E50967 /* SDK3-Cloud_ServiceType-K.png */,
-				D93F5EE72A6E105B00E50967 /* SDK1-Histogram-K.png */,
-				D93F5EE82A6E105B00E50967 /* SDK5-Bunsan-A.png */,
-				D93F5EE92A6E105B00E50967 /* SDK8-IPv6_Tunneling-K.png */,
-				D93F5EEA2A6E105B00E50967 /* SDK2-Jouchou-K.png */,
-				D93F5EEB2A6E105B00E50967 /* SDK7-CAS-K.png */,
-				D93F5EEC2A6E105B00E50967 /* SDK5-QPSK-K.png */,
-				D93F5EED2A6E105B00E50967 /* SDK5Q-BipolerNRZ-K.png */,
-				D93F5EEE2A6E105B00E50967 /* SDK7-GbE-A.png */,
-				D93F5EEF2A6E105B00E50967 /* SDK7-ROADM-K.png */,
-				D93F5EF02A6E105B00E50967 /* SDKb_DenAtasu-K.png */,
-				D93F5EF12A6E105B00E50967 /* SDK1-ShasenShiki-K.png */,
-				D93F5EF22A6E105B00E50967 /* SDK1-Pareto-A.png */,
-				D93F5EF32A6E105B00E50967 /* SDK1_ControlChart-K.png */,
-				D93F5EF42A6E105B00E50967 /* SDKb_PWM_inverter-K.png */,
-				D93F5EF52A6E105B00E50967 /* SDK2-FMEA_FTA-K.png */,
 			);
 			name = demo;
 			path = ../demo;
@@ -285,12 +118,7 @@
 		D952EACD2A61FF3B001A3F04 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				D952EAF62A64C068001A3F04 /* ExamViewController.swift */,
-				D952EAF42A64C068001A3F04 /* MenuViewController.swift */,
-				D952EAF52A64C068001A3F04 /* MessageViewController.swift */,
 				D952EACE2A61FF3B001A3F04 /* SettingViewController.swift */,
-<<<<<<< HEAD
-=======
 				D952EAD02A61FF3B001A3F04 /* ExamViewController.swift */,
 				D92219B12A75D583000CC00A /* Device.swift */,
 				D952EAD12A61FF3B001A3F04 /* MessageViewController.swift */,

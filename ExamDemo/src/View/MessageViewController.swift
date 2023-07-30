@@ -8,21 +8,11 @@
 
 import Foundation
 import UIKit
-<<<<<<< HEAD:ExamShugiDenKou/src/VIew/MessageViewController.swift
-<<<<<<< HEAD:ExamShugiDenKou/src/VIew/MessageViewController.swift
-import ExamLib_iOS1
-=======
 #if canImport(ExamLib)
 import ExamLib
 #endif
->>>>>>> develop8:ExamShugiDenKou/src/View/MessageViewController.swift
-=======
-#if canImport(ExamLib)
-import ExamLib
-#endif
->>>>>>> develop8:ExamShugiDenKou/src/View/MessageViewController.swift
 
-public class MessageViewController: MessageViewBaseController {
+public class MessageViewController: CustomViewController {
     private var messageViewArea: ExamLabel!
     public var message: String = "."
     public var returnView: ViewType = .unknown
