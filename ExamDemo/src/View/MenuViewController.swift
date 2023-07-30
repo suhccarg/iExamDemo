@@ -520,5 +520,4 @@ public class SettingButton: UIButton {
     }//layout()
     
 }//SettingButton
-
 /** End of File **/
