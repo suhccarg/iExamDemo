@@ -92,16 +92,18 @@ public class Preference {
     ////////////////////
     public static let exemFontSize = Repository.examFontSize
     public static var menu :MenuViewController!
+//    public static let examCategories: [ExamCategory] = [
+//        ExamCategory.sdk21Setsubi,
+//        ExamCategory.sdk22Shinraisei_System,
+//        ExamCategory.sdk24Koukan_Musen,
+//        ExamCategory.sdk25Densou,
+//        ExamCategory.sdk27Network,
+//        ExamCategory.sdk29Security,
+//        ExamCategory.sdk31Denryoku ]
     public static let examCategories: [ExamCategory] = [
-        ExamCategory.sdk21Setsubi,
-        ExamCategory.sdk22Shinraisei_System,
-        ExamCategory.sdk24Koukan_Musen,
-        ExamCategory.sdk25Densou,
-        ExamCategory.sdk27Network,
-        ExamCategory.sdk29Security,
-        ExamCategory.sdk31Denryoku ]
-    public static let initialCategoryCode = ExamCategory.sdk21Setsubi
-
+        ExamCategory.demo1,
+        ExamCategory.demo2,
+        ExamCategory.demo3 ]
     public static var categoryCode: Int {
         get {
             let code = UserDefaults.standard.integer(forKey: Repository.keyExamCategory)
