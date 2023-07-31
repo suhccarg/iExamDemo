@@ -3,7 +3,7 @@ V0.3c
 V0.6
 V0.6d restore ExamVC
 V0.6g Menu NG
-Vjh 0.6h Menu OK
+V0.6h Menu OK
 
 V0.7a rename package
 V0.7h log
@@ -21,3 +21,4 @@ v0.8m4 rename remote repo.
 v0.8n ExamDemo
 v0.8m2 ExamCate.
 v0.8m3 ExamCate.
+v0.9 Demo beta
