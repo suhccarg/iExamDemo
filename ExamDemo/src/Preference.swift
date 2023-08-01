@@ -218,7 +218,41 @@ public class Preference {
 //        set {
 //            UserDefaults.standard.set(newValue, forKey: Repository.keyExamFontSize)
 //        }
-//    }//var examFontSize
+//    }//var examFontSizea
+    public static var colorChanger = { () -> ExamColorChanger in
+        let type = Repository.applicationType
+        if isKoutan(application: type) || isDemo(application: type) {
+            return ExamColorKoutanThemeChanger()
+        } else if isShugi(application: type) {
+            return ExamColorShugiThemeChanger()
+        } else {
+            return ExamColorBlueThemeChanger()
+        }
+    }()
+    
+    public static func isDemo(application type: ApplicationType) -> Bool {
+        return type == ApplicationType.demo
+    }//isDemo
+    public static func isShugi(application type: ApplicationType) -> Bool {
+        return type == ApplicationType.shugiHouki
+            || type == ApplicationType.shugiHoukiTrial
+            || type == ApplicationType.shugiDenKou
+            || type == ApplicationType.shugiDenKouTrial
+    }//isKoutan
+ 
+    public static func isKoutan(application type: ApplicationType) -> Bool {
+        return type == ApplicationType.koutanHoukiSougou
+            || type == ApplicationType.koutanHoukiSougouTrial
+            || type == ApplicationType.koutanKisoSougou
+            || type == ApplicationType.koutanKisoSougouTrial
+            || type == ApplicationType.koutanGijutsuSougou
+            || type == ApplicationType.koutanGijutsuSougouTrial
+            || type == ApplicationType.koutanGijutsuDigital1
+            || type == ApplicationType.koutanGijutsuDigital1Trial
+            || type == ApplicationType.koutanGijutsuAnalog1
+            || type == ApplicationType.koutanGijutsuAnalog1Trial
+    }//isKoutan
+
     private static var isPrepared = false
     
     public init() {

@@ -489,7 +489,8 @@ public class SettingButton: UIButton {
         self.backgroundColor = UIColor.clear  // ボタンの背景色
         if ExamColor.mode == .bright {
             self.setImage(UIImage(named:"gearBlack256.png")!, for: .normal)
-            if Repository.isKoutan() {
+            let type = Repository.applicationType
+            if ( Preference.isKoutan(application: type) || Preference.isDemo(application: type) ) {
                 self.setImage(UIImage(named:"gearGreen256.png")!, for: .highlighted)
             } else {
                 self.setImage(UIImage(named:"gearBlue256.png")!, for: .highlighted)
@@ -497,7 +498,8 @@ public class SettingButton: UIButton {
             }
         } else {
             self.setImage(UIImage(named:"gearLightGray256.png")!, for: .normal)
-            if Repository.isKoutan() {
+            let type = Repository.applicationType
+            if ( Preference.isKoutan(application: type) || Preference.isDemo(application: type) ) {
                 self.setImage(UIImage(named:"gearLightGreen256.png")!, for: .highlighted)
             } else {
                 self.setImage(UIImage(named:"gearLightBlue256.png")!, for: .highlighted)

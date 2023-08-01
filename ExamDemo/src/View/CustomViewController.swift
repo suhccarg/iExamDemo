@@ -66,7 +66,7 @@ public class CustomViewController: UIViewController {
         self.view.tag = baseViewTag
         //Repository.baseViewSize = self.view.frame.size
         do {
-            try ExamColor.apply()
+            try ExamColor.apply(colorChanger: Preference.colorChanger)
             self.view.backgroundColor = ExamColor.base.uiColor
             try createScrollView()
             try setupTitle()
@@ -86,7 +86,7 @@ public class CustomViewController: UIViewController {
     }//createScrollView()
     
     public func setupColor() throws {
-        try ExamColor.apply()
+        try ExamColor.apply(colorChanger: Preference.colorChanger)
         self.view.backgroundColor = ExamColor.base.uiColor
         setupColorScrollView()
         preTitle.setupColor()

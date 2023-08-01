@@ -48,6 +48,7 @@
 		D98760372A78B24C00ABFD3B /* SDK1-ShasenShiki-K.png in Resources */ = {isa = PBXBuildFile; fileRef = D98760212A78B24C00ABFD3B /* SDK1-ShasenShiki-K.png */; };
 		D98760382A78B24C00ABFD3B /* SDK2-FMEA_FTA-K.png in Resources */ = {isa = PBXBuildFile; fileRef = D98760222A78B24C00ABFD3B /* SDK2-FMEA_FTA-K.png */; };
 		D987603C2A78B4C100ABFD3B /* ExamDemo.db in Resources */ = {isa = PBXBuildFile; fileRef = D987603B2A78B4C100ABFD3B /* ExamDemo.db */; };
+		D987603E2A79967000ABFD3B /* ColorControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D987603D2A79967000ABFD3B /* ColorControl.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -93,6 +94,7 @@
 		D98760212A78B24C00ABFD3B /* SDK1-ShasenShiki-K.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SDK1-ShasenShiki-K.png"; sourceTree = "<group>"; };
 		D98760222A78B24C00ABFD3B /* SDK2-FMEA_FTA-K.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SDK2-FMEA_FTA-K.png"; sourceTree = "<group>"; };
 		D987603B2A78B4C100ABFD3B /* ExamDemo.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = ExamDemo.db; sourceTree = "<group>"; };
+		D987603D2A79967000ABFD3B /* ColorControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorControl.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +164,7 @@
 				D905CDF72A6A2A270046BED8 /* CustomViewController.swift */,
 				D905CDF82A6A2A270046BED8 /* WebView.swift */,
 				D952EAD32A61FF3B001A3F04 /* MenuViewController.swift */,
+				D987603D2A79967000ABFD3B /* ColorControl.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -313,6 +316,7 @@
 				D952EAE32A61FF3C001A3F04 /* SettingViewController.swift in Sources */,
 				D905CDFC2A6A2A280046BED8 /* Button.swift in Sources */,
 				D91803342A61C1A00038B5A8 /* SceneDelegate.swift in Sources */,
+				D987603E2A79967000ABFD3B /* ColorControl.swift in Sources */,
 				D905CDFB2A6A2A280046BED8 /* WebView.swift in Sources */,
 				D952EAF02A61FF3C001A3F04 /* AppDelegate.swift in Sources */,
 				D905CE002A6A50350046BED8 /* Preference.swift in Sources */,
