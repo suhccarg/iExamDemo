@@ -225,7 +225,7 @@ public class Preference {
         if (!Preference.isPrepared) {
             Self.debugLevel = 60
             Self.applicationType = .demo
-            Self.defaultOptionType = .optionA
+            Self.defaultOptionType = .optionS
             ExamCategory.categories = Preference.examCategories
         }
         Preference.isPrepared = true
